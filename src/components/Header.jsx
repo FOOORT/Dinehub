@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { FaBars, FaTimes, FaUser } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { TbUserCircle } from "react-icons/tb";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
@@ -12,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full bg-white px-12 py-6 flex justify-between items-center fixed">
+    <div className="w-full bg-white/80 px-12 py-6 flex justify-between items-center fixed backdrop-blur-md z-50">
       <Image src="/image/png/Logo.png" alt="Logo" width={50} height={50} />
       <ul className="gap-4 hidden md:flex items-center justify-end">
         <li className="py-2 px-4 bg-transparent hover:bg-slate-100 duration-300 hover:scale-105 rounded-md">
@@ -31,7 +32,7 @@ const Header = () => {
           Sign in
         </button>
         <button className="bg-black text-white rounded-md px-4 border-black border py-2 duration-300 hover:scale-105 flex gap-2 items-center">
-          <FaUser />
+          <TbUserCircle />
           Sign up
         </button>
       </ul>
@@ -43,7 +44,7 @@ const Header = () => {
         Menu
       </button>
       {menu && (
-        <ul className="bg-gray-200 w-2/3 p-8 fixed top-0 right-0 mt-20 mr-12 flex md:hidden flex-col justify-end items-end rounded-md">
+        <ul className="bg-white w-2/3 p-8 fixed top-0 right-0 mt-20 mr-12 flex md:hidden flex-col justify-end items-end rounded-md border">
           <li className="py-2 px-6 bg-transparent hover:bg-slate-100 duration-300 hover:scale-105 rounded-md">
             How we works
           </li>
@@ -61,7 +62,7 @@ const Header = () => {
               Sign in
             </button>
             <button className="bg-black text-white rounded-md px-6 border-black border py-2 duration-300 hover:scale-105 flex gap-2 items-center w-1/2">
-              <FaUser />
+              <TbUserCircle />
               Sign up
             </button>
           </div>
