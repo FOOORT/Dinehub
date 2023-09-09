@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import About from "@/components/Landing/About";
 import Contact from "@/components/Landing/Contact";
+import Footer from "@/components/Landing/Footer";
 import HowWeWork from "@/components/Landing/HowWeWork";
 import Screen from "@/components/Landing/Screen";
 import Subscription from "@/components/Landing/Subscription";
@@ -16,7 +17,8 @@ const Home = () => {
       <About />
       <Subscription />
       <Screen/>
-      {/* <Contact/> */}
+      <Contact/>
+      <Footer/>
     </section>
   );
 };
