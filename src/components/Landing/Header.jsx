@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { TbUserCircle } from "react-icons/tb";
+import Link from "next/link";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
@@ -14,7 +15,9 @@ const Header = () => {
 
   return (
     <div className="w-full bg-white/80 px-12 py-6 flex justify-between items-center fixed backdrop-blur-md z-50">
-      <Image src="/image/png/Logo.png" alt="Logo" width={50} height={50} />
+      <Link href="/">
+        <Image src="/image/Logo.png" alt="Logo" width={50} height={50} />
+      </Link>
       <ul className="gap-4 hidden md:flex items-center justify-end">
         <li className="py-2 px-4 bg-transparent hover:bg-slate-100 duration-300 hover:scale-105 rounded-md">
           How we works

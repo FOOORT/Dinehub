@@ -1,26 +1,19 @@
-import Header from "@/components/Header";
-import About from "@/components/Landing/About";
-import Contact from "@/components/Landing/Contact";
-import Footer from "@/components/Landing/Footer";
-import HowWeWork from "@/components/Landing/HowWeWork";
-import Screen from "@/components/Landing/Screen";
-import Subscription from "@/components/Landing/Subscription";
-import Welcome from "@/components/Landing/Welcome";
+
+import CardsContainer from "@/components/Main/CardsContainer";
+import Footer from "@/components/Main/Footer";
+import Header from "@/components/Main/Header";
 import React from "react";
 
-const Home = () => {
+const page = () => {
   return (
-    <section className="bg-blue-5 w-screen h-screen">
+    <section className="w-screen py-12">
       <Header />
-      <Welcome />
-      <HowWeWork />
-      <About />
-      <Subscription />
-      <Screen/>
-      <Contact/>
-      <Footer/>
+      <div className="px-8 pt-20">
+        <CardsContainer />
+      </div>
+      <Footer />
     </section>
   );
 };
 
-export default Home;
+export default page;
