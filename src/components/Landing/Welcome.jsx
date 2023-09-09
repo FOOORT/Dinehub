@@ -16,7 +16,7 @@ const Welcome = () => {
         Discover, subscribe to favorite restaurant effortlessly.
       </h2>
       <div className="flex justify-between items-center mt-16 w-full">
-        <div className="flex gap-4 w-5/6 bg-yellow-300 lg:w-2/3 lg:bg-red-300">
+        <div className="flex gap-4 w-5/6 lg:w-2/3">
           <Image
             src="/image/Rectangle6.png"
             alt="image1"
