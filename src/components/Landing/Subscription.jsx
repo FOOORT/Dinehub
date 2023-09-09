@@ -26,7 +26,7 @@ const Subscription = () => {
           alt="Plain"
           width={320}
           height={300}
-          className="w-56 h-56 duration-500 group:scale-100  hidden lg:block"
+          className="w-56 h-56 duration-500 group-hover:scale-110 group-hover:saturate-200  hidden lg:block"
         />
       </div>
     </div>
