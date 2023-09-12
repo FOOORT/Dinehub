@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import React from 'react'
-import { GoHome } from 'react-icons/go';
-import { TbUserCircle } from 'react-icons/tb';
+import Link from "next/link";
+import React from "react";
+import { GoHome } from "react-icons/go";
+import { TbUserCircle } from "react-icons/tb";
 
 const Auth = () => {
   return (
@@ -11,15 +11,19 @@ const Auth = () => {
           <GoHome className="text-2xl" />
         </Link>
       </div>
-      <button className="h-full text-xl px-4 py-3 hover:rounded-md duration-300 scale-90 hover:scale-100 hover:bg-slate-100">
-        Sign in
-      </button>
-      <button className="h-full text-xl px-4 py-3 rounded-md duration-300 scale-90 hover:scale-100 bg-black text-white flex items-center gap-2 hover:rounded-md">
-        <TbUserCircle />
-        Sign up
-      </button>
+      <Link href="/auth/signin">
+        <button className="h-full text-xl px-4 py-3 hover:rounded-md duration-300 scale-90 hover:scale-100 hover:bg-slate-100">
+          Sign in
+        </button>
+      </Link>
+      <Link href="/auth">
+        <button className="h-full text-xl px-4 py-3 rounded-md duration-300 scale-90 hover:scale-100 bg-black text-white flex items-center gap-2 hover:rounded-md">
+          <TbUserCircle />
+          Sign up
+        </button>
+      </Link>
     </div>
   );
-}
+};
 
-export default Auth
+export default Auth;
