@@ -30,7 +30,7 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="John doe"
-                className="text-lg p-2 rounded-md"
+                className="text-lg p-2 rounded-md outline-none active:outline-none"
               />
             </div>
             <div className="flex flex-col">
@@ -38,7 +38,7 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="example@gmail.com"
-                className="text-lg p-2 rounded-md"
+                className="text-lg p-2 rounded-md outline-none active:outline-none"
               />
             </div>
           </div>
@@ -48,7 +48,7 @@ const Contact = () => {
               <input
                 type="text"
                 placeholder="Your subject"
-                className="text-lg p-2 rounded-md"
+                className="text-lg p-2 rounded-md outline-none active:outline-none"
               />
             </div>
             <div className="flex flex-col">
@@ -58,7 +58,7 @@ const Contact = () => {
                 id=""
                 cols="30"
                 rows="5"
-                className="text-lg p-2 rounded-md"
+                className="text-lg p-2 rounded-md outline-none active:outline-none"
               >
                 Your message ...
               </textarea>
@@ -66,7 +66,7 @@ const Contact = () => {
             <input
               type="submit"
               value="Send us message"
-              className="text-lg p-2 rounded-md bg-black text-white"
+              className="text-lg p-2 rounded-md outline-none active:outline-none bg-black text-white"
             />
           </div>
         </div>
