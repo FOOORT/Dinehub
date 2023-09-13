@@ -1,24 +1,26 @@
 import React from "react";
 import Layout from "./layout";
-import Title from "@/components/common/Main/Restaurant/Title";
-import ImageView from "@/components/common/Main/Restaurant/ImageView";
+import Title from "@/components/common/Main/Restaurant/title";
+import ImageView from "@/components/common/Main/Restaurant/imageview";
 import Details from "@/components/common/Main/Restaurant/details";
 import PayCard from "@/components/common/Main/Restaurant/paycard";
+import Simiral from "@/components/common/Main/Restaurant/simiral";
 
 const page = () => {
   return (
     <Layout>
-      <div className="w-screen h-screen flex flex-col justify-start items-start px-12 pt-24 gap-4">
+      <div className="w-screen flex flex-col justify-start items-start px-12 pt-24 gap-4 pb-36">
         <Title />
         <ImageView />
-        <div className="w-full bg-white p-2 flex gap-4">
-          <div className="w-4/6">
-            <Details/>
+        <div className="w-full p-2 flex flex-col lg:flex-row gap-4">
+          <div className="w-full lg:w-4/6">
+            <Details />
           </div>
-          <div className="w-2/6">
-            <PayCard/>
+          <div className="w-full lg:w-2/6">
+            <PayCard />
           </div>
         </div>
+        <Simiral />
       </div>
     </Layout>
   );
