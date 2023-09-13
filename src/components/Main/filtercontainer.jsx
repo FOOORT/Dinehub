@@ -2,8 +2,8 @@ import React from 'react'
 
 
 import FilterCategory from '../common/Main/filtercategory'
-import Filter from '../common/Main/Filter/Filter';
-import Following from '../common/Main/Filter/Following';
+import Filter from '../common/Main/Filter/filter';
+import Following from '../common/Main/Filter/following';
 
 const FilterContainer = () => {
   return (
