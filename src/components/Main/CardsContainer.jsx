@@ -1,5 +1,5 @@
 import React from "react";
-import Cards from "../common/Main/cards";
+import Cards from "../common/Main/Cards";
 import { Asset } from "../Asset";
 
 const CardsContainer = () => {
