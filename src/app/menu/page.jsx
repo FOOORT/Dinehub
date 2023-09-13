@@ -1,7 +1,8 @@
-import CardsContainer from "@/components/Main/CardsContainer";
+// import CardsContainer from "@/components/Main/CardsContainer";
 import FilterContainer from "@/components/Main/filtercontainer";
 import Footer from "@/components/Main/Footer";
 import Header from "@/components/Main/Header";
+import CardContainer from "@/components/Menu/cardcontainer";
 import React from "react";
 
 const page = () => {
@@ -10,9 +11,10 @@ const page = () => {
       <Header />
       <div className="px-8 pt-8">
         <FilterContainer />
-        <CardsContainer />
+        {/* <CardsContainer /> */}
+        <CardContainer/>
       </div>
-      <Footer />
+      <Footer/>
     </section>
   );
 };

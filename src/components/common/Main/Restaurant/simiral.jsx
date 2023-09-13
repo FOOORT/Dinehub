@@ -1,6 +1,6 @@
-import React from 'react'
-import Cards from '../Cards';
-import { Asset } from '@/components/Asset';
+import React from "react";
+import Cards from "../Cards";
+import { Asset } from "@/components/Asset";
 
 const Simiral = () => {
   return (
@@ -15,6 +15,6 @@ const Simiral = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Simiral
+export default Simiral;

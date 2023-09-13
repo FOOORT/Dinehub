@@ -1,6 +1,5 @@
-import Image from "next/image";
 import React from "react";
-import { FaLocationArrow, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import {} from "react-icons/fa";
 import Link from "next/link";
@@ -10,13 +9,6 @@ const Cards = ({ image, name, location }) => {
     <Link href="/restaurant">
       <div className="w-full p-2 rounded-2xl duration-300 scale-100 hover:bg-slate-200 cursor-pointer">
         {image}
-        {/* <Image
-        src={image}
-        alt={name}
-        width={100}
-        height={100}
-        className="w-full"
-      /> */}
         <div className="py-2">
           <h2 className="text-xl font-semibold">{name}</h2>
           <div className="flex justify-between items-center">
