@@ -5,9 +5,9 @@ import { FiArrowRight } from "react-icons/fi";
 
 const FilterCategory = () => {
   return (
-    <nav className="flex gap-4 items-center justify-center">
+    <nav className="flex gap-2 lg:gap-4 items-center justify-center py-2 lg:py-0">
       <Link href="/menu">
-        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-md">
+        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
             src="/image/Rectangle23.png"
             alt="image"
@@ -19,7 +19,7 @@ const FilterCategory = () => {
         </div>
       </Link>
       <Link href="/menu">
-        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-md">
+        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
             src="/image/Rectangle24.png"
             alt="image"
@@ -31,7 +31,7 @@ const FilterCategory = () => {
         </div>
       </Link>
       <Link href="/menu">
-        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-md">
+        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
             src="/image/Rectangle25.png"
             alt="image"
@@ -43,7 +43,7 @@ const FilterCategory = () => {
         </div>
       </Link>
       <Link href="/menu">
-        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-md">
+        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
             src="/image/Rectangle26.png"
             alt="image"
@@ -55,7 +55,7 @@ const FilterCategory = () => {
         </div>
       </Link>
       <Link href="/menu">
-        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-md">
+        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
             src="/image/Rectangle27.png"
             alt="image"
@@ -67,7 +67,7 @@ const FilterCategory = () => {
         </div>
       </Link>
       <Link href="/menu">
-        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-md">
+        <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
             src="/image/Rectangle28.png"
             alt="image"
@@ -78,7 +78,7 @@ const FilterCategory = () => {
           <span className="text-xs pt-1">Fruits</span>
         </div>
       </Link>
-      <div className="bg-white w-16 h-16 flex justify-center items-center rounded-full border group">
+      <div className="w-12 h-12 flex justify-center items-center rounded-full border border-transparent lg:border-black group">
         <FiArrowRight className="group-hover:ml-4 duration-300" />
       </div>
     </nav>

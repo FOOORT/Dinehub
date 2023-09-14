@@ -23,7 +23,7 @@ const Details = () => {
       </div>
       <h2 className="text-2xl font-medium">About this Place</h2>
       <h3 className="text-xl font-medium">Cuisine</h3>
-      <ul className="flex gap-2 item-center">
+      <ul className="flex gap-2 item-center flex-wrap w-full">
         <li className="border border-black rounded-md px-4 py-2">Italia</li>
         <li className="border border-black rounded-md px-4 py-2">Pasta</li>
         <li className="border border-black rounded-md px-4 py-2">Continental</li>
