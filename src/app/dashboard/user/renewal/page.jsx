@@ -1,10 +1,15 @@
+import Header from "@/components/Main/Header";
 import React from "react";
+import Layout from "../Layout";
+import RenewalLayout from "@/components/Dashboard/user/renewal/renewalLayout";
+import RenewalOption from "@/components/Dashboard/user/renewal/renewaloption";
 
 const page = () => {
   return (
-    <div className="w-screen h-screen bg-red-300 flex justify-center items-center">
-      Renewal
-    </div>
+    <Layout>
+      <RenewalLayout />
+      <RenewalOption />
+    </Layout>
   );
 };
 

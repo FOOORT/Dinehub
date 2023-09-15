@@ -2,11 +2,10 @@ import DashboardContainer from "@/components/common/DashboardContainer";
 import StatsCard from "@/components/common/StatsCard";
 import React from "react";
 
-const StatsContainer = () => {
+const UpgradePlan = () => {
   return (
-    <DashboardContainer title="Dashboard">
-      <div className="w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-2 gap-4">
-        <StatsCard />
+    <DashboardContainer title="Plan">
+      <div className="w-full grid grid-cols-2 lg:grid-cols-3 mt-2 gap-4 ">
         <StatsCard />
         <StatsCard />
         <StatsCard />
@@ -15,4 +14,4 @@ const StatsContainer = () => {
   );
 };
 
-export default StatsContainer;
+export default UpgradePlan;

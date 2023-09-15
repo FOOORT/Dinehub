@@ -1,10 +1,11 @@
 import React from "react";
+import Layout from "../Layout";
 
 const page = () => {
   return (
-    <div className="w-screen h-screen bg-red-300 flex justify-center items-center">
-      Loan
-    </div>
+    <Layout>
+      <h1>Loan</h1>
+    </Layout>
   );
 };
 

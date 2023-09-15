@@ -1,10 +1,16 @@
 import React from "react";
+import Layout from "../Layout";
+import Profile from "@/components/Dashboard/user/setting/profile";
+import Security from "@/components/Dashboard/user/setting/security";
+import Service from "@/components/Dashboard/user/setting/service";
 
 const page = () => {
   return (
-    <div className="w-screen h-screen bg-red-300 flex justify-center items-center">
-      Setting
-    </div>
+    <Layout>
+      <Profile/>
+      <Security />
+      <Service />
+    </Layout>
   );
 };
 

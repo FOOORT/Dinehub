@@ -7,7 +7,7 @@ import Link from "next/link";
 const Cards = ({ image, name, location }) => {
   return (
     <Link href="/restaurant">
-      <div className="w-full p-2 rounded-2xl duration-300 scale-100 hover:bg-slate-200 cursor-pointer">
+      <div className="w-full p-2 rounded-3xl duration-300 scale-100 hover:bg-slate-200 cursor-pointer">
         {image}
         <div className="py-2">
           <h2 className="text-xl font-semibold">{name}</h2>
