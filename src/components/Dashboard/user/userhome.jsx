@@ -2,13 +2,13 @@ import React from "react";
 import StatsContainer from "./component/statscontainer";
 import ReserveNow from "./component/reservenow";
 
-const Layout = () => {
+const UserHome = () => {
   return (
-    <div className="w-full p-4 flex flex-col gap-4">
+    <div className="w-full flex flex-col gap-4">
       <StatsContainer />
-      <ReserveNow/>
+      <ReserveNow />
     </div>
   );
 };
 
-export default Layout;
+export default UserHome;
