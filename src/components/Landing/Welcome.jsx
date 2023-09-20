@@ -9,7 +9,7 @@ import {
 
 const Welcome = () => {
   return (
-    <div className="w-full bg-white h-screen flex flex-col justify-center items-start px-12 gap-4 pt-[20%]">
+    <div className="w-full bg-white h-screen flex flex-col justify-center items-start px-4 lg:px-12 gap-4 pt-[20%]">
       <h3 className="text-3xl">Easy, Fast, Secure</h3>
       <h1 className="text-8xl uppercase font-medium">DINEHUB</h1>
       <h2 className="text-xl">

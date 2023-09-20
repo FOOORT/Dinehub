@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Subscription = () => {
   return (
-    <div className="w-full flex px-12 gap-4 py-4 group">
+    <div className="w-full flex px-4 lg:px-12 gap-4 py-4 group">
       <div className="flex bg-slate-50 p-12 rounded-md lg:rounded-r-full gap-12 ml-5 justify-center lg:justify-center">
         <div className="flex flex-col justify-start items-start gap-2">
           <h1 className="uppercase text-5xl font-semibold">Subscription</h1>

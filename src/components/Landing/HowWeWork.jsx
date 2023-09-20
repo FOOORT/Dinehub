@@ -3,7 +3,7 @@ import { FaCcAmazonPay, FaDatabase, FaHeart, FaUser } from "react-icons/fa";
 
 const HowWeWork = () => {
   return (
-    <div className="w-screen px-12 py-8">
+    <div className="w-screen px-4 lg:px-12 py-8">
       <h1 className="uppercase text-5xl pt-[8%] font-semibold">How we work</h1>
       <p className="mt-4">This is how you can work with us , It’s easy</p>
       <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">

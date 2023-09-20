@@ -3,7 +3,7 @@ import { FaEnvelope, FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="bg-white w-full p-12">
+    <div className="bg-white w-full px-4 lg:px-12 py-12">
       <div className="bg-gray-100 flex flex-col gap-4 lg:flex-row rounded-md p-12">
         <div className=" w-full lg:w-2/6">
           <p>Join Our Culinary Community</p>

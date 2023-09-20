@@ -1,13 +1,13 @@
 import React from "react";
 import Layout from "../Layout";
-import Profile from "@/components/Dashboard/user/setting/profile";
-import Security from "@/components/Dashboard/user/setting/security";
-import Service from "@/components/Dashboard/user/setting/service";
+import Profile from "@/components/common/Dashboard/user/setting/profile";
+import Security from "@/components/common/Dashboard/user/setting/security";
+import Service from "@/components/common/Dashboard/user/setting/service";
 
 const page = () => {
   return (
     <Layout>
-      <Profile/>
+      <Profile />
       <Security />
       <Service />
     </Layout>

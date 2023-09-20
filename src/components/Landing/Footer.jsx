@@ -3,7 +3,7 @@ import { FaEnvelope, FaFacebook, FaInstagram, FaLocationArrow, FaPhoneAlt, FaTwi
 
 const Footer = () => {
   return (
-    <div className="bg-white w-full p-12">
+    <div className="bg-white w-full px-4 lg:px-12 py-12">
       <div className="bg-black text-white flex flex-col gap-4 lg:flex-row rounded-md p-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="w-full flex flex-col gap-2">

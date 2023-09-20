@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="w-full flex px-12  gap-4 py-4 group">
+    <div className="w-full flex px-4 lg:px-12  gap-4 py-4 group">
       <div className="flex bg-slate-50 p-12 rounded-md lg:rounded-l-full gap-12 ml-6 justify-center lg:justify-center">
         <Image
           src="/image/Plate.png"

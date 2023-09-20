@@ -1,10 +1,14 @@
 import React from "react";
+import AdminLayout from "./adminlayout";
+import Header from "@/components/common/Dashboard/admin/header";
+import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
 
 const page = () => {
   return (
-    <div className="w-screen h-screen bg-red-800 flex justify-center items-center">
-      Admin
-    </div>
+    <AdminLayout>
+      <Header />
+      <StatsContainer />
+    </AdminLayout>
   );
 };
 

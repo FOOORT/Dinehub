@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full bg-white/80 px-12 py-6 flex justify-between items-center fixed backdrop-blur-md z-50">
+    <div className="w-full bg-white/80 px-4 lg:px-12 py-6 flex justify-between items-center fixed backdrop-blur-md z-50">
       <Link href="/">
         <Image src="/image/Logo.png" alt="Logo" width={50} height={50} />
       </Link>

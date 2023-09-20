@@ -16,9 +16,9 @@ const Home = () => {
       <HowWeWork />
       <About />
       <Subscription />
-      <Screen />
       <Contact />
       <Footer />
+      <Screen />
     </section>
   );
 };
