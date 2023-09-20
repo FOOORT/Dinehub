@@ -3,7 +3,7 @@ import { FaFileAudio } from "react-icons/fa";
 
 const StatsCard = () => {
   return (
-    <div className="bg-white p-2 rounded-md flex gap-4 items-center">
+    <div className="bg-white p-4 rounded-md flex gap-4 items-center">
       <div className="bg-slate-100 rounded-full flex justify-center items-center p-5">
         <FaFileAudio className="text-base text-blue-600" />
       </div>

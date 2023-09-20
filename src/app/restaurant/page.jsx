@@ -9,10 +9,10 @@ import Simiral from "@/components/common/Main/Restaurant/simiral";
 const page = () => {
   return (
     <Layout>
-      <div className="w-screen flex flex-col justify-start items-start px-12 pt-24 gap-4 pb-16">
+      <div className="w-screen flex flex-col justify-start items-start px-4 lg:px-12 pt-24 gap-4 pb-16">
         <Title />
         <ImageView />
-        <div className="w-full p-2 flex flex-col lg:flex-row gap-4">
+        <div className="w-full flex flex-col lg:flex-row gap-4">
           <div className="w-full lg:w-4/6">
             <Details />
           </div>

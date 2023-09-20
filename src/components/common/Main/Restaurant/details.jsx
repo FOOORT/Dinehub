@@ -11,38 +11,52 @@ const Details = () => {
         <span>06:00A AM - 11:00 PM</span>
       </p>
       <div className="flex gap-1">
-        <button className="px-6 py-2 border-b hover:bg-black hover:text-white active:scale-95 border-blue-600 text-blue-600">
+        <button className="px-6 text-sm py-2 border-b hover:bg-black hover:text-white active:scale-95 border-blue-600 text-blue-600">
           Overview
         </button>
-        <button className="px-6 py-2 border-b hover:bg-black hover:text-white active:scale-95 border-black">
+        <button className="px-6 text-sm py-2 border-b hover:bg-black hover:text-white active:scale-95 border-black">
           Review
         </button>
-        <button className="px-6 py-2 border-b hover:bg-black hover:text-white active:scale-95 border-black">
+        <button className="px-6 text-sm py-2 border-b hover:bg-black hover:text-white active:scale-95 border-black">
           Menus
         </button>
       </div>
       <h2 className="text-2xl font-medium">About this Place</h2>
       <h3 className="text-xl font-medium">Cuisine</h3>
       <ul className="flex gap-2 item-center flex-wrap w-full">
-        <li className="border border-black rounded-md px-4 py-2">Italia</li>
-        <li className="border border-black rounded-md px-4 py-2">Pasta</li>
-        <li className="border border-black rounded-md px-4 py-2">Continental</li>
-        <li className="border border-black rounded-md px-4 py-2">Pizaa</li>
-        <li className="border border-black rounded-md px-4 py-2">Asian</li>
-        <li className="border border-black rounded-md px-4 py-2">African</li>
-        <li className="border border-black rounded-md px-4 py-2">Dessert</li>
+        <li className="border border-black text-sm rounded-md px-4 py-2">
+          Italia
+        </li>
+        <li className="border border-black text-sm rounded-md px-4 py-2">
+          Pasta
+        </li>
+        <li className="border border-black text-sm rounded-md px-4 py-2">
+          Continental
+        </li>
+        <li className="border border-black text-sm rounded-md px-4 py-2">
+          Pizaa
+        </li>
+        <li className="border border-black text-sm rounded-md px-4 py-2">
+          Asian
+        </li>
+        <li className="border border-black text-sm rounded-md px-4 py-2">
+          African
+        </li>
+        <li className="border border-black text-sm rounded-md px-4 py-2">
+          Dessert
+        </li>
       </ul>
 
       <h3 className="text-xl font-medium">This place known for</h3>
-      <p>
+      <p className="text-sm">
         Professional Service, Japanese Cuisine, Sanitised Service, Amazing Vibe,
         Great Host, Great Vibe
       </p>
 
       <h3 className="text-xl font-medium">Average Cost</h3>
-      <p>2,500 rwf (approx.) Without alcohol</p>
-      <p>Cash and Cards accepted</p>
-      <p>Digital payments accepted</p>
+      <p className="text-sm">2,500 rwf (approx.) Without alcohol</p>
+      <p className="text-sm">Cash and Cards accepted</p>
+      <p className="text-sm">Digital payments accepted</p>
 
       <h3 className="text-xl font-medium">More Info</h3>
       <ul className="grid grid-cols-2">
@@ -77,7 +91,9 @@ const Details = () => {
       </ul>
 
       <h3 className="text-xl font-medium">Report an error in this listing</h3>
-      <p>Help us make Dinehub more updated and relevant for everyone</p>
+      <p className="text-sm">
+        Help us make Dinehub more updated and relevant for everyone
+      </p>
       <Link
         href="report"
         className="text-blue-500 font-medium flex items-center gap-2"
@@ -87,7 +103,7 @@ const Details = () => {
       </Link>
 
       <h3 className="text-xl font-medium">RELATED TO AFRICANO RESTAURANT</h3>
-      <Link href="/restaurant">
+      <Link href="/restaurant" className="text-sm">
         Restaurants in New Delhi, New Delhi Restaurants, Mehrauli restaurants,
         Best Mehrauli restaurants, South Delhi restaurants, Casual Dining in
         Delhi NCR, Casual Dining near me, Casual Dining in South Delhi, Casual
@@ -98,7 +114,7 @@ const Details = () => {
       <h3 className="text-xl font-medium">
         RESTAURANTS AROUND AFRICANO RESTAURANT
       </h3>
-      <Link href="/restaurant">
+      <Link href="/restaurant" className="text-sm">
         Lado Sarai restaurants, Qutab Institutional Area restaurants, Adchini
         restaurants, Geetanjali Enclave restaurants
       </Link>
@@ -106,7 +122,7 @@ const Details = () => {
       <h3 className="text-xl font-medium">
         FREQUENT SEARCHES LEADING TO THIS PAGE
       </h3>
-      <Link href="/restaurant">
+      <Link href="/restaurant" className="text-sm">
         swan menu, swan mehrauli menu, swan new delhi, swan new delhi menu, swan
         restaurant
       </Link>

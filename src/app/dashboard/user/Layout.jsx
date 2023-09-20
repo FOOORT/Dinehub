@@ -1,4 +1,4 @@
-import SideBar from "@/components/Dashboard/user/sidebar";
+import SideBar from "@/components/common/Dashboard/user/sidebar";
 import Header from "@/components/Main/Header";
 import React from "react";
 

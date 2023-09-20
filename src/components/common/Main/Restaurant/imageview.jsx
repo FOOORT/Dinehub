@@ -3,47 +3,43 @@ import React from "react";
 
 const ImageView = () => {
   return (
-    <div className="w-full  h-[20vh] sm:h-[30vh] md:h-[45vh] lg:h-[55vh] xl:h-[60vh] bg-white p-2 rounded-xl flex gap-1 md:gap-2 lg:gap-3 xl:gap-4">
-      <div className="w-1/2 overflow-hidden">
+    <div className="h-[70vh] md:h-auto w-full bg-white p-1 rounded-xl flex flex-col md:flex-row items-center justify-center gap-1">
         <Image
           src="/image/11.png"
           alt="Image 1"
           width={100}
           height={100}
-          className="w-full h-full rounded-l-xl"
+          className="w-full md:w-1/2 h-full rounded-t-xl md:rounded-l-xl md:rounded-none"
         />
-      </div>
-      <div className="flex w-1/2 gap-1 md:gap-2 lg:gap-3 xl:gap-4">
-        <div className="flex flex-col w-1/2 gap-1 md:gap-2 lg:gap-3 xl:gap-4">
+      <div className="flex w-full md:w-1/2 gap-1 md:gap-2 lg:gap-3 xl:gap-4">
+        <div className="w-full gap-1 grid grid-cols-4 md:grid-cols-1 lg:grid-cols-2">
           <Image
             src="/image/13.png"
             alt="Image 1"
             width={100}
             height={100}
-            className="w-full h-full"
+            className="w-full block md:hidden lg:block rounded-bl-xl md:rounded-none"
           />
           <Image
             src="/image/14.png"
             alt="Image 1"
             width={100}
             height={100}
-            className="w-full h-full"
+            className="w-full block md:hidden lg:block rounded-none md:rounded-tr-xl md:rounded-none lg:rounded-tr-xl"
           />
-        </div>
-        <div className="flex flex-col w-1/2 gap-1 md:gap-2 lg:gap-3 xl:gap-4">
           <Image
             src="/image/13.png"
             alt="Image 1"
             width={100}
             height={100}
-            className="w-full h-full rounded-tr-xl"
+            className="w-full block md:hidden lg:block"
           />
           <Image
             src="/image/14.png"
             alt="Image 1"
             width={100}
             height={100}
-            className="w-full h-full rounded-br-xl"
+            className="w-full rounded-none rounded-br-xl md:rounded-r-xl lg:rounded-br-xl lg:rounded-none"
           />
         </div>
       </div>

@@ -9,13 +9,13 @@ const ContactCard = () => {
       </h3>
       <div className="border rounded-lg w-full">
         <div className="flex w-full">
-          <div className="flex flex-col w-1/2 border p-2 rounded-l-md">
-            <h2 className="text-lg font-medium py-2">Call</h2>
-            <p className="text-xl font-normal">+250 788 888 898</p>
+          <div className="flex flex-col w-1/2 border p-1 rounded-l-md">
+            <h2 className="text-lg font-medium py-1">Call</h2>
+            <p className="text-sm font-normal">+250 788 888 898</p>
           </div>
           <div className="flex flex-col w-1/2 border p-2 rounded-r-md">
-            <h2 className="text-lg font-medium py-2">Whatsapp</h2>
-            <p className="text-xl font-normal">+250 788 888 898</p>
+            <h2 className="text-lg font-medium py-1">Whatsapp</h2>
+            <p className="text-sm font-normal">+250 788 888 898</p>
           </div>
         </div>
       </div>

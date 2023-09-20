@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "../Layout";
-import UpgradePlan from "@/components/Dashboard/user/upgrade/upgradeplan";
-import PayMethod from "@/components/Dashboard/user/upgrade/paymethod";
-import ChargesBill from "@/components/Dashboard/user/upgrade/chargesbill";
-import BillingInfo from "@/components/Dashboard/user/upgrade/billinginfo";
+import UpgradePlan from "@/components/common/Dashboard/user/billing/upgradeplan";
+import PayMethod from "@/components/common/Dashboard/user/billing/paymethod";
+import ChargesBill from "@/components/common/Dashboard/user/billing/chargesbill";
+import BillingInfo from "@/components/common/Dashboard/user/billing/billinginfo";
 
 const page = () => {
   return (

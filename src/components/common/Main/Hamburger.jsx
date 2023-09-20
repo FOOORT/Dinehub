@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { TbUserCircle } from "react-icons/tb";
 import SmSearchFilter from "../SmSearchFilter";
@@ -16,7 +16,7 @@ const Hamburger = () => {
   return (
     <div className="block lg:hidden">
       <button
-        className="bg-black text-white rounded-md px-6 border-black border py-2 duration-300 hover:scale-105 flex gap-2 items-center"
+        className="bg-black text-white rounded-md px-6 border-black border py-2 duration-300 hover:scale-105 flex gap-2 items-center text-sm "
         onClick={handleMenu}
       >
         {menu ? <FaTimes /> : <FaBars />}
