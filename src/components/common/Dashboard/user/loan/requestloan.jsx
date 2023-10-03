@@ -1,6 +1,6 @@
 import DashboardContainer from "@/components/common/DashboardContainer";
 import React from "react";
-import ActionButton from "../../actionbutton";
+import ActionButton from "../../../actionbutton";
 
 const RequestLoan = () => {
   return (
@@ -33,8 +33,9 @@ const RequestLoan = () => {
         </div>
       </div>
       <p className="text-xs mt-6 w-full">
-        Make sure that you read <span className="font-bold">Terms and Condition</span> of the loan
-        offer before easily request loan from dashboard
+        Make sure that you read{" "}
+        <span className="font-bold">Terms and Condition</span> of the loan offer
+        before easily request loan from dashboard
       </p>
     </DashboardContainer>
   );
