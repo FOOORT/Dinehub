@@ -18,7 +18,7 @@ const Header = () => {
         >
           {sidebar ? <FaTimes /> : <FaBars />}
         </button>
-        <h1 className="flex items-center gap-2">
+        <h1 className="flex items-center gap-2 text-slate-800">
           <span className="hidden lg:block">Welcome to </span>Obinasom
           Restaurant Dashboard
         </h1>

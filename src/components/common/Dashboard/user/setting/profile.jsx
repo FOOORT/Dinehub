@@ -1,6 +1,6 @@
 import DashboardContainer from "@/components/common/DashboardContainer";
 import React from "react";
-import ActionButton from "../../actionbutton";
+import ActionButton from "../../../actionbutton";
 
 const profile = () => {
   return (

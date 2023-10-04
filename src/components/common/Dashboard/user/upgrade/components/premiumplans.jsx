@@ -1,4 +1,4 @@
-import ActionButton from "@/components/common/Dashboard/actionbutton";
+import ActionButton from "@/components/common/actionbutton";
 import React from "react";
 import { MdWorkspacePremium } from "react-icons/md";
 
