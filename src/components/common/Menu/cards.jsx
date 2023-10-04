@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { FaCartPlus } from "react-icons/fa";
 
-const Cards = () => {
+const Cards = ({ name, desc, price, category, restaurant }) => {
   return (
     <div className="w-full p-2 flex justify-center items-center rounded-lg">
       <fieldset className="bg-gray-100 rounded-xl p-4 flex justify-center items-center w-full">
@@ -17,9 +17,9 @@ const Cards = () => {
         </legend>
         <ul className="w-full flex flex-col gap-2 justify-center items-center">
           <li className="w-full font-medium text-center mt-4 text-lg">
-            Spicy seasoned seafood noodles
+            {name}
           </li>
-          <li className="font-bold text-center text-xl">2,000 RWF</li>
+          <li className="font-bold text-center text-xl">{price * 1000} RWF</li>
           <li className="text-center text-slate-600">20 Bowls available</li>
           <div className="flex w-full gap-2">
             <button className="bg-black rounded-md text-white w-9/12 py-2">

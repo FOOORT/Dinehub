@@ -1,6 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import AdminLayout from "../adminlayout";
+import Header from "@/components/common/Dashboard/admin/header";
+import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
+import TabNav from "./tabNav";
+import RightDetails from "@/components/common/Dashboard/admin/rightDetails";
 
 const Users = [
   {
@@ -10,7 +14,7 @@ const Users = [
     email: "John@gmail.com",
     location: "Huye, South",
     phone: "078837833",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "Alice",
@@ -19,7 +23,7 @@ const Users = [
     email: "alice@gmail.com",
     location: "New York, USA",
     phone: "123456789",
-    type: "client",
+    UserType: "admin",
   },
   {
     username: "Bob",
@@ -28,7 +32,7 @@ const Users = [
     email: "bob@gmail.com",
     location: "Los Angeles, USA",
     phone: "987654321",
-    type: "client",
+    UserType: "mini-admin",
   },
   {
     username: "Emma",
@@ -37,7 +41,7 @@ const Users = [
     email: "emma@gmail.com",
     location: "London, UK",
     phone: "555555555",
-    type: "client",
+    UserType: "mini-admin",
   },
   {
     username: "David",
@@ -46,7 +50,7 @@ const Users = [
     email: "david@gmail.com",
     location: "Toronto, Canada",
     phone: "777777777",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "Sarah",
@@ -55,7 +59,7 @@ const Users = [
     email: "sarah@gmail.com",
     location: "Sydney, Australia",
     phone: "999999999",
-    type: "client",
+    UserType: "admin",
   },
   {
     username: "Michael",
@@ -64,7 +68,7 @@ const Users = [
     email: "michael@gmail.com",
     location: "Berlin, Germany",
     phone: "333333333",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "Olivia",
@@ -73,7 +77,7 @@ const Users = [
     email: "olivia@gmail.com",
     location: "Paris, France",
     phone: "666666666",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "William",
@@ -82,7 +86,7 @@ const Users = [
     email: "william@gmail.com",
     location: "Madrid, Spain",
     phone: "222222222",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "Sophia",
@@ -91,7 +95,7 @@ const Users = [
     email: "sophia@gmail.com",
     location: "Rome, Italy",
     phone: "444444444",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "Liam",
@@ -100,7 +104,7 @@ const Users = [
     email: "liam@gmail.com",
     location: "Tokyo, Japan",
     phone: "888888888",
-    type: "client",
+    UserType: "admin",
   },
   {
     username: "Ella",
@@ -109,7 +113,7 @@ const Users = [
     email: "ella@gmail.com",
     location: "Mumbai, India",
     phone: "111111111",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "James",
@@ -118,7 +122,7 @@ const Users = [
     email: "james@gmail.com",
     location: "Seoul, South Korea",
     phone: "555555555",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "Ava",
@@ -127,7 +131,7 @@ const Users = [
     email: "ava@gmail.com",
     location: "Beijing, China",
     phone: "999999999",
-    type: "client",
+    UserType: "client",
   },
   {
     username: "Noah",
@@ -136,12 +140,42 @@ const Users = [
     email: "noah@gmail.com",
     location: "Sao Paulo, Brazil",
     phone: "777777777",
-    type: "client",
+    UserType: "admin",
   },
 ];
 
-const Page = () => {
-  return <AdminLayout></AdminLayout>;
+const page = () => {
+  const [selectedTr, setSelectedTr] = useState({});
+
+  const handleRowClick = (index) => {
+    setSelectedTr(index);
+  };
+
+  return (
+    <AdminLayout>
+      <div className="flex justify-between items-start">
+        <div className="w-full lg:w-[75%] xl:w-[80%] px-3">
+          <Header />
+          <StatsContainer />
+          <TabNav
+            Users={Users}
+            selectedTr={selectedTr}
+            setSelectedTr={setSelectedTr}
+            handleRowClick={handleRowClick}
+          />
+        </div>
+        <div className="lg:w-[25%] xl:w-[20%] h-screen pl-1 bg-fixed bg-white">
+          <div className="lg:w-[20%]  xl:w-[16.5%] h-screen fixed bg-white">
+            <RightDetails
+              selectedTr={selectedTr}
+              setSelectedTr={setSelectedTr}
+              item={selectedTr !== null ? Users[selectedTr] : null}
+            />
+          </div>
+        </div>
+      </div>
+    </AdminLayout>
+  );
 };
 
-export default Page;
+export default page;
