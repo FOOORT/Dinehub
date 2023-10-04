@@ -1,120 +1,9 @@
 "use client";
-import TopFilter from "@/components/common/Dashboard/admin/restaurant/topfilter";
-import OptionsBtn from "@/components/common/optionsBtn";
 import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
-import Link from "next/link";
 import { FaPlus } from "react-icons/fa";
 import { BiDotsHorizontal } from "react-icons/bi";
 import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/addrestaurant";
-
-const Restos = [
-  {
-    name: "Restos0",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "rejected",
-  },
-  {
-    name: "Restos3",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "approved",
-  },
-  {
-    name: "Restos2",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "approved",
-  },
-  {
-    name: "Restos3",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "pending",
-  },
-  {
-    name: "Restos4",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "rejected",
-  },
-  {
-    name: "Restos5",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "pending",
-  },
-  {
-    name: "Restos6",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "approved",
-  },
-  {
-    name: "Restos7",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "rejected",
-  },
-  {
-    name: "Restos8",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "pending",
-  },
-  {
-    name: "Restos9",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "rejected",
-  },
-  {
-    name: "Restos10",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "approved",
-  },
-  {
-    name: "Restos11",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "pending",
-  },
-  {
-    name: "Restos12",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "pending",
-  },
-  {
-    name: "Restos13",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "pending",
-  },
-  {
-    name: "Restos14",
-    location: "South, Huye",
-    contact: "07886337833",
-    email: "reconfortdanny@gmail.com",
-    decision: "pending",
-  },
-];
 
 const getButtonClass = (decision) => {
   if (decision === "rejected") {
@@ -126,7 +15,7 @@ const getButtonClass = (decision) => {
   }
 };
 
-const TabNav = () => {
+const TabNav = ({ Restos, setSelectedTr, selectedTr, handleRowClick }) => {
   const [activeLink, setActiveLink] = useState("all"); // Set the default active link
   const [filteredRestos, setFilteredRestos] = useState(Restos);
 
@@ -151,7 +40,6 @@ const TabNav = () => {
   };
 
   const [selectedItem, setSelectedItem] = useState();
-
   const [addRestoModal, setAddRestoModal] = useState(false);
   const restoHandleModal = () => setAddRestoModal((prev) => !prev);
   return (
@@ -199,7 +87,10 @@ const TabNav = () => {
         />
         {addRestoModal && <AddRestaurant closeModal={restoHandleModal} />}
       </div>
-
+      {/* <div style={{ width: "100%", height: "300px" }} className="flex gap-4">
+        <PerfomanceChart />
+        <PerfomacePieChart />
+      </div> */}
       <table className="bg-white w-full mt-2 text-sm rounded-lg" border="1">
         <thead className="">
           <tr className="h-8">
@@ -214,11 +105,20 @@ const TabNav = () => {
         </thead>
         {filteredRestos.map((item, index) => (
           <>
-            <tbody>
-              <tr className="h-10 duration-200 hover:bg-slate-100 rounded-md">
+            <tbody key={index}>
+              <tr
+                className={`h-10 duration-200 hover:bg-slate-100 rounded-md ${
+                  selectedTr === index ? "bg-slate-100" : ""
+                }`}
+                onClick={function (e) {
+                  console.log("itemherererererre", item);
+                  console.log("iiiindex", index);
+                  setSelectedTr(item);
+                }}
+              >
                 <td className="pl-4">{index + 1}</td>
                 <td>{item.name}</td>
-                <td className="hidden md:flex items-center h-1">
+                <td className="hidden md:flex items-center h-1 pt-5">
                   {item.location}
                 </td>
                 <td>
