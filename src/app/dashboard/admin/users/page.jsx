@@ -1,7 +1,147 @@
+"use client";
 import React from "react";
+import AdminLayout from "../adminlayout";
 
-const page = () => {
-  return <div>page</div>;
+const Users = [
+  {
+    username: "John",
+    firstname: "John",
+    lastname: "Muhoza",
+    email: "John@gmail.com",
+    location: "Huye, South",
+    phone: "078837833",
+    type: "client",
+  },
+  {
+    username: "Alice",
+    firstname: "Alice",
+    lastname: "Smith",
+    email: "alice@gmail.com",
+    location: "New York, USA",
+    phone: "123456789",
+    type: "client",
+  },
+  {
+    username: "Bob",
+    firstname: "Bob",
+    lastname: "Johnson",
+    email: "bob@gmail.com",
+    location: "Los Angeles, USA",
+    phone: "987654321",
+    type: "client",
+  },
+  {
+    username: "Emma",
+    firstname: "Emma",
+    lastname: "Davis",
+    email: "emma@gmail.com",
+    location: "London, UK",
+    phone: "555555555",
+    type: "client",
+  },
+  {
+    username: "David",
+    firstname: "David",
+    lastname: "Lee",
+    email: "david@gmail.com",
+    location: "Toronto, Canada",
+    phone: "777777777",
+    type: "client",
+  },
+  {
+    username: "Sarah",
+    firstname: "Sarah",
+    lastname: "Brown",
+    email: "sarah@gmail.com",
+    location: "Sydney, Australia",
+    phone: "999999999",
+    type: "client",
+  },
+  {
+    username: "Michael",
+    firstname: "Michael",
+    lastname: "Wilson",
+    email: "michael@gmail.com",
+    location: "Berlin, Germany",
+    phone: "333333333",
+    type: "client",
+  },
+  {
+    username: "Olivia",
+    firstname: "Olivia",
+    lastname: "Miller",
+    email: "olivia@gmail.com",
+    location: "Paris, France",
+    phone: "666666666",
+    type: "client",
+  },
+  {
+    username: "William",
+    firstname: "William",
+    lastname: "Jones",
+    email: "william@gmail.com",
+    location: "Madrid, Spain",
+    phone: "222222222",
+    type: "client",
+  },
+  {
+    username: "Sophia",
+    firstname: "Sophia",
+    lastname: "Harris",
+    email: "sophia@gmail.com",
+    location: "Rome, Italy",
+    phone: "444444444",
+    type: "client",
+  },
+  {
+    username: "Liam",
+    firstname: "Liam",
+    lastname: "Clark",
+    email: "liam@gmail.com",
+    location: "Tokyo, Japan",
+    phone: "888888888",
+    type: "client",
+  },
+  {
+    username: "Ella",
+    firstname: "Ella",
+    lastname: "Turner",
+    email: "ella@gmail.com",
+    location: "Mumbai, India",
+    phone: "111111111",
+    type: "client",
+  },
+  {
+    username: "James",
+    firstname: "James",
+    lastname: "Wright",
+    email: "james@gmail.com",
+    location: "Seoul, South Korea",
+    phone: "555555555",
+    type: "client",
+  },
+  {
+    username: "Ava",
+    firstname: "Ava",
+    lastname: "Parker",
+    email: "ava@gmail.com",
+    location: "Beijing, China",
+    phone: "999999999",
+    type: "client",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    type: "client",
+  },
+];
+
+const Page = () => {
+  return <AdminLayout></AdminLayout>;
 };
 
-export default page;
+export default Page;

@@ -1,5 +1,5 @@
 import React from "react";
-import BankCard from "./bankCard";
+import BankCard from "./bankcard";
 import OptionsBtn from "../../optionsBtn";
 
 const RightLayout = () => {
@@ -8,7 +8,7 @@ const RightLayout = () => {
       <div className="w-full rounded-lg flex flex-col items-center">
         <div className="flex justify-between w-full">
           <h1 className="font-bold">Top selling</h1>
-          <OptionsBtn/>
+          <OptionsBtn />
         </div>
         <p className="text-sm py-16 text-center w-44 h-44 mt-8 rounded-full border flex items-center justify-center">
           Chart
