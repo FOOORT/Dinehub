@@ -14,14 +14,12 @@ const AdminLayout = ({ children }) => {
       <div className="w-[30vw] h-screen lg:w-[35vw] xl:w-[18vw] bg-red-300 hidden md:block right-0">
         <RightLayout />
       </div> */}
-      <div className="bg-white lg:w-[18vw] xl:w-[15vw]  h-screen hidden lg:block shadow-md shadow-slate-300">
-        <div className="lg:w-[17vw] xl:w-[14vw] h-full fixed pl-4">
+      <div className="bg-white lg:w-[18vw] xl:w-[15vw]  h-screen hidden lg:block">
+        <div className="lg:w-[17vw] xl:w-[14vw] h-full fixed pl-4 bg-white">
           <Sidebar />
         </div>
       </div>
-      <div className="w-screen lg:w-[82vw] xl:w-[85vw]">
-        {children}
-      </div>
+      <div className="w-screen lg:w-[82vw] xl:w-[85vw]">{children}</div>
     </div>
   );
 };

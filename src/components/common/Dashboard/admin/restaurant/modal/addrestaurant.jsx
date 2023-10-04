@@ -19,7 +19,7 @@ const AddRestaurant = ({ closeModal }) => {
   return (
     <div className="w-screen h-screen fixed left-0 top-0 z-[60] bg-black/50 backdrop-blur-sm flex justify-center items-center">
       {step === 1 && (
-        <div className="bg-white p-4 rounded-xl w-2/6 shadow-2xl shadow-slate-400">
+        <div className="bg-white p-4 rounded-xl w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 shadow-2xl shadow-slate-400">
           <div className="w-full flex justify-between items-center">
             <h1 className="text-lg font-semibold">Add business</h1>
             <button
@@ -114,10 +114,13 @@ const AddRestaurant = ({ closeModal }) => {
         </div>
       )}
       {step === 2 && (
-        <div className="bg-white p-4 rounded-xl w-2/6 shadow-2xl shadow-slate-400">
+        <div className="bg-white p-4 rounded-xl w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 shadow-2xl shadow-slate-400">
           <div className="w-full flex justify-between items-center">
             <h1 className="text-lg font-semibold">More about your business</h1>
-            <button className="bg-black text-white p-3 rounded-xl">
+            <button
+              className="bg-black text-white p-3 rounded-xl"
+              onClick={() => closeModal()}
+            >
               <FaTimes className="text-lg" />
             </button>
           </div>
