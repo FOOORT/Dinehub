@@ -2,10 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { FaCartPlus } from "react-icons/fa";
 
-const Cards = ({ name, desc, price, category, restaurant }) => {
+const AdminCard = ({ name, desc, price, category, restaurant }) => {
   return (
     <div className="w-full p-2 flex justify-center items-center rounded-lg">
-      <fieldset className="bg-gray-100 rounded-xl p-4 flex justify-center items-center w-full">
+      <fieldset className="bg-gray-100 rounded-xl p-2 flex justify-center items-center w-full">
         <legend className="w-full flex justify-center items-center rounded-xl">
           <Image
             src="/image/Plate/Image1.png"
@@ -21,12 +21,12 @@ const Cards = ({ name, desc, price, category, restaurant }) => {
           </li>
           <li className="font-bold text-center text-xl">{price * 1000} RWF</li>
           <li className="text-center text-slate-600">20 Bowls available</li>
-          <div className="flex w-full gap-2">
-            <button className="bg-black rounded-md text-white w-9/12 py-2">
-              Order now
+          <div className="grid grid-cols-2 w-full gap-2">
+            <button className="bg-gray-500 rounded-md text-white py-2 active:scale-90 duration-100">
+              Disable
             </button>
-            <button className="bg-black rounded-md text-white w-3/12 py-2 flex flex-col justify-center items-center">
-              <FaCartPlus />
+            <button className="bg-blue-700 rounded-md text-white py-2 flex flex-col justify-center items-center active:scale-90 duration-100">
+              Enable
             </button>
           </div>
         </ul>
@@ -35,4 +35,4 @@ const Cards = ({ name, desc, price, category, restaurant }) => {
   );
 };
 
-export default Cards;
+export default AdminCard;

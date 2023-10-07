@@ -15,12 +15,18 @@ const RightDetails = ({ selectedTr }) => {
         return "border-red-500";
       case "pending":
         return "border-blue-500";
+      case "client":
+        return "border-green-500";
+      case "admin":
+        return "border-blue-500";
+      case "mini-admin":
+        return "border-slate-500";
       default:
         return "border-gray-500";
     }
   };
 
-  const decision = selectedTr.decision;
+  const decision = selectedTr.decision || selectedTr.UserType;
   const borderColor = getBorderColor(decision);
 
   if (selectedTr) {
@@ -30,8 +36,12 @@ const RightDetails = ({ selectedTr }) => {
           <div
             className={`w-32 h-32 bg-white rounded-full border-2 ${borderColor}`}
           ></div>
-          <h1 className="font-bold text-lg mt-2">{selectedTr.name}</h1>
-          <p className="text-sm font-normal">{selectedTr.decision}</p>
+          <h1 className="font-bold text-lg mt-2">
+            {selectedTr.username || selectedTr.name}
+          </h1>
+          <p className="text-sm font-normal">
+            {selectedTr.decision || selectedTr.UserType}
+          </p>
         </div>
         <div className="w-full">
           <div className=" w-full p-4 duration-300 hover:bg-slate-100 rounded-lg">
@@ -43,7 +53,7 @@ const RightDetails = ({ selectedTr }) => {
               </Link>
               <Link href="" className="flex border-b mt-2 items-center gap-2">
                 <FiPhoneCall />
-                <p>{selectedTr.contact}</p>
+                <p>{selectedTr.contact || selectedTr.phone}</p>
               </Link>
               <Link href="" className="flex border-b mt-2 items-center gap-2">
                 <FaLocationArrow />

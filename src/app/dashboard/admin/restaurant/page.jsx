@@ -122,7 +122,7 @@ const Restos = [
 ];
 
 const Page = () => {
-  const [selectedTr, setSelectedTr] = useState(null);
+  const [selectedTr, setSelectedTr] = useState({});
 
   const handleRowClick = (index) => {
     setSelectedTr(index);
