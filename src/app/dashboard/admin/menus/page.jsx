@@ -128,7 +128,7 @@ const restaurantMenu = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const [selectedTr, setSelectedTr] = useState({});
 
   const handleRowClick = (index) => {
@@ -162,4 +162,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
