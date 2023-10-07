@@ -3,6 +3,7 @@ import AdminLayout from "./adminlayout";
 import Header from "@/components/common/Dashboard/admin/header";
 import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
 import RightLayout from "@/components/common/Dashboard/admin/rightlayout";
+import AdminChart from "@/components/common/Dashboard/admin/adminchart";
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
         <div className="w-full lg:w-[75%] xl:w-[80%] px-3">
           <Header />
           <StatsContainer />
+          <AdminChart />
         </div>
         <div className="bg-white shadow-md shadow-slate-400 lg:w-[25%] xl:w-[20%] h-screen pl-1">
           <div className="lg:w-[20%]  xl:w-[16.5%] h-screen fixed">

@@ -2,11 +2,10 @@
 import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
 import { FaPlus } from "react-icons/fa";
-import { BiDotsHorizontal } from "react-icons/bi";
-import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/addrestaurant";
-import AddUser from "@/components/common/Dashboard/admin/restaurant/modal/adduser";
 import Cards from "@/components/common/Menu/cards";
 import { MdReadMore } from "react-icons/md";
+import AddMenu from "@/components/common/Dashboard/admin/restaurant/modal/addMenu";
+import AdminCard from "@/components/common/Menu/admincard";
 
 const getButtonClass = (UserType) => {
   if (UserType === "admin") {
@@ -89,7 +88,6 @@ const TabNav = ({ Menus, setSelectedTr, selectedTr, handleRowClick }) => {
               icon={<MdReadMore />}
               click={handleSeeMoreClick}
             />
-            // <button onClick={handleSeeMoreClick}>See More</button>
           )}
         </ul>
         <ActionButton
@@ -97,13 +95,13 @@ const TabNav = ({ Menus, setSelectedTr, selectedTr, handleRowClick }) => {
           icon={<FaPlus />}
           click={userHandleModal}
         />
-        {addUserModal && <AddUser closeModal={userHandleModal} />}
+        {addUserModal && <AddMenu closeModal={userHandleModal} />}
       </div>
 
       <div className="w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4">
         {filteredMenus.map((item, index) => (
           <>
-            <Cards
+            <AdminCard
               name={item.name}
               desc={item.description}
               price={item.price}
@@ -113,7 +111,6 @@ const TabNav = ({ Menus, setSelectedTr, selectedTr, handleRowClick }) => {
           </>
         ))}
       </div>
-      {/* </table> */}
 
       <div className="mt-4 w-full flex justify-between items-center">
         <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
