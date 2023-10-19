@@ -2,7 +2,6 @@ import React from "react";
 import AdminLayout from "../adminlayout";
 import Header from "@/components/common/Dashboard/admin/header";
 import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
-import AdminChart from "@/components/common/Dashboard/admin/adminchart";
 import RightLayout from "@/components/common/Dashboard/admin/rightlayout";
 import StockContainer from "@/components/common/Dashboard/admin/stock/stockcontainer";
 

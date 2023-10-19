@@ -86,18 +86,18 @@ const Sidebar = () => {
         <ul className="text-slate-500">
           <h1 className="font-bold text-black">Messages</h1>
           <Link
-            href="/dashboard/admin/messages"
+            href="/dashboard/admin/message"
             className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
-              activeTab === "messages" ? "bg-black text-white" : ""
+              activeTab === "message" ? "bg-black text-white" : ""
             }`}
           >
             <FiMessageSquare />
             <span>Messages</span>
           </Link>
           <Link
-            href="/dashboard/admin/bell"
+            href="/dashboard/admin/notifications"
             className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
-              activeTab === "bell" ? "bg-black text-white" : ""
+              activeTab === "notifications" ? "bg-black text-white" : ""
             }`}
           >
             <GoBell />

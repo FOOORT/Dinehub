@@ -28,8 +28,9 @@ const RightDetails = ({ selectedTr }) => {
 
   const decision = selectedTr.decision || selectedTr.UserType;
   const borderColor = getBorderColor(decision);
+  console.log("selectedTr.length: ", selectedTr);
 
-  if (selectedTr) {
+  if (selectedTr.length > 0) {
     return (
       <div className=" w-full h-full flex flex-col justify-between items-center pt-20 pb-8">
         <div className="w-full flex flex-col justify-center items-center">

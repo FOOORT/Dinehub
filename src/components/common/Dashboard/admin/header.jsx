@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
 import Sidebar from "./sidebar";
+import SearchInput from "../../SearchInput";
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -23,16 +24,7 @@ const Header = () => {
           Restaurant Dashboard
         </h1>
       </div>
-      <div className="bg-white flex items-center rounded-md p-[1px] group">
-        <input
-          type="text"
-          placeholder="Search ..."
-          className="px-3 py-2 outline-none active:outline-none rounded-md text-sm"
-        />
-        <span className="bg-white p-3 rounded-md group-hover:bg-black group-hover:text-white duration-100 active:scale-90">
-          <FaSearch className="" />
-        </span>
-      </div>
+      <SearchInput />
       {sidebar && (
         <div className="absolute top-0 mt-[8vh] rounded-xl bg-white p-4 shadow-md z-50 w-[95vw] md:w-[67.4vw] flex lg:hidden">
           <Sidebar />

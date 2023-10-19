@@ -9,7 +9,10 @@ const AdminLayout = ({ children }) => {
           <Sidebar />
         </div>
       </div>
-      <div className="w-screen lg:w-[82vw] xl:w-[85vw]">{children}</div>
+      {/* <div className="w-screen lg:w-[82vw] xl:w-[85vw]">{children}</div> */}
+      <div className="w-screen xl:ml-[15vw] lg:ml-[18vw] ml:w-[14vw] lg:w-[82vw] xl:w-[85vw] fixed overflow-y-scroll">
+        {children}
+      </div>
     </div>
   );
 };

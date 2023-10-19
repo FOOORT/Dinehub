@@ -36,14 +36,6 @@ const StockContainer = () => {
             <OrderSummary />
           </div>
         </div>
-        <div className="flex gap-4">
-          <div className="w-[60%]">
-            <TopSelling />
-          </div>
-          <div className="w-[40%]">
-            <LowQuantity />
-          </div>
-        </div>
       </div>
     </div>
   );
