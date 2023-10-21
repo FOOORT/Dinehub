@@ -64,14 +64,6 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
           </li>
           <li
             className={`px-4 py-2 rounded-md text-xs font-medium ${
-              activeLink === "admin" ? "text-white bg-black" : ""
-            }`}
-            onClick={() => handleLinkClick("admin")}
-          >
-            Admin
-          </li>
-          <li
-            className={`px-4 py-2 rounded-md text-xs font-medium ${
               activeLink === "mini-admin" ? "text-white bg-black" : ""
             }`}
             onClick={() => handleLinkClick("mini-admin")}

@@ -5,7 +5,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 const FilterCategory = () => {
   return (
-    <nav className="flex gap-2 lg:gap-4 items-center justify-center py-2 lg:py-0">
+    <nav className="flex gap-2 lg:gap-4 items-center justify-center pt-2 lg:py-0">
       <Link href="/menu">
         <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image

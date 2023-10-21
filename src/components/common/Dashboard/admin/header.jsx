@@ -11,7 +11,7 @@ const Header = () => {
     setSidebar((prev) => !prev);
   };
   return (
-    <div className="flex justify-between rounded-xl items-center pt-4">
+    <div className="flex justify-between rounded-xl items-center pt-4 w-full">
       <div className="flex items-center justify-center gap-4">
         <button
           className="lg:hidden flex items-center justify-center bg-slate-200 p-3 rounded-md border border-black"

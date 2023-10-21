@@ -23,7 +23,7 @@ const Hamburger = () => {
         Menu
       </button>
       {menu && (
-        <ul className="bg-white w-2/3 p-8 fixed top-0 right-0 mt-24 mr-12 flex lg:hidden flex-col justify-end items-end rounded-md border z-50">
+        <ul className="bg-white w-2/3 p-8 fixed top-0 right-0 mt-16 mr-4 flex lg:hidden flex-col justify-end items-end rounded-md border z-50">
           <Link href="/home">
             <li className="py-2 px-6 bg-transparent hover:bg-slate-100 duration-300 hover:scale-105 rounded-md">
               Home
