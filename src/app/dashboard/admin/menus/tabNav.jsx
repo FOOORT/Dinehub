@@ -17,7 +17,7 @@ const getButtonClass = (UserType) => {
   }
 };
 
-const TabNav = ({ Menus, setSelectedTr, selectedTr, handleRowClick }) => {
+const TabNav = ({ Menus }) => {
   const [activeLink, setActiveLink] = useState("all"); // Set the default active link
   const [filteredMenus, setFilteredMenus] = useState(Menus);
 
@@ -90,12 +90,12 @@ const TabNav = ({ Menus, setSelectedTr, selectedTr, handleRowClick }) => {
             />
           )}
         </ul>
-        <ActionButton
+        {/* <ActionButton
           name="Add Menu"
           icon={<FaPlus />}
           click={userHandleModal}
         />
-        {addUserModal && <AddMenu closeModal={userHandleModal} />}
+        {addUserModal && <AddMenu closeModal={userHandleModal} />} */}
       </div>
 
       <div className="w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4">

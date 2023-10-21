@@ -47,7 +47,7 @@ const Header = () => {
         Menu
       </button>
       {menu && (
-        <ul className="bg-white w-2/3 p-8 fixed top-0 right-0 mt-20 mr-12 flex md:hidden flex-col justify-end items-end rounded-md border">
+        <ul className="bg-white w-2/3 p-8 fixed top-0 right-0 mt-20 mr-4 flex md:hidden flex-col justify-end items-end rounded-md border">
           <li className="py-2 px-6 bg-transparent hover:bg-slate-100 duration-300 hover:scale-105 rounded-md">
             How we works
           </li>

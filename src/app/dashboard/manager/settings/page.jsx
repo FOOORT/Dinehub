@@ -1,14 +1,13 @@
 import React from "react";
-import AdminLayout from "../adminlayout";
-import Header from "@/components/common/Dashboard/admin/header";
-import RightLayout from "@/components/common/Dashboard/admin/rightlayout";
+import ManagerLayout from "../managerlayout";
 import Image from "next/image";
-import Controll from "@/components/common/Dashboard/admin/settings/controll";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import Header from "@/components/common/Dashboard/admin/header";
+import Controll from "@/components/common/Dashboard/admin/settings/controll";
 
 const page = () => {
   return (
-    <AdminLayout>
+    <ManagerLayout>
       <div className="flex justify-between items-start pr-2">
         <div className="w-full px-3">
           <Header />
@@ -39,7 +38,7 @@ const page = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
+    </ManagerLayout>
   );
 };
 

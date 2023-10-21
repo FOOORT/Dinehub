@@ -91,34 +91,6 @@ const Restos = [
     email: "reconfortdanny@gmail.com",
     decision: "pending",
   },
-  // {
-  //   name: "Restos12",
-  //   location: "South, Huye",
-  //   contact: "07886337833",
-  //   email: "reconfortdanny@gmail.com",
-  //   decision: "pending",
-  // },
-  // {
-  //   name: "Restos13",
-  //   location: "South, Huye",
-  //   contact: "07886337833",
-  //   email: "reconfortdanny@gmail.com",
-  //   decision: "pending",
-  // },
-  // {
-  //   name: "Restos14",
-  //   location: "South, Huye",
-  //   contact: "07886337833",
-  //   email: "reconfortdanny@gmail.com",
-  //   decision: "pending",
-  // },
-  // {
-  //   name: "Restos15",
-  //   location: "South, Huye",
-  //   contact: "07886337833",
-  //   email: "reconfortdanny@gmail.com",
-  //   decision: "approved",
-  // },
 ];
 
 const Page = () => {

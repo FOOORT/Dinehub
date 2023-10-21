@@ -142,6 +142,78 @@ const Users = [
     phone: "777777777",
     UserType: "admin",
   },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
+  {
+    username: "Noah",
+    firstname: "Noah",
+    lastname: "Hall",
+    email: "noah@gmail.com",
+    location: "Sao Paulo, Brazil",
+    phone: "777777777",
+    UserType: "admin",
+  },
 ];
 
 const Page = () => {
@@ -165,7 +237,7 @@ const Page = () => {
           />
         </div>
         <div className="lg:w-[25%] xl:w-[20%] h-screen pl-1 bg-fixed bg-white">
-          <div className="lg:w-[20%]  xl:w-[16.5%] h-screen fixed bg-white">
+          <div className="lg:w-[20%]  xl:w-[16.5%] h-screen fixed bg-white ">
             <RightDetails
               selectedTr={selectedTr}
               setSelectedTr={setSelectedTr}
