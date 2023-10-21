@@ -2,7 +2,7 @@ import SearchInput from "@/components/common/SearchInput";
 import React from "react";
 import { IoMdAdd } from "react-icons/io";
 import MessageFilter from "./messagefilter";
-import UsersContainer from "./usersContainer";
+import UsersContainer from "./userscontainer";
 
 const UsersInformation = () => {
   return (
