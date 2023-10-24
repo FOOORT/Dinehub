@@ -1,5 +1,4 @@
 import React from "react";
-import { FaAirbnb } from "react-icons/fa";
 
 const StatsCard = ({ icon, title, details }) => {
   return (
@@ -9,7 +8,6 @@ const StatsCard = ({ icon, title, details }) => {
       <div
         className={`bg-blue-50 rounded-full flex justify-center items-center p-5`}
       >
-        {/* {<FaAirbnb className={``} />} */}
         {icon}
       </div>
       <div className="flex flex-col">
