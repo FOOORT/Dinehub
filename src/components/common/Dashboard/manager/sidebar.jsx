@@ -16,7 +16,12 @@ const Sidebar = () => {
   return (
     <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-full">
       <Link href="/">
-        <Image src="/image/DashLogo.png" alt="alt1" height={100} width={100} />
+        <Image
+          src="/image/DashLogo.png"
+          alt="DashboradLogo"
+          height={100}
+          width={100}
+        />
       </Link>
       <ol className="flex flex-col gap-4">
         <ul className="text-slate-500">

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
-import Sidebar from "./sidebar";
+import Sidebar from "../sidebar";
 import SearchInput from "../../SearchInput";
 
 const Header = () => {
