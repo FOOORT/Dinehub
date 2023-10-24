@@ -6,22 +6,22 @@ const Stats = [
   {
     title: 15,
     details: "All restaurant",
-    icon: <LuGalleryHorizontal />,
+    icon: <LuGalleryHorizontal className="text-base text-blue-600" />,
   },
   {
     title: 6,
     details: "Approved",
-    icon: <AiOutlineCheck />,
+    icon: <AiOutlineCheck className="text-base text-blue-600" />,
   },
   {
     title: 4,
     details: "Pending",
-    icon: <TbProgressCheck />,
+    icon: <TbProgressCheck className="text-base text-blue-600" />,
   },
   {
     title: 1,
     details: "Rejected",
-    icon: <AiOutlineDelete />,
+    icon: <AiOutlineDelete className="text-base text-blue-600" />,
   },
 ];
 

@@ -6,22 +6,22 @@ const Stats = [
   {
     title: 15,
     details: "Total Visis",
-    icon: <LuGalleryHorizontal />,
+    icon: <LuGalleryHorizontal className="text-base text-blue-600" />,
   },
   {
     title: 5,
     details: "Users",
-    icon: <AiOutlineCheck />,
+    icon: <AiOutlineCheck className="text-base text-blue-600" />,
   },
   {
     title: 7,
     details: "Total orders",
-    icon: <TbProgressCheck />,
+    icon: <TbProgressCheck className="text-base text-blue-600" />,
   },
   {
     title: 3,
     details: "New Users",
-    icon: <AiOutlineDelete />,
+    icon: <AiOutlineDelete className="text-base text-blue-600" />,
   },
 ];
 
