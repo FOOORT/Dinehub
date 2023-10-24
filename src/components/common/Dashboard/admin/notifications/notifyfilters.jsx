@@ -43,7 +43,7 @@ const NotifyFilters = () => {
   ];
   const [active, setActive] = useState("All");
 
-  console.log("active", active);
+  // console.log("active", active);
 
   return (
     <div className="w-full flex flex-col gap-2">

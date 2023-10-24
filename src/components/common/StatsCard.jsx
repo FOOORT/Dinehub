@@ -10,7 +10,7 @@ const StatsCard = ({ icon, title, details }) => {
         className={`bg-blue-50 rounded-full flex justify-center items-center p-5`}
       >
         {/* {<FaAirbnb className={``} />} */}
-        {icon}
+        {/* {icon} */}
       </div>
       <div className="flex flex-col">
         <h3 className="text-xl font-semibold text-slate-800">{title}</h3>

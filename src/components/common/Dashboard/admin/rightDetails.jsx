@@ -28,7 +28,7 @@ const RightDetails = ({ selectedTr }) => {
 
   const decision = selectedTr.decision || selectedTr.UserType;
   const borderColor = getBorderColor(decision);
-  console.log("selectedTr.length: ", selectedTr);
+  // console.log("selectedTr.length: ", selectedTr);
 
   // if (selectedTr.length > 0) {
   return (
