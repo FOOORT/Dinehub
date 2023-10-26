@@ -2,13 +2,26 @@ import Image from "next/image";
 import React from "react";
 import { FaCartPlus } from "react-icons/fa";
 
-const AdminCard = ({ name, desc, price, category, restaurant }) => {
+const AdminCard = ({
+  name,
+  desc,
+  price,
+  category,
+  restaurant,
+  status,
+  ingredients,
+  image,
+}) => {
+  const actualimage = image;
+
+  // console.log("actualimage", actualimage);
+
   return (
     <div className="w-full p-2 flex justify-center items-center rounded-lg">
       <fieldset className="bg-gray-100 rounded-xl p-2 flex justify-center items-center w-full">
         <legend className="w-full flex justify-center items-center rounded-xl">
           <Image
-            src="/image/Plate/Image1.png"
+            src={actualimage}
             alt="image1"
             width={100}
             height={100}
@@ -20,7 +33,10 @@ const AdminCard = ({ name, desc, price, category, restaurant }) => {
             {name}
           </li>
           <li className="font-bold text-center text-xl">{price * 1000} RWF</li>
-          <li className="text-center text-slate-600">20 Bowls available</li>
+          <li className="text-center text-slate-600 line-clamp-2 text-sm">
+            {desc}
+          </li>
+          <li className="text-center text-black font-medium">{category}</li>
           <div className="grid grid-cols-2 w-full gap-2">
             <button className="bg-gray-500 rounded-md text-white py-2 active:scale-90 duration-100">
               Disable
