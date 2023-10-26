@@ -1,10 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
-import { FaPlus } from "react-icons/fa";
-import Cards from "@/components/common/Menu/cards";
 import { MdReadMore } from "react-icons/md";
-import AddMenu from "@/components/common/Dashboard/admin/restaurant/modal/addMenu";
 import AdminCard from "@/components/common/Menu/admincard";
 
 const getButtonClass = (UserType) => {
@@ -17,12 +14,13 @@ const getButtonClass = (UserType) => {
   }
 };
 
-const TabNav = ({ Menus }) => {
+const TabNav = ({ Dishes }) => {
+  // console.log("Dishes", Dishes);
   const [activeLink, setActiveLink] = useState("all"); // Set the default active link
-  const [filteredMenus, setFilteredMenus] = useState(Menus);
+  const [filteredDishes, setFilteredDishes] = useState(Dishes);
 
   const uniqueCategories = Array.from(
-    new Set(filteredMenus.map((item) => item.category))
+    new Set(filteredDishes.map((item) => item.category))
   );
 
   const shouldDisplaySeeMore = uniqueCategories.length > 7;
@@ -40,14 +38,14 @@ const TabNav = ({ Menus }) => {
     setActiveLink(activeTab);
     const filterdData =
       activeTab === "all"
-        ? Menus
-        : Menus.filter((user) => {
+        ? Dishes
+        : Dishes.filter((user) => {
             return user.UserType === activeTab;
           });
-    setFilteredMenus(filterdData);
+    setFilteredDishes(filterdData);
   };
 
-  // console.log("FILTERED Menus: ", filteredMenus);
+  // console.log("FILTERED Dishes: ", filteredDishes);
 
   const [options, setOptions] = useState(false);
 
@@ -99,14 +97,18 @@ const TabNav = ({ Menus }) => {
       </div>
 
       <div className="w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4">
-        {filteredMenus.map((item, index) => (
+        {filteredDishes.map((item, index) => (
           <>
             <AdminCard
+              key={index}
               name={item.name}
-              desc={item.description}
+              desc={item.details}
               price={item.price}
               category={item.category}
               restaurant={item.restaurant}
+              status={item.status}
+              ingredients={item.ingredients}
+              image={item.image}
             />
           </>
         ))}
