@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
 import { MdReadMore } from "react-icons/md";
 import AdminCard from "@/components/common/Menu/admincard";
+import AddMenu from "@/components/common/Dashboard/admin/restaurant/modal/addMenu";
+import { FaPlus } from "react-icons/fa";
 
 const getButtonClass = (UserType) => {
   if (UserType === "admin") {
@@ -15,9 +17,10 @@ const getButtonClass = (UserType) => {
 };
 
 const TabNav = ({ Dishes }) => {
-  // console.log("Dishes", Dishes);
   const [activeLink, setActiveLink] = useState("all"); // Set the default active link
   const [filteredDishes, setFilteredDishes] = useState(Dishes);
+
+  // console.log("item.category", item.category);
 
   const uniqueCategories = Array.from(
     new Set(filteredDishes.map((item) => item.category))
@@ -88,12 +91,12 @@ const TabNav = ({ Dishes }) => {
             />
           )}
         </ul>
-        {/* <ActionButton
+        <ActionButton
           name="Add Menu"
           icon={<FaPlus />}
           click={userHandleModal}
         />
-        {addUserModal && <AddMenu closeModal={userHandleModal} />} */}
+        {addUserModal && <AddMenu closeModal={userHandleModal} />}
       </div>
 
       <div className="w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4">

@@ -6,13 +6,15 @@ import AdminChart from "@/components/common/Dashboard/admin/adminchart";
 
 import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
 import Stats from "@/components/json/admin/stats";
+import Navs from "@/components/json/manager/navbar";
 
 const page = () => {
   return (
     <ManagerLayout>
       <div className="flex justify-between items-start">
         <div className="w-full lg:w-[75%] xl:w-[80%] px-3">
-          <Header />
+          <Header Navs={Navs} />
+
           <StatsContainer Stats={Stats} />
 
           <AdminChart />
