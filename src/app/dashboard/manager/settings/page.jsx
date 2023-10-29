@@ -4,13 +4,14 @@ import Image from "next/image";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Header from "@/components/common/Dashboard/admin/header";
 import Controll from "@/components/common/Dashboard/admin/settings/controll";
+import Navs from "@/components/json/manager/navbar";
 
 const page = () => {
   return (
     <ManagerLayout>
       <div className="flex justify-between items-start pr-2">
         <div className="w-full px-3">
-          <Header />
+          <Header Navs={Navs} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 w-full rounded-md mt-4 gap-4">
             <div className="bg-white p-2 rounded-md flex flex-col ">
               <div className="bg-slate-200 w-full h-48 rounded-md"></div>

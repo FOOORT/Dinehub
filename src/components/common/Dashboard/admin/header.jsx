@@ -5,7 +5,7 @@ import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
 import Sidebar from "../sidebar";
 import SearchInput from "../../SearchInput";
 
-const Header = () => {
+const Header = ({ Navs }) => {
   const [sidebar, setSidebar] = useState(false);
   const handleSideBar = () => {
     setSidebar((prev) => !prev);
@@ -27,7 +27,7 @@ const Header = () => {
       <SearchInput />
       {sidebar && (
         <div className="absolute top-0 mt-[8vh] rounded-xl bg-white p-4 shadow-md z-50 w-[95vw] md:w-[67.4vw] flex lg:hidden">
-          <Sidebar />
+          <Sidebar Navs={Navs} />
         </div>
       )}
     </div>

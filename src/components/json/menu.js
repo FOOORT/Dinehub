@@ -5,7 +5,7 @@ const Dishes = [
     price: 12.99,
     category: "Pizza",
     restaurant: "Fantastic Restaurant 1",
-    status: "active",
+    status: "inactive",
     ingredients: [
       "Tomato Sauce",
       "Mozzarella Cheese",
@@ -37,7 +37,7 @@ const Dishes = [
     price: 8.99,
     category: "Salad",
     restaurant: "Healthy Bites",
-    status: "active",
+    status: "inactive",
     ingredients: [
       "Tomato Sauce",
       "Mozzarella Cheese",
@@ -69,7 +69,7 @@ const Dishes = [
     price: 11.99,
     category: "Burger",
     restaurant: "Wok Delight",
-    status: "active",
+    status: "inactive",
     ingredients: [
       "Tomato Sauce",
       "Mozzarella Cheese",
@@ -85,7 +85,7 @@ const Dishes = [
     price: 6.99,
     category: "Dessert",
     restaurant: "Sweet Delights",
-    status: "active",
+    status: "inactive",
     ingredients: [
       "Tomato Sauce",
       "Mozzarella Cheese",
@@ -101,7 +101,7 @@ const Dishes = [
     price: 3.99,
     category: "Sushi",
     restaurant: "Cafe Oasis",
-    status: "active",
+    status: "inactive",
     ingredients: [
       "Tomato Sauce",
       "Mozzarella Cheese",
@@ -148,7 +148,7 @@ const Dishes = [
     price: 9.99,
     category: "Sushi",
     restaurant: "Mediterranean Eats",
-    status: "active",
+    status: "inactive",
     ingredients: [
       "Tomato Sauce",
       "Mozzarella Cheese",
@@ -210,7 +210,7 @@ const Dishes = [
     price: 10.99,
     category: "Tacos",
     restaurant: "Taco Fiesta",
-    status: "active",
+    status: "inactive",
     ingredients: [
       "Tomato Sauce",
       "Mozzarella Cheese",

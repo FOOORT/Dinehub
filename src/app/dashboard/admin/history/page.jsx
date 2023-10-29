@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import AdminLayout from "../adminlayout";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <AdminLayout>
+      <div>page</div>
+    </AdminLayout>
+  );
+};
 
-export default page
+export default page;
