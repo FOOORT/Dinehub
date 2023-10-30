@@ -9,7 +9,7 @@ import TabNav from "../tabNav";
 import RightDetails from "@/components/common/Dashboard/admin/rightDetails";
 import Users from "@/components/json/users";
 
-const page = () => {
+const Page = () => {
   const [selectedTr, setSelectedTr] = useState(0);
 
   const handleRowClick = (index) => {
@@ -42,4 +42,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
