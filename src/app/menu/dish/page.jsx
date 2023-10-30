@@ -8,7 +8,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import ActionButton from "@/components/common/actionbutton";
 import { FaCartPlus, FaPlus } from "react-icons/fa";
 
-const page = () => {
+const Page = () => {
   const [dishCount, setDishCount] = useState(1);
   const [totalBill, setTotalBill] = useState(dishCount * 2000);
 
@@ -123,4 +123,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

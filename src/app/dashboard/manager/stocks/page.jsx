@@ -9,7 +9,7 @@ import InventoryStock from "@/components/common/Dashboard/manager/stock/inventor
 import LowStock from "@/components/common/Dashboard/manager/stock/lowstock/lowstock";
 import StockOrders from "@/components/common/Dashboard/manager/stock/orders/stockorders";
 
-const page = () => {
+const Page = () => {
   const [activeNav, setActiveNav] = useState("dashboard");
 
   // Define activeNav values to their respective components
@@ -33,4 +33,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
