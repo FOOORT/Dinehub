@@ -1,7 +1,12 @@
 import React from "react";
+import StockContainer from "../../../admin/stock/stockcontainer";
 
 const StockHome = () => {
-  return <div className="bg-white p-4 w-full rounded-lg">StockHome</div>;
+  return (
+    <div className="w-full rounded-lg">
+      <StockContainer />
+    </div>
+  );
 };
 
 export default StockHome;

@@ -9,61 +9,35 @@ import AddStock from "./addstock";
 import { useState } from "react";
 
 const FilterStockNav = ({ activeNav, setActiveNav }) => {
+  const navItems = [
+    { name: "Dashboard", icon: <FaHome />, key: "dashboard" },
+    { name: "Inventory", icon: <GoContainer />, key: "inventory" },
+    { name: "Low stock", icon: <TfiStatsDown />, key: "low" },
+    { name: "Orders", icon: <GrDeliver />, key: "order" },
+  ];
+
+  const handleNavClick = (key) => {
+    setActiveNav(key);
+  };
+
   const [stockAdd, setStockAdd] = useState(false);
+
   return (
     <div className="w-full flex justify-between items-center">
       <nav className="flex justify-start items-center gap-2">
-        <ActionButton
-          name="Dashboard"
-          icon={<FaHome />}
-          className={`flex-row-reverse py-3 ${
-            activeNav === `dashboard`
-              ? ""
-              : "py-3 bg-transparent !text-black !border-black hover:bg-black hover:!text-white duration-100 hover:scale-105"
-          }`}
-          click={setActiveNav("dashboard")}
-        />
-        <ActionButton
-          name="Inventory"
-          icon={<GoContainer />}
-          className={`flex-row-reverse py-3 ${
-            activeNav === `inventory`
-              ? ""
-              : "py-3 bg-transparent !text-black !border-black hover:bg-black hover:!text-white duration-100 hover:scale-105"
-          }`}
-          click={setActiveNav("inventory")}
-        />
-
-        <ActionButton
-          name="Low stock"
-          icon={<TfiStatsDown />}
-          className={`flex-row-reverse py-3 ${
-            activeNav === `low`
-              ? ""
-              : "py-3 bg-transparent !text-black !border-black hover:bg-black hover:!text-white duration-100 hover:scale-105"
-          }`}
-          click={setActiveNav("low")}
-        />
-        <ActionButton
-          name="Orders"
-          icon={<GrDeliver />}
-          className={`flex-row-reverse py-3 ${
-            activeNav === `order`
-              ? ""
-              : "py-3 bg-transparent !text-black !border-black hover:bg-black hover:!text-white duration-100 hover:scale-105"
-          }`}
-          click={setActiveNav("order")}
-        />
-        <ActionButton
-          name="Reports"
-          icon={<IoMdStats />}
-          className={`flex-row-reverse py-3 ${
-            activeNav === `reports`
-              ? ""
-              : "py-3 bg-transparent !text-black !border-black hover:bg-black hover:!text-white duration-100 hover:scale-105"
-          }`}
-          click={setActiveNav("reports")}
-        />
+        {navItems.map((item) => (
+          <ActionButton
+            key={item.key}
+            name={item.name}
+            icon={item.icon}
+            className={`flex-row-reverse py-3 ${
+              activeNav === item.key
+                ? ""
+                : "py-3 bg-transparent !text-black !border-black hover:bg-black hover:!text-white duration-100 hover:scale-105"
+            }`}
+            click={() => handleNavClick(item.key)}
+          />
+        ))}
       </nav>
 
       <ActionButton

@@ -8,30 +8,26 @@ import StockHome from "@/components/common/Dashboard/manager/stock/home/stockhom
 import InventoryStock from "@/components/common/Dashboard/manager/stock/inventory/inventorystock";
 import LowStock from "@/components/common/Dashboard/manager/stock/lowstock/lowstock";
 import StockOrders from "@/components/common/Dashboard/manager/stock/orders/stockorders";
-import StockReports from "@/components/common/Dashboard/manager/stock/reports/stockreports";
 
 const page = () => {
   const [activeNav, setActiveNav] = useState("dashboard");
 
-  let content;
-  if (activeNav === "dashboard") {
-    content = <StockHome />;
-  } else if (activeNav === "inventory") {
-    content = <InventoryStock />;
-  } else if (activeNav === "low") {
-    content = <LowStock />;
-  } else if (activeNav === "order") {
-    content = <StockOrders />;
-  } else {
-    content = <StockReports />;
-  }
+  // Define activeNav values to their respective components
+  const componentMap = {
+    dashboard: StockHome,
+    inventory: InventoryStock,
+    low: LowStock,
+    order: StockOrders,
+  };
 
+  // Use the mapping to determine the content component
+  const ContentComponent = componentMap[activeNav] || StockHome;
   return (
     <ManagerLayout>
       <div className="w-full h-screen  flex flex-col justify-start items-start gap-4">
         <Header Navs={Navs} />
         <FilterStockNav activeNav={activeNav} setActiveNav={setActiveNav} />
-        {content}
+        <ContentComponent />
       </div>
     </ManagerLayout>
   );
