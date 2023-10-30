@@ -3,12 +3,10 @@ import React, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -81,7 +79,6 @@ export default class SalesPurchaseChart extends PureComponent {
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
-              {/* <Legend /> */}
               <Bar dataKey="Purchase" fill="#FF3A29" />
               <Bar dataKey="Sales" fill="#2072EE" />
             </BarChart>

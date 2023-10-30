@@ -14,7 +14,7 @@ const AddRestaurant = ({ closeModal }) => {
     setStep(step - 1);
   };
 
-  const handleSubmit = () => closeModal();
+  // const handleSubmit = () => closeModal();
 
   return (
     <div className="w-screen h-screen fixed left-0 top-0 z-[60] bg-black/50 backdrop-blur-sm flex justify-center items-center">
