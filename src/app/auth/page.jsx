@@ -42,7 +42,7 @@ const page = () => {
             <button className="bg-black px-8 py-3 rounded-md text-white text-lg font-medium duration-300 scale-95 hover:scale-100 cursor-pointer">
               Let your business thrive
             </button>
-            <Link href="/signin">
+            <Link href="/auth/signin">
               <p className="duration-300 scale-95 hover:scale-100 cursor-pointer hover:">
                 Already have an account
                 <span className="text-blue-600 ml-2">Sign in</span>

@@ -5,17 +5,17 @@ import { TbProgressCheck } from "react-icons/tb";
 const Stats = [
   {
     title: 15,
-    details: "Total Visits",
+    details: "Sales",
     icon: <LuGalleryHorizontal className="text-base text-blue-600" />,
   },
   {
     title: 5,
-    details: "Users",
+    details: "Subsribed",
     icon: <AiOutlineCheck className="text-base text-blue-600" />,
   },
   {
     title: 7,
-    details: "Total orders",
+    details: "Orders",
     icon: <TbProgressCheck className="text-base text-blue-600" />,
   },
   {
