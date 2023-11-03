@@ -1,26 +1,81 @@
+"use client";
+import { logginUser } from "@/redux/slice/Auth/loginSlice";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const page = () => {
+const Page = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = JSON.stringify({
+      email: email,
+      password: password,
+    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: data,
+      }
+    );
+    const res = await response.json();
+
+    if (res.success === true) {
+      console.log(res);
+      toast.success("Login Success");
+      localStorage.setItem("token", res.token);
+      localStorage.setItem("user", JSON.stringify(res.user));
+      logginUser(res.user);
+      if (res.user.role === "Admin") {
+        router.push("/dashboard/admin");
+      } else if (res.user.role === "user") {
+        router.push("/dashboard/user");
+      } else if (res.user.role === "manager") {
+        router.push("/dashboard/manager");
+      } else {
+        router.push("/dashboard/employee");
+      }
+    } else {
+      toast.error(res.message);
+    }
+  };
   return (
     <div className="w-screen bg-white h-screen flex justify-center items-center">
       <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border">
+        <ToastContainer />
         <h1 className="text-3xl font-semibold text-center">Sign in</h1>
-        <div className="flex flex-col gap-4 p-4 w-full">
+        <form
+          className="flex flex-col gap-4 p-4 w-full"
+          onSubmit={handleSubmit}
+        >
           <div className="flex flex-col gap-2">
             <label htmlFor="name">Username or email</label>
             <input
-              type="text"
+              type="email"
               placeholder="Johndoe@gmail.com"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              required
               className="border outline-none active:outline-none p-3 rounded-md"
             />
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="pass">Password</label>
             <input
-              type="text"
+              type="password"
               placeholder="*******"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              required
               className="border outline-none active:outline-none p-3 rounded-md"
             />
           </div>
@@ -29,7 +84,7 @@ const page = () => {
             value="Sign in"
             className="bg-black text-white py-3 rounded-md"
           />
-        </div>
+        </form>
         <div className="w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4">
           <Link href="/auth">
             <p className="duration-300 scale-95 hover:scale-100 cursor-pointer text-md">
@@ -54,4 +109,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
