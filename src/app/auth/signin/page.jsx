@@ -13,9 +13,6 @@ const Page = () => {
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.auth);
 
-  // const { role  = useSelector((state) => state.auth.user);
-  // console.log("Role", role);
-
   // redirect by user's role
   const redirectToDashboard = (userRole) => {
     if (userRole === "Admin") {

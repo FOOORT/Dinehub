@@ -1,20 +1,90 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Cards from "../common/Main/Cards";
 import { Asset } from "../Asset";
+import { useSelector, useDispatch } from "react-redux";
+import { restosDetails } from "@/redux/slice/resto/restoSlice";
+import SkeletonLoader from "./skeletonloader";
 
 const CardsContainer = () => {
+  const dispatch = useDispatch();
+  const { loading, error, resto } = useSelector((state) => state.restaurant);
+
+  useEffect(() => {
+    // Fetch restaurant details when the component mounts
+    dispatch(restosDetails());
+  }, [dispatch]);
+
+  if (loading) {
+    return (
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (!resto) {
+    return (
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+        <SkeletonLoader />
+      </div>
+    );
+  }
+
+  console.log("Restos: ", resto.data);
   return (
     <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
-      <Cards image={Asset.logo} name="Villa" location="South, Huye" />
-      <Cards image={Asset.Image1} name="Obinasom" location="South, Huye" />
-      <Cards image={Asset.Image2} name="E-Bis" location="South, Huye" />
-      <Cards image={Asset.Image3} name="Fantastic" location="South, Huye" />
-      <Cards image={Asset.Image4} name="Villas" location="South, Huye" />
-      <Cards image={Asset.Image5} name="Villa" location="South, Huye" />
-      <Cards image={Asset.Image6} name="Villa" location="South, Huye" />
-      <Cards image={Asset.Image7} name="Villa" location="South, Huye" />
-      <Cards image={Asset.Image8} name="Villa" location="South, Huye" />
-      <Cards image={Asset.Image9} name="Villa" location="South, Huye" />
+      {resto.data &&
+        resto.data.map((restaurant, index) => (
+          <Cards
+            key={index}
+            image={restaurant.businessImage}
+            name={restaurant.businessName}
+            location={restaurant.businessAddress}
+          />
+        ))}
     </div>
   );
 };
