@@ -15,7 +15,10 @@ const page = () => {
             Join as Client or as Business
           </h1>
           <div className="flex flex-col md:flex-row gap-4 p-4 w-full">
-            <div className="w-full md:w-1/2 p-4 rounded-lg flex flex-col gap-2 scale-95 hover:scale-100 duration-300 border cursor-pointer">
+            <Link
+              href="auth/signup/user"
+              className="w-full md:w-1/2 p-4 rounded-lg flex flex-col gap-2 scale-95 hover:scale-100 duration-300 border cursor-pointer"
+            >
               <span className="w-16 h-16 flex flex-col justify-center items-center rounded-md border">
                 <BiUserCircle className="text-xl" />
               </span>
@@ -25,8 +28,11 @@ const page = () => {
                 Join us now to explore the finest restaurants wherever you go.
                 Register to access dining destinations at your fingertips.{" "}
               </p>
-            </div>
-            <div className="w-full md:w-1/2 p-4 rounded-lg flex flex-col gap-2 scale-95 hover:scale-100 duration-300 border cursor-pointer">
+            </Link>
+            <Link
+              href="auth/signup/business"
+              className="w-full md:w-1/2 p-4 rounded-lg flex flex-col gap-2 scale-95 hover:scale-100 duration-300 border cursor-pointer"
+            >
               <span className="w-16 h-16 flex flex-col justify-center items-center rounded-md border">
                 <AiOutlineShop className="text-xl" />
               </span>
@@ -36,7 +42,7 @@ const page = () => {
                 Elevate your restaurant business by registering with us. Unlock
                 a world of opportunities and visibility.{" "}
               </p>
-            </div>
+            </Link>
           </div>
           <div className="w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 py-1 px-6">
             <Link href="/auth/signin">

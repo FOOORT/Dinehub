@@ -5,7 +5,7 @@ import axios from "axios";
 // Define initial state
 const initialState = {
   loading: false,
-  resto: null,
+  resto: JSON.parse(localStorage.getItem("restaurant")) || null,
   error: "",
 };
 
