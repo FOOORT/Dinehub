@@ -5,7 +5,7 @@ import Navs from "@/components/json/admin/navbar";
 import Stats from "@/components/json/employee/stats";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div className="w-full flex flex-col gap-4 justify-start items-start">
       <Header Navs={<Navs />} />
@@ -15,4 +15,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
