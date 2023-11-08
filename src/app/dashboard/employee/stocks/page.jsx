@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/common/Dashboard/admin/header";
 import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
 import Navs from "@/components/json/employee/navbar";
