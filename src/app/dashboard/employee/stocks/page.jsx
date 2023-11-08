@@ -3,7 +3,6 @@ import Header from "@/components/common/Dashboard/admin/header";
 import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
 import Navs from "@/components/json/employee/navbar";
 import Stats from "@/components/json/employee/stats";
-import React from "react";
 
 const Page = () => {
   return (

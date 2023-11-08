@@ -187,13 +187,6 @@ const Page = () => {
           >
             {loading ? "Creating Account ..." : "Create Account"}
           </button>
-          {/* <button className="w-full">
-            <input
-              type="submit"
-              value="Create Account"
-              className="bg-black text-white py-3 rounded-md w-full cursor-pointer duration-100 active:scale-95"
-            />
-          </button> */}
         </form>
         <div className="w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4">
           <Link href="/signin">
