@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="w-screen bg-white h-screen flex justify-center items-center">
       <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border">
-        <h1 className="text-3xl font-semibold text-center">
+        <h1 className="text-xl font-semibold text-center py-2">
           About your business
         </h1>
 

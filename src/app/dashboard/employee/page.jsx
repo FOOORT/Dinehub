@@ -1,9 +1,9 @@
+"use client";
 import AdminChart from "@/components/common/Dashboard/admin/adminchart";
 import Header from "@/components/common/Dashboard/admin/header";
 import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
 import Navs from "@/components/json/admin/navbar";
 import Stats from "@/components/json/employee/stats";
-import React from "react";
 
 const page = () => {
   return (

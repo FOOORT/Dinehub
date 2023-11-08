@@ -16,7 +16,7 @@ const Cards = ({ key, image, name, location }) => {
           className="w-full rounded-2xl"
         />
         <div className="py-2">
-          <h2 className="text-xl font-semibold">{name}</h2>
+          <h2 className="text-lg font-semibold">{name}</h2>
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <MdLocationOn />

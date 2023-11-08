@@ -6,6 +6,10 @@ import axios from "axios";
 const initialState = {
   loading: false,
   resto: null,
+  // resto:
+  //   typeof window !== "undefined"
+  //     ? JSON.parse(localStorage.getItem("restaurant")) || null
+  //     : null,
   error: "",
 };
 

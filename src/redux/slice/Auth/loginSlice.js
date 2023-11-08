@@ -10,7 +10,7 @@ const initialState = {
   error: "",
 };
 
-// Create an async thunk for fetching users
+// Create an async thunk for login
 export const loginUser = createAsyncThunk(
   "loginUser",
   async (userCredentials) => {
