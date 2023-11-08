@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "@/redux/slice/Auth/loginSlice";
 
@@ -39,7 +38,7 @@ const Page = () => {
     e.preventDefault();
     dispatch(loginUser(formData))
       .then((response) => {
-        console.log("responsedd", response);
+        // console.log("responsedd", response);
         if (response.payload.success) {
           // toast.success("Login successfully");
           redirectToDashboard(response.payload.user.role);

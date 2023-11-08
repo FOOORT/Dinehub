@@ -2,6 +2,7 @@ import Screen from "@/components/Screen";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ProvidersComponent } from "@/redux/provider";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

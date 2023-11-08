@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="w-screen bg-white h-screen flex justify-center items-center">
       <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border">
-        <h1 className="text-3xl font-semibold text-center">
+        <h1 className="text-xl font-semibold text-center py-2">
           Let your business discoverable
         </h1>
 
@@ -39,17 +39,17 @@ const page = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-2 w-full">
             <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="name">Username</label>
+              <label htmlFor="name">Password</label>
               <input
-                type="text"
-                placeholder="@Johndoe"
+                type="password"
+                placeholder="*******"
                 className="border outline-none active:outline-none p-3 rounded-md"
               />
             </div>
             <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="pass">Password</label>
+              <label htmlFor="pass">Confirm Password</label>
               <input
-                type="text"
+                type="password"
                 placeholder="*******"
                 className="border outline-none active:outline-none p-3 rounded-md"
               />

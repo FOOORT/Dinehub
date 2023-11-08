@@ -5,7 +5,11 @@ import axios from "axios";
 // Define initial state
 const initialState = {
   loading: false,
-  resto: JSON.parse(localStorage.getItem("restaurant")) || null,
+  resto: null,
+  // resto:
+  //   typeof window !== "undefined"
+  //     ? JSON.parse(localStorage.getItem("restaurant")) || null
+  //     : null,
   error: "",
 };
 

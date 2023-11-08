@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPlusSquare } from "react-icons/fa";
+import { FiPlus } from "react-icons/fi";
 import ActionButton from "../../../actionbutton";
 
 const ReserveAction = () => {
@@ -8,7 +8,7 @@ const ReserveAction = () => {
       <h2 className="text-xl font-bold text-black">
         1 <span className="text-sm text-slate-400"> Plate of </span> 1,300rwf
       </h2>
-      <ActionButton />
+      <ActionButton name="Order now" icon={<FiPlus />} />
     </div>
   );
 };

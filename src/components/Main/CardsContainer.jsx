@@ -73,7 +73,7 @@ const CardsContainer = () => {
     );
   }
 
-  console.log("Restos: ", resto.data);
+  // console.log("Restos: ", resto.data);
   return (
     <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
       {resto.data &&

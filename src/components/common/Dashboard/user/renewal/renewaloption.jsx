@@ -1,6 +1,6 @@
 import DashboardContainer from "@/components/common/DashboardContainer";
 import React from "react";
-import { FaPlusSquare } from "react-icons/fa";
+import { FiPlus } from "react-icons/fi";
 import ActionButton from "../../../actionbutton";
 
 const RenewalOption = () => {
@@ -30,7 +30,7 @@ const RenewalOption = () => {
           </div>
         </div>
         <div className="w-full md:w-auto flex justify-end items-end">
-          <ActionButton />
+          <ActionButton name="Renewal" icon={<FiPlus />} />
         </div>
       </div>
     </DashboardContainer>
