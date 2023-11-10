@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaBars, FaSearch, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import Sidebar from "../sidebar";
 import SearchInput from "../../SearchInput";
 

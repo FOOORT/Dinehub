@@ -7,6 +7,8 @@ import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/
 import { useSelector, useDispatch } from "react-redux";
 import { allRestoDetails } from "@/redux/slice/resto/restoSlice";
 import SingleRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/singlerestaurant";
+import TrLoading from "@/components/Loader/trloading";
+import Image from "next/image";
 
 const getButtonClass = (decision) => {
   switch (decision) {
@@ -25,6 +27,8 @@ const TabNav = () => {
     (state) => state.restaurant
   );
 
+  // console.log("All restos:", allrestos);
+
   useEffect(() => {
     // Fetch restaurant details when the component mounts
     dispatch(allRestoDetails());
@@ -32,17 +36,55 @@ const TabNav = () => {
 
   const [activeLink, setActiveLink] = useState("all");
   const [selectedTr, setSelectedTr] = useState(null);
-  // const [filteredRestos, setFilteredRestos] = useState(resto);
-  // const [options, setOptions] = useState(false);
-  // const handleMoreBtn = () => setOptions((prev) => !prev);
 
-  // const [selectedItem, setSelectedItem] = useState();
   const [addRestoModal, setAddRestoModal] = useState(false);
   const [singleRestoModal, setSingleRestoModal] = useState(false);
 
-  if (loading) return <h1>Restos loading</h1>;
-  if (error) return <p>Error: {error}</p>;
-  if (!allrestos) return <h1>No resto found</h1>;
+  if (loading)
+    return (
+      <div className="w-full flex flex-col gap-2 justify-between mt-4 h-[70vh] xl:h-[80vh]">
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+      </div>
+    );
+  if (error)
+    return (
+      <div className="w-full flex flex-col gap-2 justify-center items-center mt-4 h-[70vh] xl:h-[80vh] rounded-2xl bg-slate-50">
+        <Image
+          src="/image/icon/undraw_access_denied.svg"
+          alt="empty"
+          width={180}
+          height={180}
+          className="p-12 "
+        />
+        <p className="text-center">Error: {error}</p>
+      </div>
+    );
+  if (!allrestos)
+    return (
+      <div className="w-full flex flex-col gap-2 justify-between mt-4 h-[70vh] xl:h-[80vh]">
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+        <TrLoading />
+      </div>
+    );
 
   const handleLinkClick = (activeTab) => {
     setActiveLink(activeTab);
@@ -148,7 +190,16 @@ const TabNav = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="7">No restaurant data available</td>
+                <div className="w-full flex flex-col gap-2 justify-center items-center mt-4 h-[70vh] xl:h-[80vh] rounded-2xl bg-slate-50">
+                  <Image
+                    src="/image/icon/undraw_no_data.svg"
+                    alt="empty"
+                    width={180}
+                    height={180}
+                    className="p-12 "
+                  />
+                  <p>No data found</p>
+                </div>
               </tr>
             )}
           </tbody>

@@ -10,6 +10,10 @@ const initialState = {
   error: "",
 };
 
+// const token = JSON.parse(localStorage.getItem("token"));
+const token =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGRlYWZmMzA3ZWFhYzY3MWIyYzFiNSIsImlhdCI6MTY5OTYxNjgzMywiZXhwIjoxNzAyMjA4ODMzfQ.mRgWb5PG3ktoojABYGMj67kqM6PK73oGfCq8mFWO1iU";
+
 // Create an async thunk for fetching restaurant
 export const restosDetails = createAsyncThunk(
   "restosDetails",
@@ -19,7 +23,7 @@ export const restosDetails = createAsyncThunk(
       { params: restoDetail }
     );
     const response = await request.data;
-    console.log("response from API 1: ", response);
+    // console.log("response from API 1: ", response);
     localStorage.setItem("restaurant", JSON.stringify(response));
     return response;
   }
@@ -27,11 +31,19 @@ export const restosDetails = createAsyncThunk(
 
 // Create an async thunk for fetching data from the second API
 export const allRestoDetails = createAsyncThunk("allRestoDetails", async () => {
+  console.log("Token taken", token);
   const request = await axios.get(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/business/all`
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/business/all`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    }
   );
   const response = await request.data;
-  console.log("second API response: ", response);
+  localStorage.setItem("allRestaurant", JSON.stringify(response));
+  // console.log("second API response: ", response);
   return response;
 });
 
@@ -73,19 +85,19 @@ const restoSlice = createSlice({
 
     builder.addCase(allRestoDetails.pending, (state) => {
       state.loading = true;
-      state.resto = null;
+      state.allrestos = null;
       state.error = "";
     });
 
     builder.addCase(allRestoDetails.fulfilled, (state, action) => {
       state.loading = false;
-      state.resto = action.payload;
+      state.allrestos = action.payload;
       state.error = "";
     });
 
     builder.addCase(allRestoDetails.rejected, (state, action) => {
       state.loading = false;
-      state.resto = null;
+      state.allrestos = null;
       console.log("Error: ", action.error.message);
       if (action.error.message === "Request failed with status code 401") {
         state.error = "Access Denied ! Invalid credentials Url";
