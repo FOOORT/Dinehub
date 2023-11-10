@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
 import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/addrestaurant";
 import { useSelector, useDispatch } from "react-redux";
-import { restosDetails } from "@/redux/slice/resto/restoSlice";
+import { allRestoDetails } from "@/redux/slice/resto/restoSlice";
 import SingleRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/singlerestaurant";
 
 const getButtonClass = (decision) => {
@@ -21,11 +21,13 @@ const getButtonClass = (decision) => {
 
 const TabNav = () => {
   const dispatch = useDispatch();
-  const { loading, error, resto } = useSelector((state) => state.restaurant);
+  const { loading, error, allrestos } = useSelector(
+    (state) => state.restaurant
+  );
 
   useEffect(() => {
     // Fetch restaurant details when the component mounts
-    dispatch(restosDetails());
+    dispatch(allRestoDetails());
   }, [dispatch]);
 
   const [activeLink, setActiveLink] = useState("all");
@@ -40,18 +42,18 @@ const TabNav = () => {
 
   if (loading) return <h1>Restos loading</h1>;
   if (error) return <p>Error: {error}</p>;
-  if (!resto) return <h1>No resto found</h1>;
+  if (!allrestos) return <h1>No resto found</h1>;
 
   const handleLinkClick = (activeTab) => {
     setActiveLink(activeTab);
     const filteredData =
       activeTab === "all"
-        ? resto
-        : resto.filter((restaurant) => restaurant.decision === activeTab);
+        ? allrestos
+        : allrestos.filter((restaurant) => restaurant.decision === activeTab);
     setFilteredRestos(filteredData);
   };
 
-  console.log("Fetched resto: ", resto);
+  console.log("Fetched resto FROM api2: ", allrestos);
 
   const restoHandleModal = () => setAddRestoModal((prev) => !prev);
   const singleRestoHandleModal = () => setSingleRestoModal((prev) => !prev);
@@ -93,8 +95,8 @@ const TabNav = () => {
         </thead>
         <>
           <tbody>
-            {resto.data.length > 0 ? (
-              resto.data.map((restaurant, index) => (
+            {allrestos.data.length > 0 ? (
+              allrestos.data.map((restaurant, index) => (
                 <tr
                   key={index}
                   className={`h-10 duration-200 hover:bg-slate-100 rounded-md ${
