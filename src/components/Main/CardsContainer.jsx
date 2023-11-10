@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Cards from "../common/Main/Cards";
-import { Asset } from "../Asset";
 import { useSelector, useDispatch } from "react-redux";
 import { restosDetails } from "@/redux/slice/resto/restoSlice";
 import SkeletonLoader from "./skeletonloader";
@@ -76,7 +75,11 @@ const CardsContainer = () => {
   // console.log("Restos: ", resto.data);
   return (
     <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
-      {resto.data &&
+      {resto.data && resto.data.length < 1 ? (
+        <div className="w-full h-[75vh] col-span-2 md:col-span-3 lg:col-span-5 bg-slate-100 flex justify-center items-center rounded-xl">
+          <h1>There is no register restaurant</h1>
+        </div>
+      ) : (
         resto.data.map((restaurant, index) => (
           <Cards
             key={index}
@@ -84,7 +87,8 @@ const CardsContainer = () => {
             name={restaurant.businessName}
             location={restaurant.businessAddress}
           />
-        ))}
+        ))
+      )}
     </div>
   );
 };

@@ -43,7 +43,7 @@ const Page = () => {
           // toast.success("Login successfully");
           redirectToDashboard(response.payload.user.role);
         } else {
-          toast.error("Incorrect email or Password");
+          toast.error(response.payload.message);
         }
       })
       .catch((error) => {

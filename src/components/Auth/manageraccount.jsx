@@ -1,49 +1,35 @@
 "use client";
-import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
-import { createManager } from "@/redux/slice/Auth/managerSlice";
 
-const ManagerAccount = ({ setActive }) => {
-  const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.createManager);
-
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const managerData = {
-    firstname,
-    lastname,
-    email,
-    password,
-    confirmPassword,
-  };
-
-  const handleRegister = (e) => {
-    e.preventDefault();
-    dispatch(createManager(managerData));
-    setActive(false);
-  };
+const ManagerAccount = ({
+  setActive,
+  firstname,
+  setFirstname,
+  lastname,
+  setLastname,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  confirmPassword,
+  setConfirmPassword,
+}) => {
   return (
     <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border">
       <h1 className="text-xl font-semibold text-center py-2">
         Let your business discoverable
       </h1>
 
-      <form
-        className="flex flex-col gap-4 p-4 w-full"
-        onSubmit={handleRegister}
-      >
+      <div className="flex flex-col gap-4 p-4 w-full">
         <div className="flex flex-col md:flex-row gap-2 w-full">
           <div className="flex flex-col gap-2 w-full md:w-1/2">
             <label htmlFor="name">Firstname</label>
             <input
               type="text"
               placeholder="John"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
               className="border outline-none active:outline-none p-3 rounded-md"
             />
           </div>
@@ -52,6 +38,8 @@ const ManagerAccount = ({ setActive }) => {
             <input
               type="text"
               placeholder="Doe"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
               className="border outline-none active:outline-none p-3 rounded-md"
             />
           </div>
@@ -61,6 +49,8 @@ const ManagerAccount = ({ setActive }) => {
           <input
             type="text"
             placeholder="Johndoe@gmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="border outline-none active:outline-none p-3 rounded-md"
           />
         </div>
@@ -70,6 +60,8 @@ const ManagerAccount = ({ setActive }) => {
             <input
               type="password"
               placeholder="*******"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="border outline-none active:outline-none p-3 rounded-md"
             />
           </div>
@@ -78,17 +70,23 @@ const ManagerAccount = ({ setActive }) => {
             <input
               type="password"
               placeholder="*******"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               className="border outline-none active:outline-none p-3 rounded-md"
             />
           </div>
         </div>
         <button
-          type="submit"
+          type="button"
           className="bg-black text-white py-3 rounded-md cursor-pointer"
+          onClick={(e) => {
+            e.preventDefault();
+            setActive(false);
+          }}
         >
-          {loading ? "Continue ..." : "Continue"}
+          Continue
         </button>
-      </form>
+      </div>
       <div className="w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4">
         <Link href="/signin">
           <p className="duration-300 scale-95 hover:scale-100 cursor-pointer text-md">

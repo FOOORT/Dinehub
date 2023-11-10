@@ -3,48 +3,23 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { useSelector, useDispatch } from "react-redux";
-import { createManagerAndBusiness } from "@/redux/slice/Auth/managerSlice";
 
-const BusinessInfo = ({ setActive }) => {
-  const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.createManager);
-
-  const [businessName, setBusinessName] = useState("");
-  const [businessAddress, setBusinessAddress] = useState("");
-  const [businessPhone, setBusinessPhone] = useState("");
-  const [businessWhatsappNumber, setBusinessWhatsappNumber] = useState("");
-  const [businessCategory, setBusinessCategory] = useState("");
-  const [businessDescription, setBusinessDescription] = useState("");
-
-  const businessInformation = {
-    businessName,
-    businessAddress,
-    businessPhone,
-    businessWhatsappNumber,
-    businessCategory,
-    businessDescription,
-  };
-
-  const handleRegisterBusiness = (e) => {
-    e.preventDefault();
-
-    dispatch(createManagerAndBusiness(businessInformation))
-      .then((response) => {
-        console.log("response data: ", response);
-        if (response.payload.success) {
-          toast.success("Successfully created");
-          router.push("/auth/signup/approval");
-        } else {
-          toast.error("Failed to create an account");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        toast.error("An error occurred while creating an account");
-      });
-  };
-
+const BusinessInfo = ({
+  setActive,
+  businessName,
+  setBusinessName,
+  businessAddress,
+  setBusinessAddress,
+  businessPhone,
+  setBusinessPhone,
+  businessWhatsappNumber,
+  setBusinessWhatsappNumber,
+  businessCategory,
+  setBusinessCategory,
+  businessDescription,
+  setBusinessDescription,
+  onSubmit,
+}) => {
   return (
     <div className="w-screen bg-white h-screen flex justify-center items-center">
       <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border">
@@ -52,10 +27,7 @@ const BusinessInfo = ({ setActive }) => {
           About your business
         </h1>
 
-        <form
-          className="flex flex-col gap-4 p-4 w-full"
-          onSubmit={handleRegisterBusiness}
-        >
+        <form className="flex flex-col gap-4 p-4 w-full">
           <div className="flex flex-col md:flex-row gap-2 w-full">
             <div className="flex flex-col gap-2 w-full md:w-1/2">
               <label htmlFor="name">Name</label>
@@ -143,10 +115,11 @@ const BusinessInfo = ({ setActive }) => {
               <FaChevronLeft />
             </button>
             <button
-              type="submit"
+              type="button"
               className="bg-black text-white py-3 rounded-md cursor-pointer w-full"
+              onClick={onSubmit}
             >
-              {loading ? "Creating business ..." : "Create business"}
+              Create Account
             </button>
           </div>
         </form>
