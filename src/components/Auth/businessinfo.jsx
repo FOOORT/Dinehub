@@ -1,8 +1,25 @@
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
+import { FaChevronLeft } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
-const page = () => {
+const BusinessInfo = ({
+  setActive,
+  businessName,
+  setBusinessName,
+  businessAddress,
+  setBusinessAddress,
+  businessPhone,
+  setBusinessPhone,
+  businessWhatsappNumber,
+  setBusinessWhatsappNumber,
+  businessCategory,
+  setBusinessCategory,
+  businessDescription,
+  setBusinessDescription,
+  onSubmit,
+}) => {
   return (
     <div className="w-screen bg-white h-screen flex justify-center items-center">
       <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border">
@@ -10,60 +27,60 @@ const page = () => {
           About your business
         </h1>
 
-        <div className="flex flex-col gap-4 p-4 w-full">
+        <form className="flex flex-col gap-4 p-4 w-full">
           <div className="flex flex-col md:flex-row gap-2 w-full">
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
               <label htmlFor="name">Name</label>
               <input
                 type="text"
                 placeholder="John"
+                value={businessName}
+                onChange={(e) => setBusinessName(e.target.value)}
                 className="border outline-none active:outline-none p-3 rounded-md"
               />
             </div>
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
               <label htmlFor="pass">Location</label>
               <input
                 type="text"
                 placeholder="Doe"
+                value={businessAddress}
+                onChange={(e) => setBusinessAddress(e.target.value)}
                 className="border outline-none active:outline-none p-3 rounded-md"
               />
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-2 w-full">
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
               <label htmlFor="name">Phone number</label>
               <input
                 type="text"
                 placeholder="John"
+                value={businessPhone}
+                onChange={(e) => setBusinessPhone(e.target.value)}
                 className="border outline-none active:outline-none p-3 rounded-md"
               />
             </div>
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 w-full md:w-1/2">
               <label htmlFor="pass">Whatsapp number</label>
               <input
                 type="text"
                 placeholder="Doe"
+                value={businessWhatsappNumber}
+                onChange={(e) => setBusinessWhatsappNumber(e.target.value)}
                 className="border outline-none active:outline-none p-3 rounded-md"
               />
             </div>
           </div>
-          <div className="flex flex-col md:flex-row gap-2 w-full">
-            <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="name">Tin number</label>
-              <input
-                type="text"
-                placeholder="John"
-                className="border outline-none active:outline-none p-3 rounded-md"
-              />
-            </div>
-            <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="pass">Opening hour </label>
-              <input
-                type="text"
-                placeholder="Doe"
-                className="border outline-none active:outline-none p-3 rounded-md"
-              />
-            </div>
+          <div className="flex flex-col gap-2 w-full">
+            <label htmlFor="name">Category</label>
+            <input
+              type="text"
+              placeholder="Restaurant"
+              value={businessCategory}
+              onChange={(e) => setBusinessCategory(e.target.value)}
+              className="border outline-none active:outline-none p-3 rounded-md"
+            />
           </div>
           <div className="flex flex-col gap-2 w-full">
             <label htmlFor="pass">Description</label>
@@ -72,8 +89,12 @@ const page = () => {
               id=""
               cols="30"
               rows="4"
+              value={businessDescription}
+              onChange={(e) => setBusinessDescription(e.target.value)}
               className="border outline-none active:outline-none p-3 rounded-md"
-            ></textarea>
+            >
+              {businessDescription}
+            </textarea>
           </div>
           <div className="flex w-full p-2 gap-2 items-center">
             <input type="radio" className="scale-110" />
@@ -83,12 +104,25 @@ const page = () => {
               <Link href="privacyPolicy"> Privacy Policy</Link> .
             </p>
           </div>
-          <input
-            type="submit"
-            value="Add your business"
-            className="bg-black text-white py-3 rounded-md"
-          />
-        </div>
+          <div className="flex gap-3">
+            <button
+              className="p-3 px-4 rounded-full flex justify-center items-center border"
+              onClick={(e) => {
+                e.preventDefault();
+                setActive(true);
+              }}
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              type="button"
+              className="bg-black text-white py-3 rounded-md cursor-pointer w-full"
+              onClick={onSubmit}
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
         <div className="w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4">
           <Link href="/auth/signin">
             <p className="duration-300 scale-95 hover:scale-100 cursor-pointer text-md">
@@ -108,4 +142,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default BusinessInfo;

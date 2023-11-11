@@ -1,4 +1,4 @@
-// import Screen from "@/components/Screen";
+import Screen from "@/components/Screen";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ProvidersComponent } from "@/redux/provider";
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ProvidersComponent>
           {children}
-          {/* <Screen /> */}
+          <Screen />
         </ProvidersComponent>
       </body>
     </html>

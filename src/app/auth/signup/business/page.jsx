@@ -1,85 +1,104 @@
-import Link from "next/link";
-import React from "react";
-import { FcGoogle } from "react-icons/fc";
+"use client";
+import React, { useState } from "react";
+import BusinessInfo from "@/components/Auth/businessinfo";
+import ManagerAccount from "@/components/Auth/manageraccount";
+import { ToastContainer, toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
-const page = () => {
+import axios from "axios";
+
+const Page = () => {
+  const router = useRouter();
+
+  const [activeComponent, setActiveComponent] = useState(true);
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [businessName, setBusinessName] = useState("");
+  const [businessAddress, setBusinessAddress] = useState("");
+  const [businessPhone, setBusinessPhone] = useState("");
+  const [businessWhatsappNumber, setBusinessWhatsappNumber] = useState("");
+  const [businessCategory, setBusinessCategory] = useState("");
+  const [businessDescription, setBusinessDescription] = useState("");
+  const managerDetails = {
+    firstname,
+    lastname,
+    email,
+    password,
+    confirmPassword,
+    businessName,
+    businessAddress,
+    businessPhone,
+    businessWhatsappNumber,
+    businessCategory,
+    businessDescription,
+  };
+
+  const handleCreateBusiness = async () => {
+    // console.log("Create Business", managerDetails);
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/business/register`,
+        managerDetails
+      );
+
+      console.log("response data: ", response);
+
+      if ((response.status = 201)) {
+        toast.success(response.data.message);
+        // Redirect or perform any other actions
+        router.push("/auth/signup/approval");
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      // Handle error
+      console.error("Error:", error.response.data.message);
+      toast.error(error.response.data.message);
+
+      // Display error message to the user
+    }
+  };
+
   return (
     <div className="w-screen bg-white h-screen flex justify-center items-center">
-      {/* <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border">
-        <h1 className="text-xl font-semibold text-center py-2">
-          Let your business discoverable
-        </h1>
-
-        <div className="flex flex-col gap-4 p-4 w-full">
-          <div className="flex flex-col md:flex-row gap-2 w-full">
-            <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="name">Firstname</label>
-              <input
-                type="text"
-                placeholder="John"
-                className="border outline-none active:outline-none p-3 rounded-md"
-              />
-            </div>
-            <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="pass">Lastname</label>
-              <input
-                type="text"
-                placeholder="Doe"
-                className="border outline-none active:outline-none p-3 rounded-md"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-2 w-full">
-            <label htmlFor="name">Email</label>
-            <input
-              type="text"
-              placeholder="Johndoe@gmail.com"
-              className="border outline-none active:outline-none p-3 rounded-md"
-            />
-          </div>
-          <div className="flex flex-col md:flex-row gap-2 w-full">
-            <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="name">Password</label>
-              <input
-                type="password"
-                placeholder="*******"
-                className="border outline-none active:outline-none p-3 rounded-md"
-              />
-            </div>
-            <div className="flex flex-col gap-2 w-full">
-              <label htmlFor="pass">Confirm Password</label>
-              <input
-                type="password"
-                placeholder="*******"
-                className="border outline-none active:outline-none p-3 rounded-md"
-              />
-            </div>
-          </div>
-          <Link href="business/info" className="w-full">
-            <input
-              type="submit"
-              value="Continue"
-              className="bg-black text-white py-3 rounded-md w-full"
-            />
-          </Link>
-        </div>
-        <div className="w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4">
-          <Link href="/signin">
-            <p className="duration-300 scale-95 hover:scale-100 cursor-pointer text-md">
-              Already have account
-              <span className="text-blue-600 ml-2">Sign in</span> now
-            </p>
-          </Link>
-        </div>
-        <div className="flex w-full bg-blue-500 p-1 rounded-lg justify-start items-center gap-4 text-white scale-95 hover:scale-100 duration-300 cursor-pointer">
-          <span className="p-2 rounded-md bg-white">
-            <FcGoogle className="text-xl" />
-          </span>
-          Continue with google
-        </div>
-      </div> */}
+      <ToastContainer />
+      {activeComponent ? (
+        <ManagerAccount
+          setActive={setActiveComponent}
+          firstname={firstname}
+          setFirstname={setFirstname}
+          lastname={lastname}
+          setLastname={setLastname}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          confirmPassword={confirmPassword}
+          setConfirmPassword={setConfirmPassword}
+        />
+      ) : (
+        <BusinessInfo
+          setActive={setActiveComponent}
+          businessName={businessName}
+          setBusinessName={setBusinessName}
+          businessAddress={businessAddress}
+          setBusinessAddress={setBusinessAddress}
+          businessPhone={businessPhone}
+          setBusinessPhone={setBusinessPhone}
+          businessWhatsappNumber={businessWhatsappNumber}
+          setBusinessWhatsappNumber={setBusinessWhatsappNumber}
+          businessCategory={businessCategory}
+          setBusinessCategory={setBusinessCategory}
+          businessDescription={businessDescription}
+          setBusinessDescription={setBusinessDescription}
+          onSubmit={handleCreateBusiness}
+        />
+      )}
     </div>
   );
 };
 
-export default page;
+export default Page;

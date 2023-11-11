@@ -13,7 +13,7 @@ const Cards = ({ key, image, name, location }) => {
           alt={{ name }}
           width={100}
           height={100}
-          className="w-full rounded-2xl"
+          className="w-full rounded-2xl lg:h-44 h-48 duration-100"
         />
         <div className="py-2">
           <h2 className="text-lg font-semibold">{name}</h2>
