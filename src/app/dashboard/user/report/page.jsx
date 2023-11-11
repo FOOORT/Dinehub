@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Layout from "../Layout";
 import HistoryReport from "@/components/common/Dashboard/user/report/historyreport";

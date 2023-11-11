@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import ManagerLayout from "../managerlayout";
 import Image from "next/image";

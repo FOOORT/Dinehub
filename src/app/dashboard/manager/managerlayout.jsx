@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Navs from "@/components/json/manager/navbar";
 import Sidebar from "@/components/common/Dashboard/sidebar";
+import withAuth from "@/utils/ProtectRouters";
 
 const ManagerLayout = ({ children }) => {
   return (
@@ -17,4 +19,4 @@ const ManagerLayout = ({ children }) => {
   );
 };
 
-export default ManagerLayout;
+export default withAuth(ManagerLayout, ["Manager"]);

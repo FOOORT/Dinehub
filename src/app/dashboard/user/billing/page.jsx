@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Layout from "../Layout";
 import UpgradePlan from "@/components/common/Dashboard/user/billing/upgradeplan";
