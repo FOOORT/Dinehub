@@ -65,18 +65,16 @@ const SingleRestaurant = ({ closeModal }) => {
         </div>
         <div className="bg-slate-100 w-3/5 flex gap-2 justify-evenly items-center rounded-2xl relative z-10 p-4 ">
           <div className="flex flex-col items-center">
-            <h3 className="text-sm">Owner's Firstname</h3>
+            <h3 className="text-sm">Owner Firstname</h3>
             <h1 className="text-lg">Reconfort</h1>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="text-sm">Owner's Lastname</h3>
+            <h3 className="text-sm">Owner Lastname</h3>
             <h1 className="text-lg">Daniel</h1>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="text-sm">Owner's Username</h3>
-            <h1 className="text-lg" className="lowercase">
-              @daniel
-            </h1>
+            <h3 className="text-sm">Owner Username</h3>
+            <h1 className="text-lg lowercase">@daniel</h1>
           </div>
         </div>
         <div className="flex w-full shadow shadow-slate-100 rounded-lg -mt-10 pt-16 gap-4 items-start bg-slate-50 p-4">
