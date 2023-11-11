@@ -15,12 +15,12 @@ const Header = ({ Navs }) => {
       <div className="flex items-center justify-center gap-4">
         <button
           className="lg:hidden flex items-center justify-center bg-slate-200 p-3 rounded-md border border-black"
-          onClick={handleSideBar}
+          // onClick={handleSideBar}
         >
           {sidebar ? <FaTimes /> : <FaBars />}
         </button>
         <h1 className="flex items-center gap-2 text-slate-800">
-          <span className="hidden lg:block">Welcome to </span>Obinasom Dashboard
+          <span className="hidden lg:block">Welcome to </span>Villa Dashboard
         </h1>
       </div>
       <SearchInput />
