@@ -80,9 +80,10 @@ const CardsContainer = () => {
           <h1>There is no register restaurant</h1>
         </div>
       ) : (
+        resto.data &&
         resto.data.map((restaurant, index) => (
           <Cards
-            key={index}
+            key={restaurant._id}
             image={restaurant.businessImage}
             name={restaurant.businessName}
             location={restaurant.businessAddress}

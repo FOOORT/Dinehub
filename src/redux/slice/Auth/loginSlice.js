@@ -1,12 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+let user = null;
+try {
+  user = JSON.parse(localStorage.getItem("user"));
+} catch (error) {}
 
 // Define initial state
 const initialState = {
   isLoggedIn: false,
   loading: false,
-  user: null,
-  userRole: null,
+  user: user,
   error: "",
 };
 
@@ -19,8 +22,8 @@ export const loginUser = createAsyncThunk(
       userCredentials
     );
     const response = await request.data;
-    console.log("response: ", response);
-    localStorage.setItem("user", JSON.stringify(response));
+    localStorage.setItem("user", JSON.stringify(response.user));
+    localStorage.setItem("token", response.token);
     return response;
   }
 );
@@ -39,14 +42,12 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
       state.loading = true;
       state.user = null;
-      state.userRole = null;
       state.error = "";
     });
 
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.loading = false;
       state.user = action.payload;
-      // state.userRole = action.payload.user.role;
       state.isLoggedIn = true;
       state.error = "";
     });
@@ -55,7 +56,6 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
       state.loading = false;
       state.user = null;
-      state.userRole = null;
       console.log("Error: ", action.error.message);
       if (action.error.message === "Request failed with status code 401") {
         state.error = "Access Denied ! Invalid credentials";

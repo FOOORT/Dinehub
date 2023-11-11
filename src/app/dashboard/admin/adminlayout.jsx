@@ -20,4 +20,4 @@ const AdminLayout = ({ children }) => {
   );
 };
 
-export default withAuth(AdminLayout,["Admin"]);
+export default withAuth(AdminLayout, ["Admin"]);

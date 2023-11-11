@@ -1,26 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import axios from "axios";
-
 // Define initial state
 const initialState = {
   loading: false,
-  resto: null,
+  resto:  null,
   allrestos: null,
   error: "",
 };
 let token;
 try {
-  const user = JSON.parse(localStorage.getItem("user"));
-  token = user.token;
+  token = localStorage.getItem("token");
 } catch (error) {
   console.error("error", error);
 }
 
-// const token =
-//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGRlYWZmMzA3ZWFhYzY3MWIyYzFiNSIsImlhdCI6MTY5OTYxNjgzMywiZXhwIjoxNzAyMjA4ODMzfQ.mRgWb5PG3ktoojABYGMj67kqM6PK73oGfCq8mFWO1iU";
-
-// Create an async thunk for fetching restaurant
 export const restosDetails = createAsyncThunk(
   "restosDetails",
   async (restoDetail) => {
@@ -30,7 +24,7 @@ export const restosDetails = createAsyncThunk(
     );
     const response = await request.data;
     // console.log("response from API 1: ", response);
-    localStorage.setItem("restaurant", JSON.stringify(response));
+    localStorage.setItem("restaurant", JSON.stringify(response.data));
     return response;
   }
 );
@@ -48,7 +42,7 @@ export const allRestoDetails = createAsyncThunk("allRestoDetails", async () => {
     }
   );
   const response = await request.data;
-  localStorage.setItem("allRestaurant", JSON.stringify(response));
+  localStorage.setItem("allRestaurant", JSON.stringify(response.data));
   // console.log("second API response: ", response);
   return response;
 });
