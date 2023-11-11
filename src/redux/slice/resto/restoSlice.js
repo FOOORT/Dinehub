@@ -9,10 +9,16 @@ const initialState = {
   allrestos: null,
   error: "",
 };
+let token;
+try {
+  const user = JSON.parse(localStorage.getItem("user"));
+  token = user.token;
+} catch (error) {
+  console.error("error", error);
+}
 
-// const token = JSON.parse(localStorage.getItem("token"));
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGRlYWZmMzA3ZWFhYzY3MWIyYzFiNSIsImlhdCI6MTY5OTYxNjgzMywiZXhwIjoxNzAyMjA4ODMzfQ.mRgWb5PG3ktoojABYGMj67kqM6PK73oGfCq8mFWO1iU";
+// const token =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGRlYWZmMzA3ZWFhYzY3MWIyYzFiNSIsImlhdCI6MTY5OTYxNjgzMywiZXhwIjoxNzAyMjA4ODMzfQ.mRgWb5PG3ktoojABYGMj67kqM6PK73oGfCq8mFWO1iU";
 
 // Create an async thunk for fetching restaurant
 export const restosDetails = createAsyncThunk(
@@ -31,7 +37,7 @@ export const restosDetails = createAsyncThunk(
 
 // Create an async thunk for fetching data from the second API
 export const allRestoDetails = createAsyncThunk("allRestoDetails", async () => {
-  console.log("Token taken", token);
+  // console.log("Token taken", token);
   const request = await axios.get(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/business/all`,
     {

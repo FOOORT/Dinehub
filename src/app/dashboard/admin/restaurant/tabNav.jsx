@@ -95,7 +95,7 @@ const TabNav = () => {
     setFilteredRestos(filteredData);
   };
 
-  console.log("Fetched resto FROM api2: ", allrestos);
+  // console.log("Fetched resto FROM api2: ", allrestos);
 
   const restoHandleModal = () => setAddRestoModal((prev) => !prev);
   const singleRestoHandleModal = () => setSingleRestoModal((prev) => !prev);

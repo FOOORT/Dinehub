@@ -17,10 +17,10 @@ const Page = () => {
     if (userRole === "Admin") {
       router.push("/dashboard/admin/");
     } else if (userRole === "Employee") {
-      router.push("//dashboard/employee/");
+      router.push("/dashboard/employee/");
     } else if (userRole === "Manager") {
-      router.push("//dashboard/manager/");
-    } else if (userRole === "User") {
+      router.push("/dashboard/manager/");
+    } else if (userRole === "Client") {
       router.push("/dashboard/user");
     } else {
       router.push("/auth/signin");
