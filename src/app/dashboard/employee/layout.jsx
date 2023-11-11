@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Navs from "@/components/json/employee/navbar";
 import Sidebar from "@/components/common/Dashboard/sidebar";
+import withAuth from "@/utils/ProtectRouters";
 
 const layout = ({ children }) => {
   return (
@@ -17,4 +19,4 @@ const layout = ({ children }) => {
   );
 };
 
-export default layout;
+export default withAuth(layout, ["Staff"]);

@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import AdminLayout from "../adminlayout";
 import Header from "@/components/common/Dashboard/admin/header";
@@ -31,4 +32,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default page
