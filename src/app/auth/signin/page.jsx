@@ -1,14 +1,39 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "@/redux/slice/Auth/loginSlice";
+import axios from "axios";
 
 const Page = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const token = searchParams.get("token");
+
+  useEffect(() => {
+    if (token) {
+      const getUser = async () => {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/profile`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        const { user } = res.data;
+        localStorage.setItem("user", JSON.stringify(user));
+        redirectToDashboard(user.role);
+      };
+      getUser();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router,token]);
+
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.auth);
 
@@ -50,6 +75,10 @@ const Page = () => {
         console.log(error);
       });
     error && console.log("You are encoutering following prbolem: ", error);
+  };
+
+  const handleGoogleLogin = () => {
+    console.log("google login");
   };
 
   return (
@@ -101,12 +130,15 @@ const Page = () => {
             </button>
           </Link>
         </div>
-        <div className="flex w-full bg-blue-500 p-1 rounded-lg justify-start items-center gap-4 text-white scale-95 hover:scale-100 duration-300 cursor-pointer">
+        <Link
+          href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/auth/google`}
+          className="flex w-full bg-blue-500 p-1 rounded-lg justify-start items-center gap-4 text-white scale-95 hover:scale-100 duration-300 cursor-pointer"
+        >
           <span className="p-2 rounded-md bg-white">
             <FcGoogle className="text-xl" />
           </span>
           Continue with google
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -6,9 +6,7 @@ function withAuth(Component, allowedRoles = []) {
     const router = useRouter();
 
     useEffect(() => {
-      const {user} = JSON.parse(localStorage.getItem("user"));
-      console.log(allowedRoles);
-      console.log(user);
+      const user = JSON.parse(localStorage.getItem("user"));
       if (
         !user ||
         (allowedRoles.length > 0 && !allowedRoles.includes(user.role))
