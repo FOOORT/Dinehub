@@ -6,6 +6,8 @@ const Users = [
     email: "John@gmail.com",
     location: "Huye, South",
     phone: "078837833",
+    activeplan: 64000,
+    progress: 100,
     UserType: "client",
   },
   {
@@ -15,6 +17,8 @@ const Users = [
     email: "alice@gmail.com",
     location: "New York, USA",
     phone: "123456789",
+    activeplan: 64000,
+    progress: 100,
     UserType: "mini-admin",
   },
   {
@@ -24,6 +28,8 @@ const Users = [
     email: "bob@gmail.com",
     location: "Los Angeles, USA",
     phone: "987654321",
+    activeplan: 64000,
+    progress: 100,
     UserType: "mini-admin",
   },
   {
@@ -33,6 +39,8 @@ const Users = [
     email: "james@gmail.com",
     location: "Seoul, South Korea",
     phone: "555555555",
+    activeplan: 64000,
+    progress: 100,
     UserType: "client",
   },
   {
@@ -42,6 +50,8 @@ const Users = [
     email: "ava@gmail.com",
     location: "Beijing, China",
     phone: "999999999",
+    activeplan: 64000,
+    progress: 100,
     UserType: "client",
   },
   {
@@ -51,6 +61,8 @@ const Users = [
     email: "noah@gmail.com",
     location: "Sao Paulo, Brazil",
     phone: "777777777",
+    activeplan: 64000,
+    progress: 100,
     UserType: "client",
   },
   {
@@ -60,6 +72,8 @@ const Users = [
     email: "noah@gmail.com",
     location: "Sao Paulo, Brazil",
     phone: "777777777",
+    activeplan: 64000,
+    progress: 100,
     UserType: "client",
   },
 ];

@@ -11,14 +11,18 @@ const initialState = {
 };
 
 let token;
+let localresto;
 try {
   const user = JSON.parse(localStorage.getItem("user"));
+  const resto = JSON.parse(localStorage.getItem("restaurant"));
   token = user.token;
+  localresto = resto.data;
 } catch (error) {
   console.error("error", error);
 }
 
 console.log("token: " + token);
+console.log("localresto: ", localresto);
 
 // Create an async thunk for fetching restaurant
 export const restosDetails = createAsyncThunk(

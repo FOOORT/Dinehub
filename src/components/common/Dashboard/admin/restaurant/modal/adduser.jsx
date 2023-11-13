@@ -2,7 +2,6 @@
 
 import ActionButton from "@/components/common/actionbutton";
 import React, { useState } from "react";
-import { BiCamera } from "react-icons/bi";
 import { FaTimes, FaArrowRight, FaArrowLeft, FaPlus } from "react-icons/fa";
 
 const AddUser = ({ closeModal }) => {
@@ -21,7 +20,7 @@ const AddUser = ({ closeModal }) => {
       {step === 1 && (
         <div className="bg-white p-4 rounded-xl w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 shadow-2xl shadow-slate-400">
           <div className="w-full flex justify-between items-center">
-            <h1 className="text-lg font-semibold">Add User</h1>
+            <h1 className="text-lg font-semibold">Add Client</h1>
             <button
               className="bg-black text-white p-3 rounded-xl"
               onClick={() => closeModal()}
@@ -48,60 +47,12 @@ const AddUser = ({ closeModal }) => {
             action=""
             className="w-full p-1 grid grid-cols-2 mt-2 gap-1 rounded-xl"
           >
-            <div className="col-span-2  flex justify-center items-center py-4">
-              <div className="bg-slate-200 w-32 h-32 p-2 py-4 flex justify-center items-center rounded-full">
-                <input
-                  type="file"
-                  className="p-2 py-4 text-sm outline-none active:outline-none w-32 h-32 rounded-full absolute opacity-0 cursor-pointer"
-                />
-                <BiCamera className=" text-xl" />
-              </div>
-            </div>
             <div className="col-span-2">
-              <h2 className="text-sm text-slate-600">Email</h2>
+              <h2 className="text-sm text-slate-600">Choose user</h2>
               <input
                 type="text"
                 className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
               />
-            </div>
-            <div className="col-span-2 grid grid-cols-2 gap-2 py-4">
-              <div className="w-full">
-                <h2 className="text-sm text-slate-600">Firstname</h2>
-                <input
-                  type="text"
-                  className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-                />
-              </div>
-              <div className="w-full">
-                <h2 className="text-sm text-slate-600">Lastname</h2>
-                <input
-                  type="text"
-                  className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-                />
-              </div>
-            </div>
-            <div className="col-span-2">
-              <h2 className="text-sm text-slate-600">Username</h2>
-              <input
-                type="text"
-                className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-              />
-            </div>
-            <div className="col-span-2 grid grid-cols-2 gap-2 py-4">
-              <div className="w-full">
-                <h2 className="text-sm text-slate-600">Password</h2>
-                <input
-                  type="text"
-                  className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-                />
-              </div>
-              <div className="w-full">
-                <h2 className="text-sm text-slate-600">Confim Password</h2>
-                <input
-                  type="text"
-                  className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-                />
-              </div>
             </div>
             <div className="pt-2">
               <ActionButton
@@ -116,7 +67,7 @@ const AddUser = ({ closeModal }) => {
       {step === 2 && (
         <div className="bg-white p-4 rounded-xl w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 shadow-2xl shadow-slate-400">
           <div className="w-full flex justify-between items-center">
-            <h1 className="text-lg font-semibold">User details</h1>
+            <h1 className="text-lg font-semibold">More info</h1>
             <button
               className="bg-black text-white p-3 rounded-xl"
               onClick={() => closeModal()}
