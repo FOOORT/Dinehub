@@ -1,7 +1,9 @@
+"use clieint";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
+import EditMenu from "./EditMenu";
 
 const AdminCard = ({
   name,
@@ -14,6 +16,12 @@ const AdminCard = ({
   image,
 }) => {
   const actualimage = image;
+
+  const [editMenu, setEditMenu] = useState(false);
+
+  const HandleMenu = (e) => {
+    setEditMenu((prev) => !prev);
+  };
 
   return (
     <div className="w-full p-2 flex justify-center items-center rounded-lg">
@@ -48,7 +56,12 @@ const AdminCard = ({
               </button>
             )}
             <div className="grid grid-cols-2 w-full gap-2">
-              <button className="border border-blue-500 rounded-md py-2 active:scale-90 duration-100 flex justify-center items-center text-blue-500 ">
+              <button
+                className="border border-blue-500 rounded-md py-2 active:scale-90 duration-100 flex justify-center items-center text-blue-500 "
+                onClick={() => {
+                  setEditMenu(true);
+                }}
+              >
                 <MdModeEdit />
               </button>
               <button className="border border-red-500 rounded-md py-2 active:scale-90 duration-100 flex justify-center items-center text-red-500">
@@ -58,6 +71,7 @@ const AdminCard = ({
           </div>
         </ul>
       </fieldset>
+      {editMenu && <EditMenu closeModal={HandleMenu} />}
     </div>
   );
 };
