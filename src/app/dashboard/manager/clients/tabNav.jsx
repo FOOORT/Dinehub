@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
 // import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/addrestaurant";
 import AddUser from "@/components/common/Dashboard/admin/restaurant/modal/adduser";
+import SingleUserModal from "@/components/common/Dashboard/manager/singleUserModal";
 
 const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
   const [activeLink, setActiveLink] = useState("all");
@@ -12,6 +13,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
   const [options, setOptions] = useState(false);
   const [selectedItem, setSelectedItem] = useState();
   const [addUserModal, setAddUserModal] = useState(false);
+  const [singleUserModal, setSingleUserModal] = useState(true);
 
   const handleLinkClick = (activeTab) => {
     setActiveLink(activeTab);
@@ -30,8 +32,8 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
   const userHandleModal = () => setAddUserModal((prev) => !prev);
 
   const HandleSingleUser = (e) => {
-    e.preventDefault();
-    alert("View single user");
+    // e.preventDefault();
+    setSingleUserModal((prev) => !prev);
   };
 
   return (
@@ -93,7 +95,9 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                   <ActionButton
                     icon={<BsArrowUpRight />}
                     className="px-2"
-                    click={HandleSingleUser}
+                    click={() => {
+                      setSingleUserModal(true);
+                    }}
                   />
                 </td>
               </tr>
@@ -114,6 +118,8 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
           Next
         </button>
       </div>
+
+      {singleUserModal && <SingleUserModal closeModal={HandleSingleUser} />}
     </div>
   );
 };
