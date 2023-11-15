@@ -7,7 +7,7 @@ const Users = [
     location: "Huye, South",
     phone: "078837833",
     activeplan: 64000,
-    progress: 100,
+    progress: 50,
     UserType: "client",
   },
   {
@@ -18,7 +18,7 @@ const Users = [
     location: "New York, USA",
     phone: "123456789",
     activeplan: 64000,
-    progress: 100,
+    progress: 80,
     UserType: "mini-admin",
   },
   {
@@ -40,7 +40,7 @@ const Users = [
     location: "Seoul, South Korea",
     phone: "555555555",
     activeplan: 64000,
-    progress: 100,
+    progress: 90,
     UserType: "client",
   },
   {
@@ -51,7 +51,7 @@ const Users = [
     location: "Beijing, China",
     phone: "999999999",
     activeplan: 64000,
-    progress: 100,
+    progress: 30,
     UserType: "client",
   },
   {
@@ -62,7 +62,7 @@ const Users = [
     location: "Sao Paulo, Brazil",
     phone: "777777777",
     activeplan: 64000,
-    progress: 100,
+    progress: 60,
     UserType: "client",
   },
   {
@@ -73,7 +73,7 @@ const Users = [
     location: "Sao Paulo, Brazil",
     phone: "777777777",
     activeplan: 64000,
-    progress: 100,
+    progress: 20,
     UserType: "client",
   },
 ];

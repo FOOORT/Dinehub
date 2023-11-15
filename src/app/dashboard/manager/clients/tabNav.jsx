@@ -3,37 +3,37 @@ import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
 import { FaPlus } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
-import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/addrestaurant";
+// import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/addrestaurant";
 import AddUser from "@/components/common/Dashboard/admin/restaurant/modal/adduser";
 
 const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
-  const [activeLink, setActiveLink] = useState("all"); // Set the default active link
+  const [activeLink, setActiveLink] = useState("all");
   const [filteredUsers, setFilteredUsers] = useState(Users);
+  const [options, setOptions] = useState(false);
+  const [selectedItem, setSelectedItem] = useState();
+  const [addUserModal, setAddUserModal] = useState(false);
 
   const handleLinkClick = (activeTab) => {
-    // console.log("activeTab: ", activeTab);
     setActiveLink(activeTab);
     const filterdData =
       activeTab === "all"
         ? Users
-        : Users.filter((user) => {
-            return user.UserType === activeTab;
-          });
+        : Users.filter((user) => user.UserType === activeTab);
+
     setFilteredUsers(filterdData);
   };
 
-  const [options, setOptions] = useState(false);
   const handleMoreBtn = () => {
     setOptions((prev) => !prev);
   };
 
-  const [selectedItem, setSelectedItem] = useState();
-  const [addUserModal, setAddUserModal] = useState(false);
   const userHandleModal = () => setAddUserModal((prev) => !prev);
+
   const HandleSingleUser = (e) => {
     e.preventDefault();
     alert("View single user");
   };
+
   return (
     <div className="mt-4 w-full">
       <div className="w-full flex justify-between items-center my-3">
@@ -63,9 +63,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                 className={`h-10 duration-200 hover:bg-slate-100 rounded-md ${
                   selectedTr === index ? "bg-slate-100" : ""
                 }`}
-                onClick={function (e) {
-                  setSelectedTr(item);
-                }}
+                onClick={() => setSelectedTr(item)}
               >
                 <td className="pl-4">{index + 1}</td>
                 <td>
@@ -75,8 +73,8 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                     <p>{item.phone}</p>
                   </div>
                 </td>
-                <td className="hidden md:flex items-center h-1 pt-5">
-                  <div className="flex flex-col w-full">
+                <td className="hidden md:flex items-center h-12">
+                  <div className="flex flex-col w-full h-full items-start justify-start mb-1">
                     <h2 className="text-xs hidden md:block">{item.email}</h2>
                     <p>{item.phone}</p>
                   </div>
@@ -84,8 +82,12 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                 <td>
                   <p>{item.activeplan} rwf</p>
                   <p className="block xl:hidden mt-1">{item.progress} %</p>
+
+                  <p className="block lg:hidden">{item.progress}%</p>
                 </td>
-                <td className="hidden xl:block h-10">{item.progress} %</td>
+                <td className="hidden xl:block h-10">
+                  <p>{item.progress}%</p>
+                </td>
                 <td>34000 rwf</td>
                 <td>
                   <ActionButton
