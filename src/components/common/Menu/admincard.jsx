@@ -17,10 +17,10 @@ const AdminCard = ({
 }) => {
   const actualimage = image;
 
-  const [editMenu, setEditMenu] = useState(false);
+  const [editMenus, setEditMenus] = useState(false);
 
   const HandleMenu = (e) => {
-    setEditMenu((prev) => !prev);
+    setEditMenus((prev) => !prev);
   };
 
   return (
@@ -59,7 +59,7 @@ const AdminCard = ({
               <button
                 className="border border-blue-500 rounded-md py-2 active:scale-90 duration-100 flex justify-center items-center text-blue-500 "
                 onClick={() => {
-                  setEditMenu(true);
+                  setEditMenus(true);
                 }}
               >
                 <MdModeEdit />
@@ -71,7 +71,7 @@ const AdminCard = ({
           </div>
         </ul>
       </fieldset>
-      {editMenu && <EditMenu closeModal={HandleMenu} />}
+      {editMenus && <EditMenu closeModal={HandleMenu} />}
     </div>
   );
 };
