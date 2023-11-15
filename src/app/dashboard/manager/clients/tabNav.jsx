@@ -13,7 +13,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
   const [options, setOptions] = useState(false);
   const [selectedItem, setSelectedItem] = useState();
   const [addUserModal, setAddUserModal] = useState(false);
-  const [singleUserModal, setSingleUserModal] = useState(true);
+  const [singleUserModal, setSingleUserModal] = useState(false);
 
   const handleLinkClick = (activeTab) => {
     setActiveLink(activeTab);
@@ -83,9 +83,8 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                 </td>
                 <td>
                   <p>{item.activeplan} rwf</p>
-                  <p className="block xl:hidden mt-1">{item.progress} %</p>
 
-                  <p className="block lg:hidden">{item.progress}%</p>
+                  <p className="block lg:hidden bg-red-600">{item.progress}%</p>
                 </td>
                 <td className="hidden xl:block h-10">
                   <p>{item.progress}%</p>

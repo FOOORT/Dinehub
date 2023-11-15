@@ -5,6 +5,7 @@ import { MdReadMore } from "react-icons/md";
 import AdminCard from "@/components/common/Menu/admincard";
 import AddMenu from "@/components/common/Dashboard/admin/restaurant/modal/addMenu";
 import { FaPlus } from "react-icons/fa";
+import ManagerMenuModal from "@/components/common/Menu/managermenumodal";
 
 const getButtonClass = (UserType) => {
   if (UserType === "admin") {
@@ -69,7 +70,6 @@ const TabNav = ({ Dishes }) => {
           >
             All
           </li>
-
           {displayedCategories.map((category, index) => (
             <li
               key={index}
@@ -89,12 +89,14 @@ const TabNav = ({ Dishes }) => {
             />
           )}
         </ul>
+
         <ActionButton
           name="Add Menu"
           icon={<FaPlus />}
           click={userHandleModal}
         />
-        {addUserModal && <AddMenu closeModal={userHandleModal} />}
+        {addUserModal && <ManagerMenuModal closeModal={userHandleModal} />}
+        {/* {addUserModal && <AddMenu closeModal={userHandleModal} />} */}
       </div>
 
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5">

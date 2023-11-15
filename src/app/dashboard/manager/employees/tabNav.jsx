@@ -3,42 +3,43 @@ import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
 import { FaPlus } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
-import AddRestaurant from "@/components/common/Dashboard/admin/restaurant/modal/addrestaurant";
 import AddUser from "@/components/common/Dashboard/admin/restaurant/modal/adduser";
+import SingleUserModal from "@/components/common/Dashboard/manager/singleUserModal";
 
 const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
-  const [activeLink, setActiveLink] = useState("all"); // Set the default active link
+  const [activeLink, setActiveLink] = useState("all");
   const [filteredUsers, setFilteredUsers] = useState(Users);
+  const [options, setOptions] = useState(false);
+  const [selectedItem, setSelectedItem] = useState();
+  const [addUserModal, setAddUserModal] = useState(false);
+  const [singleUserModal, setSingleUserModal] = useState(false);
 
   const handleLinkClick = (activeTab) => {
-    // console.log("activeTab: ", activeTab);
     setActiveLink(activeTab);
     const filterdData =
       activeTab === "all"
         ? Users
-        : Users.filter((user) => {
-            return user.UserType === activeTab;
-          });
+        : Users.filter((user) => user.UserType === activeTab);
+
     setFilteredUsers(filterdData);
   };
 
-  const [options, setOptions] = useState(false);
   const handleMoreBtn = () => {
     setOptions((prev) => !prev);
   };
 
-  const [selectedItem, setSelectedItem] = useState();
-  const [addUserModal, setAddUserModal] = useState(false);
   const userHandleModal = () => setAddUserModal((prev) => !prev);
+
   const HandleSingleUser = (e) => {
-    e.preventDefault();
-    alert("View single Employee");
+    // e.preventDefault();
+    setSingleUserModal((prev) => !prev);
   };
+
   return (
     <div className="mt-4 w-full">
       <div className="w-full flex justify-between items-center my-3">
         <ActionButton
-          name="Add employee"
+          name="Add client"
           icon={<FaPlus />}
           click={userHandleModal}
         />
@@ -50,9 +51,9 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
             <th className="text-left pl-4">#</th>
             <th className="text-left">Name</th>
             <th className="text-left hidden md:block">Info</th>
-            <th className="text-left">Active plan</th>
-            <th className="text-left hidden xl:block">Progress</th>
-            <th className="text-left">Balance</th>
+            <th className="text-left">Position</th>
+            <th className="text-left hidden xl:block">Category</th>
+            {/* <th className="text-left">Balance</th> */}
             <th className="text-left"></th>
           </tr>
         </thead>
@@ -63,9 +64,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                 className={`h-10 duration-200 hover:bg-slate-100 rounded-md ${
                   selectedTr === index ? "bg-slate-100" : ""
                 }`}
-                onClick={function (e) {
-                  setSelectedTr(item);
-                }}
+                onClick={() => setSelectedTr(item)}
               >
                 <td className="pl-4">{index + 1}</td>
                 <td>
@@ -75,23 +74,28 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                     <p>{item.phone}</p>
                   </div>
                 </td>
-                <td className="hidden md:flex items-center h-1 pt-5">
-                  <div className="flex flex-col w-full">
+                <td className="hidden md:flex items-center h-12">
+                  <div className="flex flex-col w-full h-full items-start justify-start mb-1">
                     <h2 className="text-xs hidden md:block">{item.email}</h2>
                     <p>{item.phone}</p>
                   </div>
                 </td>
                 <td>
-                  <p>{item.activeplan} rwf</p>
-                  <p className="block xl:hidden mt-1">{item.progress} %</p>
+                  <p>Employee</p>
+
+                  <p className="block lg:hidden">Canteen</p>
                 </td>
-                <td className="hidden xl:block h-10">{item.progress} %</td>
-                <td>34000 rwf</td>
+                <td className="hidden xl:block h-10">
+                  <p>Canteen</p>
+                </td>
+                {/* <td>34000 rwf</td> */}
                 <td>
                   <ActionButton
                     icon={<BsArrowUpRight />}
                     className="px-2"
-                    click={HandleSingleUser}
+                    click={() => {
+                      setSingleUserModal(true);
+                    }}
                   />
                 </td>
               </tr>
@@ -112,6 +116,8 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
           Next
         </button>
       </div>
+
+      {singleUserModal && <SingleUserModal closeModal={HandleSingleUser} />}
     </div>
   );
 };
