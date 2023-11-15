@@ -18,7 +18,9 @@ const HistoryTable = () => {
         <tbody className="w-full">
           <tr className="grid grid-cols-7">
             <td className="border p-2 px-6">1</td>
-            <td className="border p-2 px-6">28 May 2023 . 18:26am</td>
+            <td className="border p-2 px-6">
+              28 May 2023 .<p className="text-sm">18:26am</p>
+            </td>
             <td className="border p-2 px-6">
               <button className="bg-black text-white rounded-lg px-6 py-2 text-xs">
                 90 rwf

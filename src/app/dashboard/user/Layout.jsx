@@ -1,7 +1,7 @@
 "use client";
 import SideBar from "@/components/common/Dashboard/user/sidebar";
 import Header from "@/components/Main/Header";
-import withAuth from "@/utils/ProtectRouters";
+// import withAuth from "@/utils/ProtectRouters";
 import React from "react";
 
 const Layout = ({ children }) => {
@@ -18,4 +18,5 @@ const Layout = ({ children }) => {
   );
 };
 
-export default withAuth(Layout, ["Client"]);
+export default Layout;
+// export default withAuth(Layout, ["Client"]);

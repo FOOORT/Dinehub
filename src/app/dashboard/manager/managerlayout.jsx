@@ -19,4 +19,5 @@ const ManagerLayout = ({ children }) => {
   );
 };
 
-export default withAuth(ManagerLayout, ["Manager"]);
+export default ManagerLayout;
+// export default withAuth(ManagerLayout, ["Manager"]);

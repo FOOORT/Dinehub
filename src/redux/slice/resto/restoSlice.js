@@ -9,16 +9,20 @@ const initialState = {
   allrestos: null,
   error: "",
 };
+
 let token;
+let localresto;
 try {
   const user = JSON.parse(localStorage.getItem("user"));
+  const resto = JSON.parse(localStorage.getItem("restaurant"));
   token = user.token;
+  localresto = resto.data;
 } catch (error) {
   console.error("error", error);
 }
 
-// const token =
-//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGRlYWZmMzA3ZWFhYzY3MWIyYzFiNSIsImlhdCI6MTY5OTYxNjgzMywiZXhwIjoxNzAyMjA4ODMzfQ.mRgWb5PG3ktoojABYGMj67kqM6PK73oGfCq8mFWO1iU";
+console.log("token: " + token);
+console.log("localresto: ", localresto);
 
 // Create an async thunk for fetching restaurant
 export const restosDetails = createAsyncThunk(
@@ -49,7 +53,7 @@ export const allRestoDetails = createAsyncThunk("allRestoDetails", async () => {
   );
   const response = await request.data;
   localStorage.setItem("allRestaurant", JSON.stringify(response));
-  // console.log("second API response: ", response);
+
   return response;
 });
 

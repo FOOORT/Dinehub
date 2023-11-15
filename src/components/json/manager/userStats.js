@@ -9,18 +9,18 @@ const UserStats = [
     icon: <PiUsersFourLight className="text-base text-blue-600" />,
   },
   {
-    title: 3,
-    details: "Employees",
+    title: 706900,
+    details: "Active balance",
     icon: <FaUserShield className="text-base text-blue-600" />,
   },
   {
-    title: 43,
-    details: "Clients",
+    title: 98800,
+    details: "Daily balance",
     icon: <HiOutlineUserCircle className="text-base text-blue-600" />,
   },
   {
-    title: 61,
-    details: "Subscribers",
+    title: 15,
+    details: "New Clients Today",
     icon: <PiUserCirclePlus className="text-base text-blue-600" />,
   },
 ];

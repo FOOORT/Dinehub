@@ -1,6 +1,9 @@
+"use clieint";
 import Image from "next/image";
-import React from "react";
-import { FaCartPlus } from "react-icons/fa";
+import React, { useState } from "react";
+import { MdModeEdit } from "react-icons/md";
+import { IoMdTrash } from "react-icons/io";
+import EditMenu from "./editmenu";
 
 const AdminCard = ({
   name,
@@ -14,7 +17,11 @@ const AdminCard = ({
 }) => {
   const actualimage = image;
 
-  // console.log("actualimage", actualimage);
+  const [editMenus, setEditMenus] = useState(false);
+
+  const HandleMenu = (e) => {
+    setEditMenus((prev) => !prev);
+  };
 
   return (
     <div className="w-full p-2 flex justify-center items-center rounded-lg">
@@ -32,21 +39,39 @@ const AdminCard = ({
           <li className="w-full font-medium text-center mt-4 text-lg">
             {name}
           </li>
-          <li className="font-bold text-center text-xl">{price * 1000} RWF</li>
+          <li className="font-bold text-center text-xl">{price * 100} RWF</li>
           <li className="text-center text-slate-600 line-clamp-2 text-sm">
             {desc}
           </li>
           <li className="text-center text-black font-medium">{category}</li>
+          <div className="flex"></div>
           <div className="grid grid-cols-2 w-full gap-2">
-            <button className="bg-gray-500 rounded-md text-white py-2 active:scale-90 duration-100">
-              Disable
-            </button>
-            <button className="bg-blue-700 rounded-md text-white py-2 flex flex-col justify-center items-center active:scale-90 duration-100">
-              Enable
-            </button>
+            {status === "inactive" ? (
+              <button className="bg-gray-500 rounded-md text-white py-2 active:scale-90 duration-100">
+                Disable
+              </button>
+            ) : (
+              <button className="bg-blue-700 rounded-md text-white py-2 flex flex-col justify-center items-center active:scale-90 duration-100">
+                Enable
+              </button>
+            )}
+            <div className="grid grid-cols-2 w-full gap-2">
+              <button
+                className="border border-blue-500 rounded-md py-2 active:scale-90 duration-100 flex justify-center items-center text-blue-500 "
+                onClick={() => {
+                  setEditMenus(true);
+                }}
+              >
+                <MdModeEdit />
+              </button>
+              <button className="border border-red-500 rounded-md py-2 active:scale-90 duration-100 flex justify-center items-center text-red-500">
+                <IoMdTrash />
+              </button>
+            </div>
           </div>
         </ul>
       </fieldset>
+      {editMenus && <EditMenu closeModal={HandleMenu} />}
     </div>
   );
 };

@@ -57,19 +57,28 @@ const AddMenu = ({ closeModal }) => {
               />
             </div>
             <div className="w-full">
-              <h2 className="text-sm text-slate-600">Quantity</h2>
-              <input
-                type="text"
+              <h2 className="text-sm text-slate-600">Category</h2>
+              <select
+                name=""
+                id=""
                 className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-              />
+              >
+                <option value="">choose</option>
+                <option value="">Food</option>
+                <option value="">Snacks</option>
+                <option value="">Beverages</option>
+              </select>
             </div>
           </div>
           <div className="col-span-2">
-            <h2 className="text-sm text-slate-600">Restaurant</h2>
-            <input
-              type="text"
+            <h2 className="text-sm text-slate-600">Description</h2>
+            <textarea
+              name=""
+              id=""
+              cols="10"
+              rows="5"
               className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-            />
+            ></textarea>
           </div>
           <div className="pt-2 flex items-center gap-2">
             <ActionButton name="Add menu" icon={<FaPlus />} />

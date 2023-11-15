@@ -177,7 +177,6 @@ const TabNav = () => {
                   <td>
                     <button className="active:bg-black active:text-white h-5 w-6 flex justify-center items-center rounded-md border relative z-40 ">
                       <ActionButton
-                        // name="Actions"
                         icon={<BsArrowUpRight />}
                         className="px-2"
                         click={() => {
