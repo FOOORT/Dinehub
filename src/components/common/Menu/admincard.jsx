@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
-import EditMenu from "./EditMenu";
+import EditMenu from "./editmenu";
 
 const AdminCard = ({
   name,
