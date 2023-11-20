@@ -3,7 +3,7 @@ import React from "react";
 import Sidebar from "@/components/common/Dashboard/sidebar";
 
 import Navs from "@/components/json/admin/navbar";
-import withAuth from "@/utils/ProtectRouters";
+// import withAuth from "@/utils/ProtectRouters";
 
 const AdminLayout = ({ children }) => {
   return (
@@ -20,4 +20,5 @@ const AdminLayout = ({ children }) => {
   );
 };
 
-export default withAuth(AdminLayout,["Admin"]);
+export default AdminLayout;
+// export default withAuth(AdminLayout,["Admin"]);
