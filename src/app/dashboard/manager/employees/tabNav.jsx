@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { BsArrowUpRight } from "react-icons/bs";
 import AddUser from "@/components/common/Dashboard/admin/restaurant/modal/adduser";
 import SingleUserModal from "@/components/common/Dashboard/manager/singleUserModal";
+import AddEmployees from "@/components/common/Dashboard/admin/restaurant/modal/addEmployees";
 
 const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
   const [activeLink, setActiveLink] = useState("all");
@@ -39,11 +40,11 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
     <div className="mt-4 w-full">
       <div className="w-full flex justify-between items-center my-3">
         <ActionButton
-          name="Add client"
+          name="Add employee"
           icon={<FaPlus />}
           click={userHandleModal}
         />
-        {addUserModal && <AddUser closeModal={userHandleModal} />}
+        {addUserModal && <AddEmployees closeModal={userHandleModal} />}
       </div>
       <table className="bg-white w-full mt-2 text-sm rounded-lg" border="1">
         <thead className="">
