@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
 import { MdReadMore } from "react-icons/md";
 import AdminCard from "@/components/common/Menu/menucard";
-import AddMenu from "@/components/common/Dashboard/admin/restaurant/modal/addMenu";
-import { FaPlus } from "react-icons/fa";
 
 const getButtonClass = (UserType) => {
   if (UserType === "admin") {
@@ -89,15 +87,9 @@ const TabNav = ({ Dishes }) => {
             />
           )}
         </ul>
-        <ActionButton
-          name='Add Menu'
-          icon={<FaPlus />}
-          click={userHandleModal}
-        />
-        {addUserModal && <AddMenu closeModal={userHandleModal} />}
       </div>
 
-      <div className='w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4'>
+      <div className='w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5'>
         {filteredDishes.map((item, index) => (
           <>
             <AdminCard
