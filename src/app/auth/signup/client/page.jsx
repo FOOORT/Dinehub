@@ -12,7 +12,10 @@ import { createUser } from "@/redux/slice/Auth/userSlice";
 const Page = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.createUser);
+
+  // const { loading, error } = useSelector((state) => state.createUser);
+  let loading = false;
+  let error = false;
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -189,7 +192,7 @@ const Page = () => {
           </button>
         </form>
         <div className='w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4'>
-          <Link href='/signin'>
+          <Link href='/auth/signin'>
             <p className='duration-300 scale-95 hover:scale-100 cursor-pointer text-md'>
               Already have account
               <span className='text-blue-600 ml-2'>Sign in</span> now

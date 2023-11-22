@@ -16,7 +16,7 @@ const page = () => {
           </h1>
           <div className='flex flex-col md:flex-row gap-4 p-4 w-full'>
             <Link
-              href='auth/signup/client'
+              href='/auth/signup/client'
               className='w-full md:w-1/2 p-4 rounded-lg flex flex-col gap-2 scale-95 hover:scale-100 duration-300 border cursor-pointer'
             >
               <span className='w-16 h-16 flex flex-col justify-center items-center rounded-md border'>
@@ -30,7 +30,7 @@ const page = () => {
               </p>
             </Link>
             <Link
-              href='auth/signup/business'
+              href='/auth/signup/business'
               className='w-full md:w-1/2 p-4 rounded-lg flex flex-col gap-2 scale-95 hover:scale-100 duration-300 border cursor-pointer'
             >
               <span className='w-16 h-16 flex flex-col justify-center items-center rounded-md border'>
