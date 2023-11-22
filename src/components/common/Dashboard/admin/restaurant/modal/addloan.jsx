@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { FaTimes, FaArrowRight, FaArrowLeft, FaPlus } from "react-icons/fa";
 import Users from "@/components/json/users";
 
-const AddUser = ({ closeModal }) => {
+const AddLoan = ({ closeModal }) => {
   const [step, setStep] = useState(1);
   const [plan, setPlan] = useState(false);
   const handleNext = () => {
@@ -40,7 +40,7 @@ const AddUser = ({ closeModal }) => {
       {step === 1 && (
         <div className='bg-white p-4 rounded-xl w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 shadow-2xl shadow-slate-400'>
           <div className='w-full flex justify-between items-center'>
-            <h1 className='text-lg font-semibold'>Add Client</h1>
+            <h1 className='text-lg font-semibold'>Add Loan</h1>
             <button
               className='bg-black text-white p-3 rounded-full'
               onClick={() => closeModal()}
@@ -178,7 +178,7 @@ const AddUser = ({ closeModal }) => {
                 click={handlePrevious}
               />
               <ActionButton
-                name='Add Client'
+                name='Add Loan'
                 icon={<FaPlus />}
                 styles='py-4 bg-green-700'
               />
@@ -190,4 +190,4 @@ const AddUser = ({ closeModal }) => {
   );
 };
 
-export default AddUser;
+export default AddLoan;

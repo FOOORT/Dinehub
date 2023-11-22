@@ -26,7 +26,7 @@ const Navs = [
   {
     name: "Loan",
     icon: <MdOutlineMenuBook />,
-    path: "/dashboard/manager/menus",
+    path: "/dashboard/manager/loan",
     category: "menu",
   },
   {

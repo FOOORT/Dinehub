@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ActionButton from "@/components/common/actionbutton";
 import { MdReadMore } from "react-icons/md";
-import AdminCard from "@/components/common/Menu/admincard";
+import AdminCard from "@/components/common/Menu/menucard";
 import AddMenu from "@/components/common/Dashboard/admin/restaurant/modal/addMenu";
 import { FaPlus } from "react-icons/fa";
 
@@ -58,9 +58,9 @@ const TabNav = ({ Dishes }) => {
   const [addUserModal, setAddUserModal] = useState(false);
   const userHandleModal = () => setAddUserModal((prev) => !prev);
   return (
-    <div className="mt-4 w-full">
-      <div className="w-full flex justify-between items-center my-3">
-        <ul className="flex items-center p-[1px] rounded-lg gap-2 cursor-pointer overflow-x-visible">
+    <div className='mt-4 w-full'>
+      <div className='w-full flex justify-between items-center my-3'>
+        <ul className='flex items-center p-[1px] rounded-lg gap-2 cursor-pointer overflow-x-visible'>
           <li
             className={`px-4 py-2 rounded-md text-xs font-medium ${
               activeLink === "all" ? "text-white bg-black" : ""
@@ -83,21 +83,21 @@ const TabNav = ({ Dishes }) => {
           ))}
           {shouldDisplaySeeMore && (
             <ActionButton
-              name="See more"
+              name='See more'
               icon={<MdReadMore />}
               click={handleSeeMoreClick}
             />
           )}
         </ul>
         <ActionButton
-          name="Add Menu"
+          name='Add Menu'
           icon={<FaPlus />}
           click={userHandleModal}
         />
         {addUserModal && <AddMenu closeModal={userHandleModal} />}
       </div>
 
-      <div className="w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4">
+      <div className='w-full grid grid-cols-2 md:grid-cols-3  xl:grid-cols-4'>
         {filteredDishes.map((item, index) => (
           <>
             <AdminCard
@@ -115,15 +115,15 @@ const TabNav = ({ Dishes }) => {
         ))}
       </div>
 
-      <div className="mt-4 w-full flex justify-between items-center">
-        <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
+      <div className='mt-4 w-full flex justify-between items-center'>
+        <button className='px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold'>
           Prev
         </button>
         <h2>
-          Page <span className="font-semibold">1</span> of{" "}
-          <span className="font-semibold">3</span>
+          Page <span className='font-semibold'>1</span> of{" "}
+          <span className='font-semibold'>3</span>
         </h2>
-        <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
+        <button className='px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold'>
           Next
         </button>
       </div>
