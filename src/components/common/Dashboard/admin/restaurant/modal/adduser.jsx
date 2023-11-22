@@ -49,10 +49,15 @@ const AddUser = ({ closeModal }) => {
           >
             <div className="col-span-2">
               <h2 className="text-sm text-slate-600">Choose user</h2>
-              <input
-                type="text"
-                className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-              />
+              <select
+                name=""
+                id=""
+                className="w-full p-2 py-3 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
+              >
+                <option value="">John David</option>;
+                <option value="">John Doe </option>;
+                <option value="">Peter Becker</option>;
+              </select>
             </div>
             <div className="pt-2">
               <ActionButton
@@ -94,28 +99,18 @@ const AddUser = ({ closeModal }) => {
             action=""
             className="w-full p-1 grid grid-cols-2 mt-2 gap-1 rounded-xl"
           >
-            <div className="col-span-2 grid grid-cols-2 gap-2 py-4">
+            <div className="grid grid-cols-1 col-span-2 gap-2 py-4">
               <div className="w-full">
-                <h2 className="text-sm text-slate-600">Type</h2>
+                <h2 className="text-sm text-slate-600">Plan </h2>
                 <select
                   name=""
                   id=""
-                  className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
+                  className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg pr-4"
                 >
-                  <option value="">Kigali</option>
-                  <option value="">South</option>
-                  <option value="">North</option>
-                  <option value="">East</option>
-                  <option value="">West</option>
+                  <option value="full">60 Days</option>
+                  <option value="half">30 Days</option>
+                  <option value="custom">Custom</option>
                 </select>
-                <input type="text" />
-              </div>
-              <div className="w-full">
-                <h2 className="text-sm text-slate-600">Location</h2>
-                <input
-                  type="text"
-                  className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg"
-                />
               </div>
             </div>
             <div className="col-span-2 grid grid-cols-2 gap-2 py-4">
@@ -134,13 +129,13 @@ const AddUser = ({ closeModal }) => {
                 />
               </div>
             </div>
-            <textarea
+            {/* <textarea
               name=""
               id=""
               cols="30"
               rows="5"
               className="w-full p-2 py-4 text-sm outline-none bg-slate-100 active:outline-none rounded-lg col-span-2"
-            ></textarea>
+            ></textarea> */}
             <div className="col-span-2 flex gap-2 mt-2">
               <input type="radio" />
               <p className="text-xs text-slate-600">
@@ -151,10 +146,15 @@ const AddUser = ({ closeModal }) => {
             <div className="pt-2 flex items-center gap-2">
               <ActionButton
                 name="Back"
+                styles="py-4"
                 icon={<FaArrowLeft />}
                 click={handlePrevious}
               />
-              <ActionButton name="Add user" icon={<FaPlus />} />
+              <ActionButton
+                name="Add client"
+                icon={<FaPlus />}
+                styles="py-4 bg-green-700"
+              />
             </div>
           </form>
         </div>
