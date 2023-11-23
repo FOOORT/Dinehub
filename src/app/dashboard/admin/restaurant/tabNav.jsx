@@ -27,36 +27,26 @@ const TabNav = () => {
     (state) => state.restaurant
   );
 
-  // console.log("All restos:", allrestos);
-
   useEffect(() => {
-    // Fetch restaurant details when the component mounts
     dispatch(allRestoDetails());
   }, [dispatch]);
 
   const [activeLink, setActiveLink] = useState("all");
   const [selectedTr, setSelectedTr] = useState(null);
-
   const [addRestoModal, setAddRestoModal] = useState(false);
   const [singleRestoModal, setSingleRestoModal] = useState(false);
 
-  if (loading)
+  if (loading) {
     return (
       <div className="w-full flex flex-col gap-2 justify-between mt-4 h-[70vh] xl:h-[80vh]">
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
+        {[...Array(12)].map((_, index) => (
+          <TrLoading key={index} />
+        ))}
       </div>
     );
-  if (error)
+  }
+
+  if (error) {
     return (
       <div className="w-full flex flex-col gap-2 justify-center items-center mt-4 h-[70vh] xl:h-[80vh] rounded-2xl bg-slate-50">
         <Image
@@ -64,27 +54,24 @@ const TabNav = () => {
           alt="empty"
           width={180}
           height={180}
-          className="p-12 "
+          className="p-12"
         />
+        <br />
+        <h1>Error occurred</h1>
         <p className="text-center">Error: {error}</p>
       </div>
     );
-  if (!allrestos)
+  }
+
+  if (!allrestos) {
     return (
       <div className="w-full flex flex-col gap-2 justify-between mt-4 h-[70vh] xl:h-[80vh]">
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
-        <TrLoading />
+        {[...Array(12)].map((_, index) => (
+          <TrLoading key={index} />
+        ))}
       </div>
     );
+  }
 
   const handleLinkClick = (activeTab) => {
     setActiveLink(activeTab);
@@ -94,8 +81,6 @@ const TabNav = () => {
         : allrestos.filter((restaurant) => restaurant.decision === activeTab);
     setFilteredRestos(filteredData);
   };
-
-  // console.log("Fetched resto FROM api2: ", allrestos);
 
   const restoHandleModal = () => setAddRestoModal((prev) => !prev);
   const singleRestoHandleModal = () => setSingleRestoModal((prev) => !prev);
@@ -195,7 +180,7 @@ const TabNav = () => {
                     alt="empty"
                     width={180}
                     height={180}
-                    className="p-12 "
+                    className="p-12"
                   />
                   <p>No data found</p>
                 </div>

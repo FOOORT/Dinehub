@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 function withAuth(Component, allowedRoles = []) {
-  return function AuthenticatedComponent(props) {
+  const AuthenticatedComponent = (props) => {
     const router = useRouter();
 
     useEffect(() => {
       const user = JSON.parse(localStorage.getItem("user"));
+
       if (
         !user ||
         (allowedRoles.length > 0 && !allowedRoles.includes(user.role))
@@ -18,6 +19,8 @@ function withAuth(Component, allowedRoles = []) {
 
     return <Component {...props} />;
   };
+
+  return AuthenticatedComponent;
 }
 
 export default withAuth;

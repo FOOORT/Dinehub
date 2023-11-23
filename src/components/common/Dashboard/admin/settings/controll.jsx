@@ -4,7 +4,7 @@ import OptionsBtn from "@/components/common/optionsBtn";
 const Controll = () => {
   return (
     <div>
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-4 border-t pt-4">
         <h2 className=" font-semibold">Manage your account</h2>
         <OptionsBtn />
       </div>
@@ -37,7 +37,7 @@ const Controll = () => {
           <p>New launches and projects</p>
           <Changestatus />
         </li>
-        <li className="w-full flex justify-between items-center">
+        {/* <li className="w-full flex justify-between items-center">
           <p>Monthly product changes</p>
           <Changestatus />
         </li>
@@ -48,7 +48,7 @@ const Controll = () => {
         <li className="w-full flex justify-between items-center">
           <p>Email me when someone follows me</p>
           <Changestatus />
-        </li>
+        </li> */}
       </ul>
     </div>
   );
