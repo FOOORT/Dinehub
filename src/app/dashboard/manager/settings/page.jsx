@@ -31,7 +31,7 @@ const page = () => {
                   alt="banner"
                   width={100}
                   height={50}
-                  className="rounded-full border-4 border-white"
+                  className="rounded-full border-4 border-white relative z-10"
                 />
               </div>
               <ProfileDetails />
