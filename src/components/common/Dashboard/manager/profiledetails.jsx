@@ -9,20 +9,42 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Controll from "../admin/settings/controll";
 import RestoAbout from "./restoabout";
 
-const ProfileDetails = () => {
-  const [moreInfo, setMoreInfo] = useState(true);
+const ProfileDetails = ({ updateProfile, setUpdateProfile }) => {
+  const [moreInfo, setMoreInfo] = useState(false);
   return (
     <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div className="flex flex-col w-full p-4 mt-14 gap-2 items-start">
-        <RestoInfo />
-        <RestoSubscription />
-        {moreInfo && <RestoAbout />}
+        <RestoInfo
+          updateProfile={updateProfile}
+          setUpdateProfile={setUpdateProfile}
+        />
+        <RestoSubscription
+          updateProfile={updateProfile}
+          setUpdateProfile={setUpdateProfile}
+        />
+        {moreInfo && (
+          <RestoAbout
+            updateProfile={updateProfile}
+            setUpdateProfile={setUpdateProfile}
+          />
+        )}
       </div>
       <div className="bg-white p-4 rounded-md">
-        <BankAccount />
-        <RestoGallery />
+        <BankAccount
+          updateProfile={updateProfile}
+          setUpdateProfile={setUpdateProfile}
+        />
+        <RestoGallery
+          updateProfile={updateProfile}
+          setUpdateProfile={setUpdateProfile}
+        />
 
-        {moreInfo && <Controll />}
+        {moreInfo && (
+          <Controll
+            updateProfile={updateProfile}
+            setUpdateProfile={setUpdateProfile}
+          />
+        )}
       </div>
       <div className="col-span-2 flex justify-center items-center">
         <ActionButton

@@ -12,7 +12,7 @@ const BankAccount = () => {
           <Image src="/image/icon/mtn.png" alt="MTN" width={20} height={20} />
           <h2 className="font-bold">Momo pay</h2>
         </div>
-        <h2 className=" tracking-wider">******</h2>
+        <h2 className=" tracking-wider">948391</h2>
       </div>
       <div className="flex gap-3 items-center text-sm w-full">
         <div className="flex gap-2 items-start text-sm">
@@ -24,21 +24,21 @@ const BankAccount = () => {
           />
           <h2 className="font-bold">Airtel money</h2>
         </div>
-        <h2 className=" tracking-wider">******</h2>
+        <h2 className=" tracking-wider">948391</h2>
       </div>
       <div className="flex gap-3 items-center text-sm w-full">
         <div className="flex gap-2 items-start text-sm">
           <SiVisa />
           <h2 className="font-bold">Visa Card</h2>
         </div>
-        <h2 className=" tracking-wider">**** **** **** ****</h2>
+        <h2 className=" tracking-wider">9483 7429 3783 7290</h2>
       </div>
       <div className="flex gap-3 items-center text-sm w-full">
         <div className="flex gap-2 items-start text-sm">
           <RiMastercardLine />
           <h2 className="font-bold">Master Card</h2>
         </div>
-        <h2 className=" tracking-wider">**** **** **** ****</h2>
+        <h2 className=" tracking-wider">3728 8902 7839 2729</h2>
       </div>
     </div>
   );

@@ -1,16 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import ManagerLayout from "../managerlayout";
 import Image from "next/image";
 import Header from "@/components/common/Dashboard/admin/header";
-import Controll from "@/components/common/Dashboard/admin/settings/controll";
 import Navs from "@/components/json/manager/navbar";
 import ActionButton from "@/components/common/actionbutton";
-
 import { FaEdit } from "react-icons/fa";
 import ProfileDetails from "@/components/common/Dashboard/manager/profiledetails";
 
-const page = () => {
+const Page = () => {
+  const [updateProfile, setUpdateProfile] = useState(true);
   return (
     <ManagerLayout>
       <div className="flex justify-between items-start pr-2">
@@ -23,6 +22,7 @@ const page = () => {
                   name="edit"
                   icon={<FaEdit />}
                   className="px-5 py-3 m-2"
+                  click={() => setUpdateProfile((prev) => !prev)}
                 />
               </div>
               <div className="flex w-full h-1 justify-start items-center px-8">
@@ -34,7 +34,10 @@ const page = () => {
                   className="rounded-full border-4 border-white relative z-10"
                 />
               </div>
-              <ProfileDetails />
+              <ProfileDetails
+                updateProfile={updateProfile}
+                setUpdateProfile={setUpdateProfile}
+              />
             </div>
           </div>
         </div>
@@ -43,4 +46,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
