@@ -28,7 +28,7 @@ const Dishes = [
       "Fresh Basil",
       "Pizza Dough",
     ],
-    image: "/image/Plate/Image1.png",
+    image: "/image/Plate/Image2.png",
   },
   {
     name: "Caesar Salad",
@@ -44,7 +44,7 @@ const Dishes = [
       "Fresh Basil",
       "Pizza Dough",
     ],
-    image: "/image/Plate/Image1.png",
+    image: "/image/1.png",
   },
   {
     name: "BBQ Burger",
@@ -60,7 +60,7 @@ const Dishes = [
       "Fresh Basil",
       "Pizza Dough",
     ],
-    image: "/image/Plate/Image1.png",
+    image: "/image/8.png",
   },
   {
     name: "Vegetable Stir-Fry",

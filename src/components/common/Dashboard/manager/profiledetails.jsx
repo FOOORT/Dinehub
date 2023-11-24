@@ -5,7 +5,7 @@ import RestoSubscription from "./restosubscription";
 import BankAccount from "./bankaccount";
 import RestoGallery from "./restogallery";
 import ActionButton from "../../actionbutton";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaEdit } from "react-icons/fa";
 import Controll from "../admin/settings/controll";
 import RestoAbout from "./restoabout";
 
@@ -46,13 +46,22 @@ const ProfileDetails = ({ updateProfile, setUpdateProfile }) => {
           />
         )}
       </div>
-      <div className="col-span-2 flex justify-center items-center">
+      <div className="col-span-2 flex justify-between items-center mt-4">
         <ActionButton
           name={moreInfo ? "Less info" : "More info"}
           icon={moreInfo ? <FaChevronLeft /> : <FaChevronRight />}
           click={() => setMoreInfo((prev) => !prev)}
-          className="w-auto mt-4 p-4"
+          className="w-2/6 px-5 py-3 bg-slate-200 !text-black text-center"
         />
+
+        {!updateProfile && (
+          <ActionButton
+            name="Update"
+            icon={<FaEdit />}
+            className="px-5 py-3 m-2 w-full bg-blue-700 text-center"
+            click={() => setUpdateProfile((prev) => !prev)}
+          />
+        )}
       </div>
     </div>
   );

@@ -18,12 +18,14 @@ const Page = () => {
           <div className="grid grid-cols-1 w-full rounded-md mt-4 gap-4">
             <div className="bg-white p-2 rounded-md flex flex-col ">
               <div className="bg-slate-200 w-full h-48 rounded-md flex justify-end items-start">
-                <ActionButton
-                  name="edit"
-                  icon={<FaEdit />}
-                  className="px-5 py-3 m-2"
-                  click={() => setUpdateProfile((prev) => !prev)}
-                />
+                {updateProfile && (
+                  <ActionButton
+                    name="edit"
+                    icon={<FaEdit />}
+                    className="px-5 py-3 m-2"
+                    click={() => setUpdateProfile((prev) => !prev)}
+                  />
+                )}
               </div>
               <div className="flex w-full h-1 justify-start items-center px-8">
                 <Image
