@@ -16,7 +16,7 @@ const CardsContainer = () => {
 
   if (loading) {
     return (
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
         <SkeletonLoader />
         <SkeletonLoader />
         <SkeletonLoader />
@@ -47,7 +47,7 @@ const CardsContainer = () => {
 
   if (!resto) {
     return (
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
         <SkeletonLoader />
         <SkeletonLoader />
         <SkeletonLoader />
@@ -72,11 +72,10 @@ const CardsContainer = () => {
     );
   }
 
-  // console.log("Restos: ", resto.data);
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
+    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
       {resto.data && resto.data.length < 1 ? (
-        <div className="w-full h-[75vh] col-span-2 md:col-span-3 lg:col-span-5 bg-slate-100 flex justify-center items-center rounded-xl">
+        <div className="w-full h-[75vh] col-span-2 md:col-span-3 xl:col-span-5 lg:col-span-4 bg-slate-100 flex justify-center items-center rounded-xl">
           <h1>There is no register restaurant</h1>
         </div>
       ) : (

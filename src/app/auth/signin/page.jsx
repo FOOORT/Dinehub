@@ -31,8 +31,8 @@ const Page = () => {
       };
       getUser();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router,token]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router, token]);
 
   const dispatch = useDispatch();
   const { loading, error } = useSelector((state) => state.auth);
@@ -124,7 +124,7 @@ const Page = () => {
               <span className="text-blue-600 ml-2">Sign up</span> now
             </p>
           </Link>
-          <Link href="/forgot">
+          <Link href="/auth/forgot">
             <button className="px-8 rounded-md text-red-600 text-md font-medium duration-300 scale-95 hover:scale-100 cursor-pointer">
               Forgot Password
             </button>

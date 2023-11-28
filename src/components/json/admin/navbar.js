@@ -3,6 +3,7 @@ import { BiHistory } from "react-icons/bi";
 import { FiMessageSquare, FiSettings, FiUsers } from "react-icons/fi";
 import { GoBell } from "react-icons/go";
 import { MdOutlineMenuBook, MdSpaceDashboard } from "react-icons/md";
+import { TbCategory } from "react-icons/tb";
 
 const Navs = [
   {
@@ -21,6 +22,12 @@ const Navs = [
     name: "Users",
     icon: <FiUsers />,
     path: "/dashboard/admin/users",
+    category: "menu",
+  },
+  {
+    name: "Category",
+    icon: <TbCategory />,
+    path: "/dashboard/admin/category",
     category: "menu",
   },
   {
