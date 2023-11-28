@@ -5,8 +5,8 @@ import axios from "axios";
 // Define initial state
 const initialState = {
   loading: false,
-  resto: null,
-  allrestos: null,
+  resto: [],
+  allrestos: [],
   error: "",
 };
 
@@ -72,7 +72,7 @@ const restoSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(restosDetails.pending, (state) => {
       state.loading = true;
-      state.resto = null;
+      state.resto = [];
       state.error = "";
     });
 
@@ -84,7 +84,7 @@ const restoSlice = createSlice({
 
     builder.addCase(restosDetails.rejected, (state, action) => {
       state.loading = false;
-      state.resto = null;
+      state.resto = [];
       console.log("Error: ", action.error.message);
       if (action.error.message === "Request failed with status code 401") {
         state.error = "Access Denied ! Invalid credentials Url";
@@ -95,7 +95,7 @@ const restoSlice = createSlice({
 
     builder.addCase(allRestoDetails.pending, (state) => {
       state.loading = true;
-      state.allrestos = null;
+      state.allrestos = [];
       state.error = "";
     });
 
@@ -107,7 +107,7 @@ const restoSlice = createSlice({
 
     builder.addCase(allRestoDetails.rejected, (state, action) => {
       state.loading = false;
-      state.allrestos = null;
+      state.allrestos = [];
       console.log("Error: ", action.error.message);
       if (action.error.message === "Request failed with status code 401") {
         state.error = "Access Denied ! Invalid credentials Url";
