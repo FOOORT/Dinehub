@@ -34,6 +34,7 @@ const Page = () => {
               </div>
               <div className="flex w-full h-1 justify-start items-center px-8">
                 <Image
+                  layout="responsive"
                   src="/image/10.jpg"
                   alt="banner"
                   width={100}

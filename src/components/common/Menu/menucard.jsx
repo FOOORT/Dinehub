@@ -34,6 +34,7 @@ const MenuCard = ({
       <fieldset className="bg-gray-100 rounded-xl p-2 flex justify-center items-center w-full">
         <legend className="w-full flex justify-center items-center rounded-xl">
           <Image
+            layout="responsive"
             src={actualImage}
             alt="image1"
             width={100}

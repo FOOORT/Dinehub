@@ -13,10 +13,12 @@ const Sidebar = ({ Navs }) => {
     <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-full">
       <Link href="/">
         <Image
+          layout="responsive"
           src="/image/DashLogo.png"
           alt="DashboradLogo"
           height={100}
           width={100}
+          layout="responsive"
         />
       </Link>
 

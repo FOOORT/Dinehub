@@ -9,6 +9,7 @@ const FilterCategory = () => {
       <Link href="/menu">
         <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
+            layout="responsive"
             src="/image/Rectangle23.png"
             alt="image"
             width={50}
@@ -21,6 +22,7 @@ const FilterCategory = () => {
       <Link href="/menu">
         <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
+            layout="responsive"
             src="/image/Rectangle24.png"
             alt="image"
             width={50}
@@ -33,6 +35,7 @@ const FilterCategory = () => {
       <Link href="/menu">
         <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
+            layout="responsive"
             src="/image/Rectangle25.png"
             alt="image"
             width={50}
@@ -45,6 +48,7 @@ const FilterCategory = () => {
       <Link href="/menu">
         <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
+            layout="responsive"
             src="/image/Rectangle26.png"
             alt="image"
             width={50}
@@ -57,6 +61,7 @@ const FilterCategory = () => {
       <Link href="/menu">
         <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
+            layout="responsive"
             src="/image/Rectangle27.png"
             alt="image"
             width={50}
@@ -69,6 +74,7 @@ const FilterCategory = () => {
       <Link href="/menu">
         <div className="flex flex-col items-center justify-center active:rounded-full px-4 rounded-full">
           <Image
+            layout="responsive"
             src="/image/Rectangle28.png"
             alt="image"
             width={50}

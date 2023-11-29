@@ -18,6 +18,7 @@ const page = () => {
               <div className="bg-slate-200 w-full h-48 rounded-md"></div>
               <div className="flex w-full h-1 justify-center items-center">
                 <Image
+                  layout="responsive"
                   src="/image/10.jpg"
                   alt="banner"
                   width={100}

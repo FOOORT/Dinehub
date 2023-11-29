@@ -106,8 +106,6 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                   selectedTr === index ? "bg-slate-100" : ""
                 }`}
                 onClick={function (e) {
-                  // console.log("itemherererererre", item);
-                  // console.log("iiiindex", index);
                   setSelectedTr(item);
                 }}
               >

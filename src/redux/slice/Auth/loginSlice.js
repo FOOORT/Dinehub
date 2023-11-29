@@ -7,6 +7,7 @@ const initialState = {
   loading: false,
   user: null,
   userRole: null,
+  token: null, // Add token to the initial state
   error: "",
 };
 
@@ -20,6 +21,7 @@ export const loginUser = createAsyncThunk(
     );
     const response = await request.data;
     localStorage.setItem("user", JSON.stringify(response.user));
+    localStorage.setItem("token", response.token); // Save token in localStorage
     return response;
   }
 );
@@ -40,12 +42,14 @@ const authSlice = createSlice({
       state.user = null;
       state.userRole = null;
       state.error = "";
+      state.token = null; // Set token to null during the pending state
     });
 
     builder.addCase(loginUser.fulfilled, (state, action) => {
       state.loading = false;
-      state.user = action.payload;
-      // state.userRole = action.payload.user.role;
+      state.user = action.payload.user;
+      state.userRole = action.payload.user.role;
+      state.token = action.payload.token; // Set token in the state
       state.isLoggedIn = true;
       state.error = "";
     });
@@ -55,9 +59,10 @@ const authSlice = createSlice({
       state.loading = false;
       state.user = null;
       state.userRole = null;
+      state.token = null; // Set token to null in case of rejection
       console.log("Error: ", action.error.message);
       if (action.error.message === "Request failed with status code 401") {
-        state.error = "Access Denied ! Invalid credentials";
+        state.error = "Access Denied! Invalid credentials";
       } else {
         state.error = action.error.message;
       }

@@ -50,6 +50,7 @@ const TabNav = () => {
     return (
       <div className="w-full flex flex-col gap-2 justify-center items-center mt-4 h-[70vh] xl:h-[80vh] rounded-2xl bg-slate-50">
         <Image
+          layout="responsive"
           src="/image/icon/undraw_access_denied.svg"
           alt="empty"
           width={180}
@@ -176,6 +177,7 @@ const TabNav = () => {
               <tr>
                 <div className="w-full flex flex-col gap-2 justify-center items-center mt-4 h-[70vh] xl:h-[80vh] rounded-2xl bg-slate-50">
                   <Image
+                    layout="responsive"
                     src="/image/icon/undraw_no_data.svg"
                     alt="empty"
                     width={180}

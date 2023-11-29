@@ -11,6 +11,7 @@ const LowQuantity = () => {
       <div className="flex gap-1 w-full mt-1  ">
         <div className="bg-blue-300 w-[20%]">
           <Image
+            layout="responsive"
             src="/image/product1.png"
             alt="salsa"
             width={100}

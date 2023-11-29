@@ -19,6 +19,7 @@ const RestoGallery = ({ updateProfile, setUpdateProfile }) => {
   const renderGalleryImages = () => {
     return selectedImages.map((image, index) => (
       <Image
+        layout="responsive"
         key={index}
         src={image.src}
         alt={image.alt}

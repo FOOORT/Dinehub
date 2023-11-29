@@ -1,5 +1,6 @@
-"use client";
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMenus } from "@/redux/slice/resto/menuSlice";
 import ActionButton from "@/components/common/actionbutton";
 import { MdReadMore } from "react-icons/md";
 import MenuCard from "@/components/common/Menu/menucard";
@@ -7,9 +8,26 @@ import { FaPlus } from "react-icons/fa";
 import ManagerMenuModal from "@/components/common/Menu/managermenumodal";
 
 const TabNav = ({ Dishes }) => {
+  const dispatch = useDispatch();
+  const menus = useSelector((state) => state.menus.menus);
+  const status = useSelector((state) => state.menus.status);
+  const error = useSelector((state) => state.menus.error);
+
   const [activeLink, setActiveLink] = useState("all");
-  const [filteredDishes, setFilteredDishes] = useState(Dishes);
+  const [filteredDishes, setFilteredDishes] = useState(menus);
   const [displayedCategoriesLimit, setDisplayedCategoriesLimit] = useState(8);
+
+  useEffect(() => {
+    dispatch(fetchMenus());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setFilteredDishes(
+      activeLink === "all"
+        ? Dishes
+        : Dishes.filter((dish) => dish.category === activeLink)
+    );
+  }, [activeLink, Dishes]);
 
   const uniqueCategories = Array.from(
     new Set(filteredDishes.map((item) => item.category))
@@ -26,11 +44,6 @@ const TabNav = ({ Dishes }) => {
 
   const handleLinkClick = (category) => {
     setActiveLink(category);
-    const filterData =
-      category === "all"
-        ? Dishes
-        : Dishes.filter((dish) => dish.category === category);
-    setFilteredDishes(filterData);
   };
 
   const [addUserModal, setAddUserModal] = useState(false);
@@ -60,7 +73,6 @@ const TabNav = ({ Dishes }) => {
             </li>
           ))}
           {shouldDisplaySeeMore && (
-            // "See More" Button
             <ActionButton
               name="See more"
               icon={<MdReadMore />}
@@ -69,7 +81,6 @@ const TabNav = ({ Dishes }) => {
           )}
         </ul>
 
-        {/* "Add Menu" Button and Modal */}
         <ActionButton
           name="Add Menu"
           icon={<FaPlus />}
@@ -78,30 +89,25 @@ const TabNav = ({ Dishes }) => {
         {addUserModal && <ManagerMenuModal closeModal={userHandleModal} />}
       </div>
 
-      {/* Grid of Menu Cards */}
       <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {filteredDishes.length === 0 ? (
-          // Message when no dishes found
           <p>No dishes found for the selected category.</p>
         ) : (
-          // Display Menu Cards
           filteredDishes.map((item, index) => (
             <MenuCard
               key={index}
-              name={item.name}
-              desc={item.details}
-              price={item.price}
-              category={item.category}
+              name={item.menuName}
+              price={item.menuPrice}
+              category={item.menuCategory}
               restaurant={item.restaurant}
-              status={item.status}
+              status={item.menuStatus}
               ingredients={item.ingredients}
-              image={item.image}
+              image={item.menuImage}
             />
           ))
         )}
       </div>
 
-      {/* Page Navigation */}
       <div className="mt-4 w-full flex justify-between items-center">
         <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
           Prev

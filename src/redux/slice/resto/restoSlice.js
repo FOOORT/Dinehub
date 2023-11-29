@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
 import axios from "axios";
 
 // Define initial state
@@ -10,15 +9,26 @@ const initialState = {
   error: "",
 };
 
-let token;
-let localresto;
+// Initialize token and localresto with default values
+let token = null;
+let localresto = null;
+
+// Attempt to parse data from localStorage
 try {
   const user = JSON.parse(localStorage.getItem("user"));
   const resto = JSON.parse(localStorage.getItem("restaurant"));
-  token = user.token;
-  localresto = resto.data;
+
+  // Check if user and token exist
+  if (user && user.token) {
+    token = user.token;
+  }
+
+  // Check if resto data exists
+  if (resto && resto.data) {
+    localresto = resto.data;
+  }
 } catch (error) {
-  console.error("error", error);
+  console.error("Error while parsing localStorage data", error);
 }
 
 console.log("token: " + token);
@@ -33,7 +43,6 @@ export const restosDetails = createAsyncThunk(
       { params: restoDetail }
     );
     const response = await request.data;
-    // console.log("response from API 1: ", response);
     localStorage.setItem("restaurant", JSON.stringify(response));
     return response;
   }
@@ -41,7 +50,6 @@ export const restosDetails = createAsyncThunk(
 
 // Create an async thunk for fetching data from the second API
 export const allRestoDetails = createAsyncThunk("allRestoDetails", async () => {
-  // console.log("Token taken", token);
   const request = await axios.get(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/business/all`,
     {
@@ -53,7 +61,6 @@ export const allRestoDetails = createAsyncThunk("allRestoDetails", async () => {
   );
   const response = await request.data;
   localStorage.setItem("allRestaurant", JSON.stringify(response));
-
   return response;
 });
 
