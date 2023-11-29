@@ -5,7 +5,7 @@ import { RiMastercardLine } from "react-icons/ri";
 
 const BankAccount = ({ updateProfile, setUpdateProfile }) => {
   return (
-    <div className={`w-full flex flex-col gap-4 mt-4 border-t`}>
+    <div className={`w-full flex flex-col gap-4 mt-4 border-b pb-8`}>
       {updateProfile ? (
         <>
           <h1 className="font-bold mt-4">Banking info</h1>

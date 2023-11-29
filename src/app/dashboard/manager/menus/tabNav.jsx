@@ -39,7 +39,6 @@ const TabNav = ({ Dishes }) => {
   return (
     <div className="mt-4 w-full">
       <div className="w-full flex justify-between items-center my-3">
-        {/* Category List */}
         <ul className="flex items-center p-[1px] rounded-lg gap-2 cursor-pointer overflow-x-visible">
           <li
             className={`px-4 py-2 rounded-md text-xs font-medium ${

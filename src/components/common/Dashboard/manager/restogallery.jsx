@@ -38,11 +38,11 @@ const RestoGallery = ({ updateProfile, setUpdateProfile }) => {
         ) : (
           <>
             {renderGalleryImages()}
-            <div className="w-full h-full border border-dashed rounded-lg flex justify-center items-center">
+            <div className="w-full h-[140px]  border border-dashed rounded-lg flex justify-center items-center">
               <input
                 type="file"
                 name="image"
-                className="min-h-full h-[140px] w-full opacity-0"
+                className="min-h-full w-full opacity-0"
                 onChange={handleImageChange}
                 multiple
               />

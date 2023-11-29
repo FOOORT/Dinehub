@@ -5,6 +5,7 @@ import {
   MdOutlineLocalPhone,
   MdWhatsapp,
 } from "react-icons/md";
+import ActionButton from "../../actionbutton";
 
 const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
   return (
@@ -16,7 +17,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
           <p className="text-sm">Huye , kg 655 st</p>
           <p className="text-slate-700 text-sm">Joined since 2023 Dec 2018</p>
 
-          <div className="w-full flex flex-col gap-4 mt-4 border-t">
+          {/* <div className="w-full flex flex-col gap-4 mt-4 border-t">
             <h1 className="font-bold mt-4">Manager info</h1>
             <div className="flex gap-2 items-center text-sm">
               <FaRegCircleUser />
@@ -34,7 +35,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
               <MdWhatsapp />
               <h2>0780151067</h2>
             </div>
-          </div>
+          </div> */}
 
           <div className="w-full flex flex-col gap-4 mt-4 border-t">
             <h1 className="font-bold mt-4">Working time</h1>
@@ -66,7 +67,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
             />
           </div>
 
-          <h1 className="font-bold mt-4">Manager info</h1>
+          {/* <h1 className="font-bold mt-4">Manager info</h1>
           <div className="grid grid-cols-2 gap-3 w-full">
             <div className="flex flex-col w-full gap-2 items-start mt-4">
               <label className="text-xs font-semibold">Firstname</label>
@@ -110,7 +111,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
                 className="border border-slate-100 px-2 py-1 rounded-md w-full outline-none active:outline-none tracking-widest"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-2 gap-3 w-full">
             <div className="flex flex-col w-full gap-2 items-start mt-4">
