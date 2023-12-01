@@ -16,8 +16,7 @@ const Page = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log("auth:", auth)
-        if (auth.token) {
+        if (auth?.token) {
             const userRole = auth.user.role
             if (userRole === "Admin") {
                 router.push("/dashboard/admin/");
@@ -35,6 +34,7 @@ const Page = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
+        setLoading(true)
         dispatch(addAuth({
             email,
             password

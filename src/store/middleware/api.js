@@ -15,6 +15,7 @@ const api = store => next => action => {
             onSuccess,
             onPaginate,
             onError,
+            headers,
             withBaseUrl = true,
         } = action.payload;
         if (onStart) store.dispatch({type: onStart});
@@ -27,6 +28,7 @@ const api = store => next => action => {
                     method,
                     data,
                     headers: {
+                        ...headers,
                         Accept: 'application/json',
                         Authorization: store.getState().auth.user
                             ? 'Bearer ' + store.getState().auth.user.token
@@ -36,14 +38,14 @@ const api = store => next => action => {
                 // general
                 store.dispatch(
                     actions.apiCallSuccess(
-                        response.data
+                        response?.data?.data ? response.data.data : response.data,
                     ),
                 );
                 // // specific
                 if (onSuccess) {
                     store.dispatch({
                         type: onSuccess,
-                        payload: response.data,
+                        payload: response.data?.data ? response.data.data : response.data
                     });
                 }
             } catch (error) {

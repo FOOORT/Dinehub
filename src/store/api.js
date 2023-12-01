@@ -7,6 +7,7 @@ import {createAction} from '@reduxjs/toolkit';
 //   data?: unknown;
 //   onSuccess?: string;
 //   onError?: string;
+//   headers: object
 // }
 
 export const apiCallBegan = createAction('api/callBegan');
