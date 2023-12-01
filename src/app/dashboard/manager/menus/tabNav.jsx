@@ -18,7 +18,17 @@ const TabNav = ({ Dishes }) => {
   const [displayedCategoriesLimit, setDisplayedCategoriesLimit] = useState(8);
 
   useEffect(() => {
-    dispatch(fetchMenus());
+    // dispatch(fetchMenus());
+    dispatch({
+      type: "apiRequest",
+      payload: {
+        url: "manager/menu",
+        // method: "GET",
+        // data: {},
+        onSuccess: "bugsReceived",
+        onError: "bugsRequestFailed",
+      },
+    });
   }, [dispatch]);
 
   useEffect(() => {
