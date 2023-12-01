@@ -32,7 +32,7 @@ const RequestLoan = () => {
           <ActionButton />
         </div>
       </div>
-      <p className="text-xs mt-6 w-full">
+      <p className="text-sm mt-6 w-full">
         Make sure that you read{" "}
         <span className="font-bold">Terms and Condition</span> of the loan offer
         before easily request loan from dashboard

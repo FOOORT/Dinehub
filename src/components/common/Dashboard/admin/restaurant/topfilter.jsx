@@ -26,7 +26,7 @@ const TopFilter = () => {
         {linkData.map((link, index) => (
           <Link key={index} href={link.href}>
             <span
-              className={`px-4 py-2 rounded-md text-xs font-medium ${
+              className={`px-4 py-2 rounded-md text-sm font-medium ${
                 activeLink === link.href ? "text-white bg-black" : ""
               }`}
               onClick={() => handleLinkClick(link.href)}

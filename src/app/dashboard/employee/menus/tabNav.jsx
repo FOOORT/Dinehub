@@ -64,7 +64,7 @@ const TabNav = ({ Dishes }) => {
       <div className='w-full flex justify-between items-center my-3'>
         <ul className='flex items-center p-[1px] rounded-lg gap-2 cursor-pointer overflow-x-visible'>
           <li
-            className={`px-4 py-2 rounded-md text-xs font-medium ${
+            className={`px-4 py-2 rounded-md text-sm font-medium ${
               activeLink === "all" ? "text-white bg-black" : ""
             }`}
             onClick={() => handleLinkClick("all")}
@@ -75,7 +75,7 @@ const TabNav = ({ Dishes }) => {
           {displayedCategories.map((category, index) => (
             <li
               key={index}
-              className={`px-4 py-2 rounded-md text-xs font-medium ${
+              className={`px-4 py-2 rounded-md text-sm font-medium ${
                 activeLink === category ? "text-white bg-black" : ""
               }`}
               onClick={() => handleLinkClick(category)}
@@ -118,14 +118,14 @@ const TabNav = ({ Dishes }) => {
       </div>
 
       <div className='mt-4 w-full flex justify-between items-center'>
-        <button className='px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold'>
+        <button className='px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold'>
           Prev
         </button>
         <h2>
           Page <span className='font-semibold'>1</span> of{" "}
           <span className='font-semibold'>3</span>
         </h2>
-        <button className='px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold'>
+        <button className='px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold'>
           Next
         </button>
       </div>

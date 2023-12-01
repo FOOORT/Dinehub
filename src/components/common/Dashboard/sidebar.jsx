@@ -13,12 +13,10 @@ const Sidebar = ({ Navs }) => {
     <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-full">
       <Link href="/">
         <Image
-          layout="responsive"
           src="/image/DashLogo.png"
           alt="DashboradLogo"
           height={100}
           width={100}
-          layout="responsive"
         />
       </Link>
 
@@ -32,7 +30,7 @@ const Sidebar = ({ Navs }) => {
                   <Link
                     key={nav.path}
                     href={nav.path}
-                    className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover-text-white rounded-md duration-300 cursor-pointer ${
+                    className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover-text-white rounded-md duration-300 cursor-pointer ${
                       activeTab === nav.path ? "bg-black text-white" : ""
                     }`}
                   >

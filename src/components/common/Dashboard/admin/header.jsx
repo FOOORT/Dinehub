@@ -25,7 +25,7 @@ const Header = ({ Navs }) => {
       </div>
       <div className="flex gap-2">
         <SearchInput />
-        <h1 className="bg-black text-slate-50 text-xs px-4 rounded-lg flex justify-center items-center">
+        <h1 className="bg-black text-slate-50 text-sm px-4 rounded-lg flex justify-center items-center">
           Profile
         </h1>
       </div>

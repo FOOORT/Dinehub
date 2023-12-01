@@ -93,7 +93,7 @@ const TabNav = () => {
           {["all", "pending", "verified", "rejected"].map((tab) => (
             <li
               key={tab}
-              className={`px-4 py-2 rounded-md text-xs font-medium ${
+              className={`px-4 py-2 rounded-md text-sm font-medium ${
                 activeLink === tab ? "text-white bg-black" : ""
               }`}
               onClick={() => handleLinkClick(tab)}
@@ -139,11 +139,11 @@ const TabNav = () => {
                   </td>
                   <td>
                     <p>{restaurant.businessPhone}</p>
-                    <h2 className="text-xs block xl:hidden">
+                    <h2 className="text-sm block xl:hidden">
                       {/* {restaurant.businessOwner.email} */}
                       danny.reco2002@gmail.com
                     </h2>
-                    <h3 className="text-xs block md:hidden text-slate-700">
+                    <h3 className="text-sm block md:hidden text-slate-700">
                       {restaurant.businessAddress}
                     </h3>
                   </td>
@@ -153,7 +153,7 @@ const TabNav = () => {
                   </td>
                   <td>
                     <button
-                      className={`px-3 rounded-md py-2 text-xs font-medium w-5/6 ${getButtonClass(
+                      className={`px-3 rounded-md py-2 text-sm font-medium w-5/6 ${getButtonClass(
                         restaurant.businessStatus
                       )}`}
                     >
@@ -193,14 +193,14 @@ const TabNav = () => {
       </table>
 
       <div className="mt-4 w-full flex justify-between items-center">
-        <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
+        <button className="px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold">
           Prev
         </button>
         <h2>
           Page <span className="font-semibold">1</span> of{" "}
           <span className="font-semibold">3</span>
         </h2>
-        <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
+        <button className="px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold">
           Next
         </button>
       </div>

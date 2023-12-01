@@ -24,7 +24,7 @@ const Notifyitem = () => {
         </span>
       </h2>
       <div className="flex flex-col gap-4">
-        <h3 className=" whitespace-nowrap text-xs">1 hr ago</h3>
+        <h3 className=" whitespace-nowrap text-sm">1 hr ago</h3>
         <OptionsBtn />
       </div>
     </div>

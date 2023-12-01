@@ -16,7 +16,7 @@ const FilterCategory = () => {
             height={50}
             className="rounded-full"
           />
-          <span className="text-xs pt-1">Continental</span>
+          <span className="text-sm pt-1">Continental</span>
         </div>
       </Link>
       <Link href="/menu">
@@ -29,7 +29,7 @@ const FilterCategory = () => {
             height={50}
             className="rounded-full"
           />
-          <span className="text-xs pt-1">Beverage</span>
+          <span className="text-sm pt-1">Beverage</span>
         </div>
       </Link>
       <Link href="/menu">
@@ -42,7 +42,7 @@ const FilterCategory = () => {
             height={50}
             className="rounded-full"
           />
-          <span className="text-xs pt-1">Food</span>
+          <span className="text-sm pt-1">Food</span>
         </div>
       </Link>
       <Link href="/menu">
@@ -55,7 +55,7 @@ const FilterCategory = () => {
             height={50}
             className="rounded-full"
           />
-          <span className="text-xs pt-1">Snacks</span>
+          <span className="text-sm pt-1">Snacks</span>
         </div>
       </Link>
       <Link href="/menu">
@@ -68,7 +68,7 @@ const FilterCategory = () => {
             height={50}
             className="rounded-full"
           />
-          <span className="text-xs pt-1">Soda</span>
+          <span className="text-sm pt-1">Soda</span>
         </div>
       </Link>
       <Link href="/menu">
@@ -81,7 +81,7 @@ const FilterCategory = () => {
             height={50}
             className="rounded-full"
           />
-          <span className="text-xs pt-1">Fruits</span>
+          <span className="text-sm pt-1">Fruits</span>
         </div>
       </Link>
       <div className="w-12 h-12 flex justify-center items-center rounded-full border border-transparent lg:border-black group">

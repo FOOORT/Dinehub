@@ -9,7 +9,7 @@ const BankCard = ({title, number, expdate, color}) => {
         {/* <FaFileAudio/> */}
         <FaWifi className="text-base font-extralight rotate-90" />
       </div>
-      <h2 className="mt-4 text-xs font-thin">Dinehub</h2>
+      <h2 className="mt-4 text-sm font-thin">Dinehub</h2>
       <p className="mt-2 text-sm font-bold">{number}</p>
       <div className="flex flex-row justify-between w-full items-center mt-2">
         <h3 className=" text-base font-medium">{expdate}</h3>

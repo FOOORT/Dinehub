@@ -28,7 +28,7 @@ const AddEmployees = ({ closeModal }) => {
               <FaTimes className='text-lg' />
             </button>
           </div>
-          <div className='mt-2 flex justify-start items-center gap-4 text-xs'>
+          <div className='mt-2 flex justify-start items-center gap-4 text-sm'>
             <p>Steps: </p>
             <button
               className=' h-10 w-10 rounded-full bg-black text-white text-sm p-3'

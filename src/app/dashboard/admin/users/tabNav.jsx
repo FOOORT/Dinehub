@@ -46,7 +46,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
       <div className="w-full flex justify-between items-center my-3">
         <ul className="flex items-center p-[1px] rounded-lg gap-2 cursor-pointer">
           <li
-            className={`px-4 py-2 rounded-md text-xs font-medium ${
+            className={`px-4 py-2 rounded-md text-sm font-medium ${
               activeLink === "all" ? "text-white bg-black" : ""
             }`}
             onClick={() => handleLinkClick("all")}
@@ -55,7 +55,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
           </li>
 
           <li
-            className={`px-4 py-2 rounded-md text-xs font-medium ${
+            className={`px-4 py-2 rounded-md text-sm font-medium ${
               activeLink === "client" ? "text-white bg-black" : ""
             }`}
             onClick={() => handleLinkClick("client")}
@@ -63,7 +63,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
             Client
           </li>
           <li
-            className={`px-4 py-2 rounded-md text-xs font-medium ${
+            className={`px-4 py-2 rounded-md text-sm font-medium ${
               activeLink === "admin" ? "text-white bg-black" : ""
             }`}
             onClick={() => handleLinkClick("admin")}
@@ -71,7 +71,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
             Admin
           </li>
           <li
-            className={`px-4 py-2 rounded-md text-xs font-medium ${
+            className={`px-4 py-2 rounded-md text-sm font-medium ${
               activeLink === "mini-admin" ? "text-white bg-black" : ""
             }`}
             onClick={() => handleLinkClick("mini-admin")}
@@ -118,15 +118,15 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                 </td>
                 <td>
                   <p>{item.phone}</p>
-                  <h2 className="text-xs block xl:hidden">{item.email}</h2>
-                  <h3 className="text-xs block md:hidden text-slate-700">
+                  <h2 className="text-sm block xl:hidden">{item.email}</h2>
+                  <h3 className="text-sm block md:hidden text-slate-700">
                     {item.location}
                   </h3>
                 </td>
                 <td className="hidden xl:block h-10">{item.email}</td>
                 <td>
                   <button
-                    className={`px-3 rounded-md py-2 text-xs font-medium w-5/6 ${getButtonClass(
+                    className={`px-3 rounded-md py-2 text-sm font-medium w-5/6 ${getButtonClass(
                       item.UserType
                     )}`}
                   >
@@ -144,7 +144,7 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                     <BiDotsHorizontal />
                   </button>
                   {selectedItem === index && options && (
-                    <ul className="rounded-lg flex flex-col absolute gap-1 text-white text-xs font-semibold mt-7 z-50 active:z-50">
+                    <ul className="rounded-lg flex flex-col absolute gap-1 text-white text-sm font-semibold mt-7 z-50 active:z-50">
                       <button className="px-4 py-2 rounded-lg bg-blue-600">
                         Approve
                       </button>
@@ -161,14 +161,14 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
       </table>
 
       <div className="mt-4 w-full flex justify-between items-center">
-        <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
+        <button className="px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold">
           Prev
         </button>
         <h2>
           Page <span className="font-semibold">1</span> of{" "}
           <span className="font-semibold">3</span>
         </h2>
-        <button className="px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold">
+        <button className="px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold">
           Next
         </button>
       </div>

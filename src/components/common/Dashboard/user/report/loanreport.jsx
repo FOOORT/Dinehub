@@ -5,7 +5,7 @@ import HistoryTable from "./common/historytable";
 const LoanReport = () => {
   return (
     <DashboardContainer title="Loan History">
-      <p className="text-xs">View or download your past invoices</p>
+      <p className="text-sm">View or download your past invoices</p>
       <HistoryTable/>
     </DashboardContainer>
   );

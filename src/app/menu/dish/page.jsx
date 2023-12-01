@@ -59,7 +59,7 @@ const Page = () => {
                 spicy Seasoned seafood Noodels
               </p>
             </div>
-            <button className="bg-black text-white rounded-full p-3 text-xs">
+            <button className="bg-black text-white rounded-full p-3 text-sm">
               <BsHeart />
             </button>
           </div>

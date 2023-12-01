@@ -51,7 +51,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
       ) : (
         <div className="flex flex-col w-full gap-2 items-start">
           <div className="flex flex-col w-full gap-2 items-start mt-4">
-            <label className="text-xs font-semibold">Restaurant name</label>
+            <label className="text-sm font-semibold">Restaurant name</label>
             <input
               type="text"
               value="Villa restaurant"
@@ -59,7 +59,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
             />
           </div>
           <div className="flex flex-col w-full gap-2 items-start mt-4">
-            <label className="text-xs font-semibold">Restaurant address</label>
+            <label className="text-sm font-semibold">Restaurant address</label>
             <input
               type="text"
               value="Huye , kg 655 st"
@@ -70,7 +70,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
           {/* <h1 className="font-bold mt-4">Manager info</h1>
           <div className="grid grid-cols-2 gap-3 w-full">
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">Firstname</label>
+              <label className="text-sm font-semibold">Firstname</label>
               <input
                 type="text"
                 value="Reconfort"
@@ -78,7 +78,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
               />
             </div>
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">Lastname</label>
+              <label className="text-sm font-semibold">Lastname</label>
               <input
                 type="text"
                 value="Daniel"
@@ -87,7 +87,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
             </div>
           </div>
           <div className="flex flex-col w-full gap-2 items-start mt-4">
-            <label className="text-xs font-semibold">Email</label>
+            <label className="text-sm font-semibold">Email</label>
             <input
               type="email"
               value="reconfort@gmail.com"
@@ -96,7 +96,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
           </div>
           <div className="grid grid-cols-2 gap-3 w-full">
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">Phone number</label>
+              <label className="text-sm font-semibold">Phone number</label>
               <input
                 type="number"
                 value="0780151067"
@@ -104,7 +104,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
               />
             </div>
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">Whatsapp number</label>
+              <label className="text-sm font-semibold">Whatsapp number</label>
               <input
                 type="number"
                 value="0780151067"
@@ -115,7 +115,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
 
           <div className="grid grid-cols-2 gap-3 w-full">
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">Opening hours</label>
+              <label className="text-sm font-semibold">Opening hours</label>
               <div className="flex items-center w-full gap-1">
                 <input
                   type="time"
@@ -133,7 +133,7 @@ const RestoInfo = ({ updateProfile, setUpdateProfile }) => {
               </div>
             </div>
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">Closing hours</label>
+              <label className="text-sm font-semibold">Closing hours</label>
               <div className="flex items-center w-full gap-1">
                 <input
                   type="time"

@@ -37,9 +37,7 @@ const TabNav = () => {
                                 price={item.menuPrice}
                                 category={item.menuCategory}
                                 desc={item.menuDescription}
-                                // restaurant={item.restaurant}
                                 status={item.menuStatus}
-                                // ingredients={item.ingredients}
                                 image={item.menuImage}
                             />
                         )
