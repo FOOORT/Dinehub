@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Cards from "../common/Main/Cards";
 import { useDispatch, useSelector } from "react-redux";
 import SkeletonLoader from "./skeletonloader";
-// import { restosDetails } from "@/store/resto/restoSlice";
 import { getRestaurant, loadRestaurant } from "@/store/restaurant/restaurant";
 
 const CardsContainer = () => {
