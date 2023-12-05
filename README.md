@@ -96,8 +96,8 @@ Install this project with:
 👤 **Author**
 
 - GitHub: [@Reconfort](https://github.com/Reconfort)
-- Twitter: [@Reconfort\_](https://twitter.com/Reconfort_)
-- LinkedIn: [reconfort-daniel](https://linkedin.com/in/reconfort-daniel)
+- Github: [Alain Tresor](https://github.com/alaintresor)
+- - Github: [Tugane Amiel](https://github.com/tugane)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,15 +109,6 @@ There is no future build.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-I would like to thank Microverse staff, Reviewer, Mentor! and Many thanks to Cindy Shin 🙌 .
-
-Feel free to check the [issues page](https://github.com/FOOORT/Dinehub/issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
 
