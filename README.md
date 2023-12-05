@@ -97,7 +97,7 @@ Install this project with:
 
 - GitHub: [@Reconfort](https://github.com/Reconfort)
 - Github: [Alain Tresor](https://github.com/alaintresor)
-- - Github: [Tugane Amiel](https://github.com/tugane)
+- Github: [Tugane Amiel](https://github.com/tugane)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
