@@ -17,10 +17,12 @@ const Sidebar = () => {
     <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-full">
       <Link href="/">
         <Image
+          layout="responsive"
           src="/image/DashLogo.png"
           alt="DashboradLogo"
           height={100}
           width={100}
+          layout="responsive"
         />
       </Link>
       <ol className="flex flex-col gap-4">
@@ -28,7 +30,7 @@ const Sidebar = () => {
           <h1 className="font-bold text-black">Menu</h1>
           <Link
             href="/dashboard/manager/"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === null ? "bg-black text-white" : ""
             }`}
           >
@@ -37,7 +39,7 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/dashboard/manager/users"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === "users" ? "bg-black text-white" : ""
             }`}
           >
@@ -46,7 +48,7 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/dashboard/manager/menus"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === "menus" ? "bg-black text-white" : ""
             }`}
           >
@@ -58,7 +60,7 @@ const Sidebar = () => {
           <h1 className="font-bold text-black">Reports</h1>
           <Link
             href="/dashboard/manager/history"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === "history" ? "bg-black text-white" : ""
             }`}
           >
@@ -70,7 +72,7 @@ const Sidebar = () => {
           <h1 className="font-bold text-black">Stock</h1>
           <Link
             href="/dashboard/manager/stocks"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === "stocks" ? "bg-black text-white" : ""
             }`}
           >
@@ -82,7 +84,7 @@ const Sidebar = () => {
           <h1 className="font-bold text-black">Messages</h1>
           <Link
             href="/dashboard/manager/message"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === "message" ? "bg-black text-white" : ""
             }`}
           >
@@ -91,7 +93,7 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/dashboard/manager/notifications"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === "notifications" ? "bg-black text-white" : ""
             }`}
           >
@@ -100,7 +102,7 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/dashboard/manager/settings"
-            className={`flex gap-2 items-center pl-2 text-xs mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
+            className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-white rounded-md duration-300 cursor-pointer ${
               activeTab === "settings" ? "bg-black text-white" : ""
             }`}
           >

@@ -23,7 +23,12 @@ const Header = ({ Navs }) => {
           <span className="hidden lg:block">Welcome to </span>Villa Dashboard
         </h1>
       </div>
-      <SearchInput />
+      <div className="flex gap-2">
+        <SearchInput />
+        <h1 className="bg-black text-slate-50 text-sm px-4 rounded-lg flex justify-center items-center">
+          Profile
+        </h1>
+      </div>
       {sidebar && (
         <div className="absolute top-0 mt-[8vh] rounded-xl bg-white p-4 shadow-md z-50 w-[95vw] md:w-[67.4vw] flex lg:hidden">
           <Sidebar Navs={Navs} />

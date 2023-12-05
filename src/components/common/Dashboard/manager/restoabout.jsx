@@ -37,7 +37,7 @@ const RestoAbout = ({ updateProfile, setUpdateProfile }) => {
 
   const renderTags = (tagList, tagSetter, label) => (
     <div className="flex flex-col w-full gap-2 items-start mt-4">
-      <label className="text-xs font-semibold">{label}</label>
+      <label className="text-sm font-semibold">{label}</label>
       <div className="flex gap-1 w-full">
         <input
           type="text"
@@ -55,7 +55,7 @@ const RestoAbout = ({ updateProfile, setUpdateProfile }) => {
         {tagList.map((tag, index) => (
           <li
             key={index}
-            className="border border-black text-xs rounded-md px-2 gap-2 py-2 flex justify-between items-center group duration-100"
+            className="border border-black text-sm rounded-md px-2 gap-2 py-2 flex justify-between items-center group duration-100"
           >
             {tag}
             <button
@@ -75,42 +75,42 @@ const RestoAbout = ({ updateProfile, setUpdateProfile }) => {
       {updateProfile ? (
         <div className="w-full mt-4 border-t pt-4">
           <h2 className="font-bold">About your restaurant</h2>
-          <h3 className="text-xs font-medium my-2 text-slate-500">
+          <h3 className="text-sm font-medium my-2 text-slate-500">
             Cuisine Tags
           </h3>
           <ul className="flex gap-2 items-center flex-wrap w-full">
             {cuisineTags.map((tag, index) => (
               <li
                 key={index}
-                className="border border-black text-xs rounded-md px-4 py-2 flex justify-center items-center"
+                className="border border-black text-sm rounded-md px-4 py-2 flex justify-center items-center"
               >
                 {tag}
               </li>
             ))}
           </ul>
 
-          <h2 className="text-xs font-medium my-2 text-slate-500 mt-4">
+          <h2 className="text-sm font-medium my-2 text-slate-500 mt-4">
             Related to your restaurant
           </h2>
           <ul className="flex gap-2 items-center flex-wrap w-full">
             {restaurantTags.map((tag, index) => (
               <li
                 key={index}
-                className="border border-black text-xs rounded-md px-4 py-2 flex justify-center items-center"
+                className="border border-black text-sm rounded-md px-4 py-2 flex justify-center items-center"
               >
                 {tag}
               </li>
             ))}
           </ul>
 
-          <h2 className="text-xs font-medium my-2 text-slate-500 mt-4">
+          <h2 className="text-sm font-medium my-2 text-slate-500 mt-4">
             Restaurants around
           </h2>
           <ul className="flex gap-2 items-center flex-wrap w-full">
             {nearbyRestaurantTags.map((tag, index) => (
               <li
                 key={index}
-                className="border border-black text-xs rounded-md px-4 py-2 flex justify-center items-center"
+                className="border border-black text-sm rounded-md px-4 py-2 flex justify-center items-center"
               >
                 {tag}
               </li>

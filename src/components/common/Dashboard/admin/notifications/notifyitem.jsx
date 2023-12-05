@@ -7,6 +7,7 @@ const Notifyitem = () => {
     <div className="w-full flex gap-4 items-center border-l-2 border-blue-500 px-4 py-1 rounded-md hover:bg-slate-100 cursor-pointer duration-100">
       <div className="bg-white h-full p-2 rounded-full border">
         <Image
+          layout="responsive"
           src="/image/Rectangle23.png"
           alt="Profile"
           width="130"
@@ -23,7 +24,7 @@ const Notifyitem = () => {
         </span>
       </h2>
       <div className="flex flex-col gap-4">
-        <h3 className=" whitespace-nowrap text-xs">1 hr ago</h3>
+        <h3 className=" whitespace-nowrap text-sm">1 hr ago</h3>
         <OptionsBtn />
       </div>
     </div>

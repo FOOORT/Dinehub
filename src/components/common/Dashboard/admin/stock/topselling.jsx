@@ -5,7 +5,7 @@ const TopSelling = () => {
     <div className="bg-white w-full rounded-lg p-4">
       <div className="flex justify-between">
         <h2 className="text-lg font-semibold mb-3">Top selling</h2>
-        <span className="text-blue-500 text-xs">See all</span>
+        <span className="text-blue-500 text-sm">See all</span>
       </div>
       <table className="w-full">
         <thead>

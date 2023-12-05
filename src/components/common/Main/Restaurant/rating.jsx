@@ -10,7 +10,7 @@ const Rating = () => {
       </div>
       <div className="flex flex-col">
         <h4 className="text-xl font-semibold">771</h4>
-        <h3 className="text-xs -mt-1">Reviews</h3>
+        <h3 className="text-sm -mt-1">Reviews</h3>
       </div>
     </button>
   );

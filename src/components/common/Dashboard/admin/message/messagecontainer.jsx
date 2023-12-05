@@ -12,7 +12,7 @@ const MessageContainer = () => {
           <div className="w-12 h-12 rounded-full border border-green-500"></div>
           <div className="flex-col">
             <h1 className="text-black text-sm text-bold">John Cairo</h1>
-            <p className="text-xs text-slate-400">Online</p>
+            <p className="text-sm text-slate-400">Online</p>
           </div>
         </div>
         <btton className="bg-black text-white p-3 rounded-full">
@@ -41,7 +41,7 @@ const MessageContainer = () => {
 
       <div className="border bg-slate-50 w-full rounded-lg px-2 py-0 flex items-center gap-2 mt-2 group">
         <button className="p-3 rounded-full flex justify-center items-center bg-slate-50">
-          <IoMdAttach className="text-xs" />
+          <IoMdAttach className="text-sm" />
         </button>
         <input
           type="text"
@@ -49,7 +49,7 @@ const MessageContainer = () => {
           className="w-full bg-slate-50 p-4 text-sm rounded-full outline-none active:outline-none"
         />
         <button className="p-3 rounded-full flex justify-center items-center bg-slate-50 group-hover:bg-slate-100 duration-300 active:bg-black group-active:bg-black group-active:text-white">
-          <BsSend className="text-xs" />
+          <BsSend className="text-sm" />
         </button>
       </div>
     </div>

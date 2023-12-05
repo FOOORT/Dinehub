@@ -1,67 +1,36 @@
 "use client";
 import React, { useEffect } from "react";
 import Cards from "../common/Main/Cards";
-import { useSelector, useDispatch } from "react-redux";
-import { restosDetails } from "@/redux/slice/resto/restoSlice";
+import { useDispatch, useSelector } from "react-redux";
 import SkeletonLoader from "./skeletonloader";
+import { getRestaurant, loadRestaurant } from "@/store/restaurant/restaurant";
 
 const CardsContainer = () => {
   const dispatch = useDispatch();
-  const { loading, error, resto } = useSelector((state) => state.restaurant);
+  const restaurant = useSelector(getRestaurant)
 
   useEffect(() => {
-    // Fetch restaurant details when the component mounts
-    dispatch(restosDetails());
-  }, [dispatch]);
+    dispatch(loadRestaurant);
+  }, []);
 
-  if (loading) {
-    return (
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
-        <SkeletonLoader />
+  return (
+    <div className='w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2'>
+    {restaurant && restaurant.length < 1 ? (
+      <div className='w-full'>
         <SkeletonLoader />
         <SkeletonLoader />
       </div>
-    );
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
-
-  return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
-      {resto.data && resto.data.length < 1 ? (
-        <div className="w-full h-[75vh] col-span-2 md:col-span-3 xl:col-span-5 lg:col-span-4 bg-slate-100 flex justify-center items-center rounded-xl">
-          <h1>There is no register restaurant</h1>
-        </div>
       ) : (
-        resto.data?.map((restaurant, index) => (
+        restaurant.map((restaurant, index) => (
           <Cards
             key={index}
             image={restaurant.businessImage}
             name={restaurant.businessName}
             location={restaurant.businessAddress}
           />
-        ))
-      )}
-    </div>
+          ))
+          )}
+          </div>
   );
 };
 

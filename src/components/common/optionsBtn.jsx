@@ -18,7 +18,7 @@ const OptionsBtn = () => {
         <BiDotsHorizontal />
       </button>
       {options && (
-        <ul className="rounded-lg flex flex-col absolute gap-1 text-white text-xs font-semibold mt-7 z-50 active:z-50">
+        <ul className="rounded-lg flex flex-col absolute gap-1 text-white text-sm font-semibold mt-7 z-50 active:z-50">
           <button className="px-4 py-2 rounded-lg bg-blue-600">Approve</button>
           <button className="px-4 py-2 rounded-lg bg-red-600">Reject</button>
         </ul>

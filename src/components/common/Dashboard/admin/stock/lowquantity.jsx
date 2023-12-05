@@ -6,11 +6,12 @@ const LowQuantity = () => {
     <div className="bg-white w-full rounded-lg p-4">
       <div className="flex justify-between">
         <h2 className="text-lg font-semibold mb-3"> Low Quantity</h2>
-        <span className="text-blue-500 text-xs">See all</span>
+        <span className="text-blue-500 text-sm">See all</span>
       </div>
       <div className="flex gap-1 w-full mt-1  ">
         <div className="bg-blue-300 w-[20%]">
           <Image
+            layout="responsive"
             src="/image/product1.png"
             alt="salsa"
             width={100}
@@ -22,7 +23,7 @@ const LowQuantity = () => {
           <p>Remaining Quantity : 10 Packet</p>
         </div>
         <div className="bg-red-300 flex flex-col justify-center items-end w-[10%]">
-          <span className="text-xs text-red-500 bg-red-100 p-2 rounded-lg">
+          <span className="text-sm text-red-500 bg-red-100 p-2 rounded-lg">
             Low
           </span>
         </div>

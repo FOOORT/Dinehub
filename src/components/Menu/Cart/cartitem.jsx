@@ -26,6 +26,7 @@ const CartItem = () => {
   return (
     <div className="w-full p-4 rounded-lg flex gap-2 items-center justify-between">
       <Image
+        layout="responsive"
         src="/image/Plate/Image1.png"
         width={500}
         height={500}

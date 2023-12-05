@@ -71,14 +71,14 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
                 <td className='pl-4'>{index + 1}</td>
                 <td>
                   {item.firstname} {item.lastname}
-                  <div className='text-xs block md:hidden'>
+                  <div className='text-sm block md:hidden'>
                     <h2>{item.email}</h2>
                     <p>{item.phone}</p>
                   </div>
                 </td>
                 <td className='hidden md:flex items-center h-12'>
                   <div className='flex flex-col w-full h-full items-start justify-start mb-1'>
-                    <h2 className='text-xs hidden md:block'>{item.email}</h2>
+                    <h2 className='text-sm hidden md:block'>{item.email}</h2>
                     <p>{item.phone}</p>
                   </div>
                 </td>
@@ -107,14 +107,14 @@ const TabNav = ({ Users, setSelectedTr, selectedTr, handleRowClick }) => {
       </table>
 
       <div className='mt-4 w-full flex justify-between items-center'>
-        <button className='px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold'>
+        <button className='px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold'>
           Prev
         </button>
         <h2>
           Page <span className='font-semibold'>1</span> of{" "}
           <span className='font-semibold'>3</span>
         </h2>
-        <button className='px-4 py-2 bg-black text-white text-xs rounded-lg font-semibold'>
+        <button className='px-4 py-2 bg-black text-white text-sm rounded-lg font-semibold'>
           Next
         </button>
       </div>

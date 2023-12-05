@@ -12,6 +12,7 @@ const Page = () => {
         </h1>
         <div className=" p-24 rounded-lg">
           <Image
+            layout="responsive"
             src="/image/undraw_approve.svg"
             alt="Approved"
             width={200}

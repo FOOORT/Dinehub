@@ -11,7 +11,7 @@ const page = () => {
     <Layout>
       <div className="w-screen flex flex-col justify-start items-start px-4 lg:px-12 pt-24 gap-4 pb-16">
         <Title />
-        <ImageView />
+        <Image layout="responsive" View />
         <div className="w-full flex flex-col lg:flex-row gap-4">
           <div className="w-full lg:w-4/6">
             <Details />

@@ -9,6 +9,7 @@ const Cards = ({ key, image, name, location }) => {
     <Link href="/restaurant" key={key}>
       <div className="w-full p-2 rounded-3xl duration-300 scale-100 hover:bg-slate-200 cursor-pointer">
         <Image
+          layout="responsive"
           src={image}
           alt={{ name }}
           width={100}

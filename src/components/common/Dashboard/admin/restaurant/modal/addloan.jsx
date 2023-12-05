@@ -165,7 +165,7 @@ const AddLoan = ({ closeModal }) => {
 
             <div className="col-span-2 flex gap-2 mt-2">
               <input type="radio" />
-              <p className="text-xs text-slate-600">
+              <p className="text-sm text-slate-600">
                 Yes, I understand and agree to the Dinehub terms of services,
                 including the User Agreement and Privacy Policy .
               </p>

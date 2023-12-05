@@ -39,6 +39,7 @@ const Page = () => {
       </div>
       <div className="flex flex-col md:flex-row w-full p-0 md:p-6 mt-4 md:mt-8 gap-12 items-center">
         <Image
+          layout="responsive"
           src="/image/Plate/Image1.png"
           alt="image 1"
           height={500}
@@ -58,7 +59,7 @@ const Page = () => {
                 spicy Seasoned seafood Noodels
               </p>
             </div>
-            <button className="bg-black text-white rounded-full p-3 text-xs">
+            <button className="bg-black text-white rounded-full p-3 text-sm">
               <BsHeart />
             </button>
           </div>

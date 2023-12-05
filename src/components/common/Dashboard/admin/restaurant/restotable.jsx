@@ -6,7 +6,7 @@ const RestoTable = ({ title, name, location, contact, email, decision }) => {
     <div className="w-full mt-4">
       <div className="w-full flex justify-between">
         <h1 className="text-lg pt-2 font-bold">{title}</h1>
-        <button className="text-xs "></button>
+        <button className="text-sm "></button>
       </div>
       <table className="w-full mt-2 text-sm" border="1">
         <thead className="bg-slate-300">
@@ -29,14 +29,14 @@ const RestoTable = ({ title, name, location, contact, email, decision }) => {
             </td>
             <td className="bg-green-200">
               <p>{contact}</p>
-              <h2 className="text-xs block xl:hidden">{email}</h2>
-              <h3 className="text-xs block md:hidden text-slate-700">
+              <h2 className="text-sm block xl:hidden">{email}</h2>
+              <h3 className="text-sm block md:hidden text-slate-700">
                 {location}
               </h3>
             </td>
             <td className="hidden xl:block bg-gray-200 h-10">{email}</td>
             <td>
-              <button className="bg-red-100 px-3 rounded-md py-2 text-xs font-medium">
+              <button className="bg-red-100 px-3 rounded-md py-2 text-sm font-medium">
                 {decision}
               </button>
             </td>

@@ -27,7 +27,7 @@ const RestoSubscription = ({ updateProfile, setUpdateProfile }) => {
           <h1 className="font-bold mt-4">Subscription pricing</h1>
           <div className="grid grid-cols-2 gap-3 w-full">
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">Normal</label>
+              <label className="text-sm font-semibold">Normal</label>
               <input
                 type="number"
                 value="42000"
@@ -35,7 +35,7 @@ const RestoSubscription = ({ updateProfile, setUpdateProfile }) => {
               />
             </div>
             <div className="flex flex-col w-full gap-2 items-start mt-4">
-              <label className="text-xs font-semibold">VIP</label>
+              <label className="text-sm font-semibold">VIP</label>
               <input
                 type="number"
                 value="640000"

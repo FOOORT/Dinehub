@@ -9,6 +9,7 @@ const Cards = ({ name, desc, price, category, image }) => {
       <fieldset className="bg-gray-100 rounded-xl p-4 flex justify-center items-center w-full">
         <legend className="w-full flex justify-center items-center rounded-xl">
           <Image
+            layout="responsive"
             src={image}
             alt="image1"
             width={100}

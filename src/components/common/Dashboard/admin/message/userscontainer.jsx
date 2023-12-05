@@ -7,9 +7,9 @@ const UsersContainer = () => {
       <div className="flex gap-2 flex-col">
         <div className="flex items-center justify-between">
           <h2 className="text-sm text-black font-semibold">Shelby Goode</h2>
-          <p className="text-xs text-gray-400">1min ago</p>
+          <p className="text-sm text-gray-400">1min ago</p>
         </div>
-        <p className="text-xs text-gray-400">
+        <p className="text-sm text-gray-400">
           Lorem Ipsum is simply dummy text of the printing{" "}
         </p>
       </div>
