@@ -2,6 +2,8 @@
 import React, { use, useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import {setMenu} from "../../../store/restaurant/menu";
 import EditMenu from "./editmenu";
 
 const MenuCard = ({
@@ -14,9 +16,11 @@ const MenuCard = ({
   image,
   key
 }) => {
+  const dispatch=useDispatch();
   const [editMenus, setEditMenus] = useState(false);
   const [menuStatus, setMenuStatus] = useState(status);
   const [id, setId] = useState(key);
+  const [selectedMenu,setSelectMenu]=useState(0);
 
   const handleMenu = () => {
     setEditMenus((prev) => !prev);
@@ -65,7 +69,9 @@ const MenuCard = ({
             <div className='grid grid-cols-2 w-full gap-2'>
               <button
                 className='border border-blue-500 rounded-md py-2 active:scale-90 duration-100 flex justify-center items-center text-blue-500'
-                onClick={() => setEditMenus(true)}
+                onClick={() => {setEditMenus(true)
+                  dispatch(setMenu(id))
+                }}
               >
                 <MdModeEdit />
               </button>

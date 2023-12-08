@@ -1,22 +1,35 @@
+"use client";
 import React from "react";
 import Cards from "../common/Menu/cards";
 import Dishes from "../json/menu";
+import { useEffect, useState } from "react";
+
+import { getMenu, loadMenu } from "@/store/restaurant/menu";
+import { useDispatch, useSelector } from "react-redux";
 
 const CardContainer = () => {
-  // console.log("Dishes", Dishes);
+  const dispatch = useDispatch();
+  const menus = useSelector(getMenu);
+
+  useEffect(() => {
+    dispatch(loadMenu);
+  }, []);
+
+  console.log("Menus: ", menus);
+
   return (
     <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
-      {Dishes.map((dish, index) => (
+      {menus.map((dish, index) => (
         <Cards
           key={index}
-          name={dish.name}
-          desc={dish.details}
-          price={dish.price}
-          category={dish.category}
+          name={dish.menuName}
+          desc={dish.menuDescription}
+          price={dish.menuPrice}
+          category={dish.menuCategory}
           restaurant={dish.restaurant}
-          status={dish.status}
-          ingredients={dish.ingredients}
-          image={dish.image}
+          // status={dish.status}
+          // ingredients={dish.ingredients}
+          image={dish.menuImage}
         />
       ))}
     </div>

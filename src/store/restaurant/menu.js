@@ -7,6 +7,7 @@ const menu = createSlice({
   initialState: {
     list: [],
     loading: false,
+  selectedMenu:0,
   },
   reducers: {
     menuRequested: (menu) => {
@@ -24,6 +25,12 @@ const menu = createSlice({
       menu.loading = false;
       alert("Menu Added");
     },
+    setMenu:(menu,action)=>{
+      return{
+        ...menu,selectedMenu:action.payload
+      }
+
+    },
     menuUpdated: (menu, actions) => {
       const { id, updatedMenu } = actions.payload;
       const index = menu.list.findIndex((item) => item.id === id);
@@ -40,6 +47,7 @@ const {
   menuRequested,
   menuRequestFailed,
   menuUpdated,
+  setMenu
 } = menu.actions;
 export default menu.reducer;
 // actions

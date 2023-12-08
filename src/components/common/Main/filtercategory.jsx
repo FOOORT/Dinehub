@@ -14,7 +14,7 @@ const FilterCategory = () => {
             alt="image"
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full max-w-10 max-h-10"
           />
           <span className="text-sm pt-1">Continental</span>
         </div>
@@ -27,7 +27,7 @@ const FilterCategory = () => {
             alt="image"
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full max-w-10 max-h-10"
           />
           <span className="text-sm pt-1">Beverage</span>
         </div>
@@ -40,7 +40,7 @@ const FilterCategory = () => {
             alt="image"
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full max-w-10 max-h-10"
           />
           <span className="text-sm pt-1">Food</span>
         </div>
@@ -53,7 +53,7 @@ const FilterCategory = () => {
             alt="image"
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full max-w-10 max-h-10"
           />
           <span className="text-sm pt-1">Snacks</span>
         </div>
@@ -66,7 +66,7 @@ const FilterCategory = () => {
             alt="image"
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full max-w-10 max-h-10"
           />
           <span className="text-sm pt-1">Soda</span>
         </div>
@@ -79,7 +79,7 @@ const FilterCategory = () => {
             alt="image"
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full max-w-10 max-h-10"
           />
           <span className="text-sm pt-1">Fruits</span>
         </div>

@@ -3,207 +3,140 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from "next/navigation";
-
 import { ToastContainer, toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { addClient } from "@/store/auth/client";
+import FormField from "@/components/common/Form/Field/FormField";
+// Import Yup and formik
+import * as Yup from "yup";
+import { Form, Formik } from "formik";
 
-import { useDispatch, useSelector } from "react-redux";
-import { createUser } from "@/redux/slice/Auth/userSlice";
+// ... (import statements)
 
 const Page = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
-  // const { loading, error } = useSelector((state) => state.createUser);
-  let loading = false;
-  let error = false;
+  const schema = Yup.object().shape({
+    firstname: Yup.string().required("First Name is required"),
+    lastname: Yup.string().required("Last Name is required"),
+    email: Yup.string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    username: Yup.string().required("Username is required"),
+    address: Yup.string().required("Address is required"),
+    gender: Yup.string().required("Gender is required"),
+    dob: Yup.date().nullable().required("Date of Birth is required"),
+    phone: Yup.string().required("Phone number is required"),
+    password: Yup.string()
+      .required("Password is required")
+      .min(6, "Password must be at least 6 characters"),
+    confirm_password: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
+      .required("Confirm Password is required"),
+  });
 
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [gender, setGender] = useState("M");
-  const [dob, setDob] = useState("20/10/2023");
-  const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirm_password, setConfirm_password] = useState("");
+  const genderOptions = [
+    {
+      value: "Male",
+      label: "Male",
+    },
+    {
+      value: "Female",
+      label: "Female",
+    },
+  ];
 
-  const formData = {
-    firstname,
-    lastname,
-    email,
-    username,
-    address,
-    gender,
-    dob,
-    phone,
-    role: "Client",
-    password,
-    confirm_password,
-  };
-
-  const handleCreateUser = (e) => {
-    e.preventDefault();
-
-    dispatch(createUser(formData))
-      .then((response) => {
-        console.log("response data: ", response);
-        if (response.payload.success) {
-          toast.success("Your account created");
-          router.push("/auth/signup/verify");
-        } else {
-          toast.error("Failed to create an account");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        toast.error("An error occurred while creating an account");
-      });
-
-    error && console.log("You are encoutering following prbolem: ", error);
-  };
   return (
-    <div className='w-screen bg-white h-screen flex justify-center items-center'>
+    <div className="w-screen bg-white h-screen flex justify-center items-center">
       <ToastContainer />
-      <div className='bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-2/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border scale-90'>
-        <h1 className='text-xl font-semibold text-center py-3'>
-          Create account
-        </h1>
-        <form
-          className='flex flex-col gap-4 p-4 w-full'
-          onSubmit={handleCreateUser}
+      <div className="bg-gray-50 w-[90%] md:w-5/6 lg:w-4/6 xl:w-3/6 flex flex-col justify-center items-center p-4 py-8 rounded-lg border scale-90">
+        <Formik
+          validationSchema={schema}
+          initialValues={{
+            firstname: "",
+            lastname: "",
+            email: "",
+            username: "",
+            address: "",
+            gender: "",
+            dob: "",
+            phone: "",
+            password: "",
+            confirm_password: "",
+            role: "Client",
+          }}
+          onSubmit={(values) => {
+            console.log(values);
+            const formData = new FormData();
+            formData.append("firstname", values.firstname),
+              formData.append("lastname", values.lastname),
+              formData.append("email", values.email),
+              formData.append("username", values.username),
+              formData.append("address", values.address),
+              formData.append("gender", values.gender),
+              formData.append("dob", values.dob),
+              formData.append("role", values.role),
+              formData.append("phone", values.phone),
+              formData.append("password", values.password),
+              formData.append("confirm_password", values.confirm_password),
+              setLoading(true);
+            dispatch(addClient(formData));
+            router.push("/auth/signin/");
+          }}
         >
-          <div className='flex flex-col md:flex-row gap-2 w-full'>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='name'>Firstname</label>
-              <input
-                type='text'
-                placeholder='John'
-                value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
+          {({ isSubmitting }) => (
+            <Form className="w-full grid grid-cols-2 gap-4">
+              <FormField label="Firstname" name="firstname" />
+              <FormField label="Lastname" name="lastname" />
+              <FormField label="Email" name="email" />
+              <FormField label="Username" name="username" />
+              <FormField label="Address" name="address" />
+              <FormField
+                label="Gender"
+                name="gender"
+                as="select"
+                options={genderOptions}
               />
-            </div>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='pass'>Lastname</label>
-              <input
-                type='text'
-                placeholder='Doe'
-                value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
+              <FormField label="Date of Birth" name="dob" type="date" />
+              <FormField label="Phone number" name="phone" type="number" />
+              <FormField
+                containerClassName="col-span-2"
+                label="Password"
+                name="password"
+                type="password"
               />
-            </div>
-          </div>
+              <FormField
+                containerClassName="col-span-2"
+                label="Confirm Password"
+                name="confirm_password"
+                type="password"
+              />
 
-          <div className='flex flex-col md:flex-row gap-2 w-full'>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='name'>Email</label>
-              <input
-                type='email'
-                placeholder='Johndoe@gmail.com'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='pass'>Username</label>
-              <input
-                type='text'
-                placeholder='@Johndoe'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-          </div>
-          <div className='flex flex-col md:flex-row gap-2 w-full'>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='name'>Gender</label>
-              <input
-                type='text'
-                placeholder='Male'
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='pass'>Date of birth</label>
-              <input
-                type='date'
-                placeholder='30/07/2022'
-                value={dob}
-                onChange={(e) => setDob(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-          </div>
-          <div className='flex flex-col md:flex-row gap-2 w-full'>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='name'>Adress</label>
-              <input
-                type='text'
-                placeholder='Kigali, Kacyiru'
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='pass'>Phone number</label>
-              <input
-                type='number'
-                placeholder='078 880 8188'
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-          </div>
-          <div className='flex flex-col md:flex-row gap-2 w-full'>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='name'>Password</label>
-              <input
-                type='password'
-                placeholder='*******'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-            <div className='flex flex-col gap-2 w-full'>
-              <label htmlFor='pass'>Confirm Password</label>
-              <input
-                type='password'
-                placeholder='*******'
-                value={confirm_password}
-                onChange={(e) => setConfirm_password(e.target.value)}
-                className='border outline-none active:outline-none p-3 rounded-md'
-              />
-            </div>
-          </div>
-          <button
-            type='submit'
-            className='bg-black text-white py-3 rounded-md cursor-pointer'
-          >
-            {loading ? "Creating Account ..." : "Create Account"}
-          </button>
-        </form>
-        <div className='w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4'>
-          <Link href='/auth/signin'>
-            <p className='duration-300 scale-95 hover:scale-100 cursor-pointer text-md'>
-              Already have account
-              <span className='text-blue-600 ml-2'>Sign in</span> now
+              <button
+                type="submit"
+                className="bg-black text-white py-3 rounded-md cursor-pointer col-span-2"
+                disabled={isSubmitting}
+              >
+                {loading ? "Creating Account ..." : "Create Account"}
+              </button>
+            </Form>
+          )}
+        </Formik>
+        <div className="w-full flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center gap-2 p-4">
+          <Link href="/auth/signin">
+            <p className="duration-300 scale-95 hover:scale-100 cursor-pointer text-md">
+              Already have an account?{" "}
+              <span className="text-blue-600 ml-2">Sign in</span> now
             </p>
           </Link>
         </div>
-        <div className='flex w-full bg-blue-500 p-1 rounded-lg justify-start items-center gap-4 text-white scale-95 hover:scale-100 duration-300 cursor-pointer'>
-          <span className='p-2 rounded-md bg-white'>
-            <FcGoogle className='text-xl' />
+        <div className="flex w-full bg-blue-500 p-1 rounded-lg justify-start items-center gap-4 text-white scale-95 hover:scale-100 duration-300 cursor-pointer">
+          <span className="p-2 rounded-md bg-white">
+            <FcGoogle className="text-xl" />
           </span>
-          Continue with google
+          Continue with Google
         </div>
       </div>
     </div>

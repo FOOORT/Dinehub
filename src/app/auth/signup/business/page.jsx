@@ -2,13 +2,17 @@
 import React, { useState } from "react";
 import BusinessInfo from "@/components/Auth/businessinfo";
 import ManagerAccount from "@/components/Auth/manageraccount";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
 
-import axios from "axios";
+// import axios from "axios";
+import { addRestaurant } from "@/store/restaurant/restaurant";
 
 const Page = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const [activeComponent, setActiveComponent] = useState(true);
   const [firstname, setFirstname] = useState("");
@@ -22,7 +26,8 @@ const Page = () => {
   const [businessWhatsappNumber, setBusinessWhatsappNumber] = useState("");
   const [businessCategory, setBusinessCategory] = useState("");
   const [businessDescription, setBusinessDescription] = useState("");
-  const managerDetails = {
+
+  const managerForms = {
     firstname,
     lastname,
     email,
@@ -36,30 +41,23 @@ const Page = () => {
     businessDescription,
   };
 
-  const handleCreateBusiness = async () => {
-    // console.log("Create Business", managerDetails);
-    try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/business/register`,
-        managerDetails
-      );
-
-      console.log("response data: ", response);
-
-      if ((response.status = 201)) {
-        toast.success(response.data.message);
-        // Redirect or perform any other actions
-        router.push("/auth/signup/approval");
-      } else {
-        toast.error(response.data.message);
-      }
-    } catch (error) {
-      // Handle error
-      console.error("Error:", error.response.data.message);
-      toast.error(error.response.data.message);
-
-      // Display error message to the user
-    }
+  const handleCreateBusiness = () => {
+    const formData = new FormData();
+    formData.append(firstname),
+      formData.append(lastname),
+      formData.append(email),
+      formData.append(username),
+      formData.append(password),
+      formData.append(confirmPassword),
+      formData.append(businessName),
+      formData.append(businessAddress),
+      formData.append(businessCategory),
+      formData.append(businessDescription),
+      formData.append(businessPhone),
+      formData.append(businessWhatsappNumber),
+      setLoading(true);
+    dispatch(addRestaurant(formData));
+    // router.push("/auth/signup/approval");
   };
 
   return (
