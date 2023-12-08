@@ -19,16 +19,16 @@ const schema = Yup.object().shape({
 
 const categories = [
   {
-    value: 1,
-    label: "food",
+    value: "Food",
+    label: "Food",
   },
   {
-    value: 2,
-    label: "snacks",
+    value: "Snacks",
+    label: "Snacks",
   },
   {
-    value: 3,
-    label: "beverages",
+    value: "Beverages",
+    label: "Beverages",
   },
 ];
 

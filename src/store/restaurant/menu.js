@@ -7,7 +7,7 @@ const menu = createSlice({
   initialState: {
     list: [],
     loading: false,
-  selectedMenu:0,
+    selectedMenu: 0,
   },
   reducers: {
     menuRequested: (menu) => {
@@ -25,17 +25,17 @@ const menu = createSlice({
       menu.loading = false;
       alert("Menu Added");
     },
-    setMenu:(menu,action)=>{
-      return{
-        ...menu,selectedMenu:action.payload
-      }
-
-    },
     menuUpdated: (menu, actions) => {
-      const { id, updatedMenu } = actions.payload;
-      const index = menu.list.findIndex((item) => item.id === id);
+      const newMenu = actions.payload;
+      const index = menu.list.findIndex((item) => item._id === newMenu._id);
       if (index !== -1) {
-        menu.list[index] = updatedMenu;
+        menu.list[index] = newMenu;
+      }
+    },
+    menuDeleted: (menu, actions) => {
+      const index = menu.list.findIndex((item) => item._id === actions.payload);
+      if (index !== -1) {
+        menu.list.splice(index, 1);
       }
     },
   },
@@ -47,7 +47,7 @@ const {
   menuRequested,
   menuRequestFailed,
   menuUpdated,
-  setMenu
+  menuDeleted,
 } = menu.actions;
 export default menu.reducer;
 // actions
@@ -77,7 +77,7 @@ export const updateMenu = (id, updatedMenu) => (dispatch) => {
       onSuccess: menuUpdated.type,
       data: updatedMenu,
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
       },
     })
   );
@@ -86,10 +86,34 @@ export const updateMenu = (id, updatedMenu) => (dispatch) => {
 export const loadMenu = (dispatch) => {
   dispatch(
     apiCallBegan({
-      url: "/manager/menu",
+      url: "/manager/menu/business",
       onStart: menuRequested.type,
       onError: menuRequestFailed.type,
       onSuccess: menuReceived.type,
+    })
+  );
+};
+
+export const activateOrDeactivateMenu = (id) => (dispatch) => {
+  dispatch(
+    apiCallBegan({
+      url: `manager/menu/activateOrDeactivate/${id}`,
+      method: "PUT",
+      onStart: menuRequested.type,
+      onError: menuRequestFailed.type,
+      onSuccess: menuUpdated.type,
+    })
+  );
+};
+
+export const deleteMenu = (id) => (dispatch) => {
+  dispatch(
+    apiCallBegan({
+      url: `/manager/menu/${id}`,
+      method: "DELETE",
+      onStart: menuRequested.type,
+      onError: menuRequestFailed.type,
+      onSuccess: menuDeleted.type,
     })
   );
 };

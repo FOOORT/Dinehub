@@ -2,10 +2,10 @@
 
 import ActionButton from "@/components/common/actionbutton";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { FaTimes } from "react-icons/fa";
 import { MdModeEdit } from "react-icons/md";
 import { Form, Formik } from "formik";
-import { useSelector } from "react-redux";
 import * as Yup from "yup";
 
 import FormField from "@/components/common/Form/Field/FormField";
@@ -19,25 +19,24 @@ const schema = Yup.object().shape({
   description: Yup.string().required(),
 });
 
-
 const categories = [
   {
-    value: 1,
-    label: "food",
+    value: "Food",
+    label: "Food",
   },
   {
-    value: 2,
-    label: "snacks",
+    value: "Snacks",
+    label: "Snacks",
   },
   {
-    value: 3,
-    label: "beverages",
+    value: "Beverages",
+    label: "Beverages",
   },
 ];
 
-const EditMenu = ({ closeModal }) => {
-  const menuId = useSelector((state) => state.menu.selectedMenu);
-  console.log(menuId);
+const EditMenu = ({ closeModal, menu }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="w-screen h-screen fixed left-0 top-0 z-[60] bg-black/50 backdrop-blur-sm flex justify-center items-center">
       <div className="bg-white p-0 rounded-3xl w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 shadow-2xl shadow-slate-400 flex flex-col justify-center items-center duration-150">
@@ -52,21 +51,25 @@ const EditMenu = ({ closeModal }) => {
         <Formik
           initialValues={{
             image: "",
-            name: "HJJGGG",
-            price: "",
-            category: "",
-            description: "",
+            menuName: menu?.name,
+            menuPrice: menu?.price,
+            menuCategory: menu?.category,
+            menuDescription: menu?.desc,
+          }}
+          onSubmit={(values) => {
+            dispatch(updateMenu(menu.id, values));
+            closeModal();
           }}
         >
           {() => (
             <Form className="w-full flex flex-col gap-4 justify-center items-center p-4">
               <FormField label={"Image"} type={"file"} name={"image"} />
-              <FormField label={"Name"} name={"name"} />
+              <FormField label={"Name"} name={"menuName"} />
               <div className="col-span-2 grid grid-cols-2 gap-2 py-4 w-full">
-                <FormField label={"Price"} name={"price"} type={"number"} />
+                <FormField label={"Price"} name={"menuPrice"} type={"number"} />
                 <FormField
                   label={"Category"}
-                  name={"category"}
+                  name={"menuCategory"}
                   as="select"
                   options={categories}
                 />
@@ -74,7 +77,7 @@ const EditMenu = ({ closeModal }) => {
               <FormField
                 containerClassName="w-full"
                 label={"Description"}
-                name={"description"}
+                name={"menuDescription"}
                 as="textarea"
                 cols="10"
                 rows="5"
