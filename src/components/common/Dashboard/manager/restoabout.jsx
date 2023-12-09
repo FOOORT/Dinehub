@@ -36,7 +36,7 @@ const RestoAbout = ({ updateProfile, setUpdateProfile }) => {
   };
 
   const renderTags = (tagList, tagSetter, label) => (
-    <div className="flex flex-col w-full gap-2 items-start mt-4">
+    <div className="flex flex-col w-full gap-2 items-start mt-4 ">
       <label className="text-sm font-semibold">{label}</label>
       <div className="flex gap-1 w-full">
         <input

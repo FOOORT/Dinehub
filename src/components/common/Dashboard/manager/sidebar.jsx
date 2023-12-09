@@ -14,15 +14,13 @@ const Sidebar = () => {
   const activeTab = currentPage.split("/manager/")[1];
 
   return (
-    <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-full">
+    <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-full h-[93%]">
       <Link href="/">
         <Image
-          layout="responsive"
           src="/image/DashLogo.png"
           alt="DashboradLogo"
           height={100}
           width={100}
-          layout="responsive"
         />
       </Link>
       <ol className="flex flex-col gap-4">

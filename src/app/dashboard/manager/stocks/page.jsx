@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import ManagerLayout from "../managerlayout";
 import Navs from "@/components/json/manager/navbar";
 import Header from "@/components/common/Dashboard/admin/header";
 import FilterStockNav from "@/components/common/Dashboard/manager/stock/filterNav";
@@ -23,13 +22,11 @@ const Page = () => {
   // Use the mapping to determine the content component
   const ContentComponent = componentMap[activeNav] || StockHome;
   return (
-    <ManagerLayout>
       <div className="w-full h-screen  flex flex-col justify-start items-start gap-4">
         <Header Navs={Navs} />
         <FilterStockNav activeNav={activeNav} setActiveNav={setActiveNav} />
         <ContentComponent />
       </div>
-    </ManagerLayout>
   );
 };
 

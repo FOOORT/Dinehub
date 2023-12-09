@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AdminLayout from "../adminlayout";
+import AdminLayout from "../layout";
 import Header from "@/components/common/Dashboard/admin/header";
 import RightLayout from "@/components/common/Dashboard/admin/rightlayout";
 import NotifyFilters from "@/components/common/Dashboard/admin/notifications/notifyfilters";
@@ -8,7 +8,6 @@ import Notifyitem from "@/components/common/Dashboard/admin/notifications/notify
 
 const page = () => {
   return (
-    <AdminLayout>
       <div className="flex justify-between items-start">
         <div className="w-full lg:w-[75%] xl:w-[80%] px-3">
           <Header />
@@ -34,7 +33,6 @@ const page = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
   );
 };
 

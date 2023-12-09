@@ -1,12 +1,11 @@
 "use client";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
+// import { useRouter, useSearchParams } from "next/navigation";
+// import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "@/redux/slice/Auth/loginSlice";
-import axios from "axios";
+// import { useDispatch, useSelector } from "react-redux";
+// import axios from "axios";
 
 const Page = () => {
   const [password, setPassword] = useState("");

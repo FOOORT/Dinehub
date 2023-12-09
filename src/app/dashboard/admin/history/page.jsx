@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
-import AdminLayout from "../adminlayout";
+import AdminLayout from "../layout";
 
 const page = () => {
   return (
-    <AdminLayout>
       <div>page</div>
-    </AdminLayout>
   );
 };
 

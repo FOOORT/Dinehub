@@ -14,7 +14,7 @@ const Cards = ({ name, desc, price, category, image }) => {
             alt="image1"
             width={100}
             height={100}
-            className=" !w-28 !h-28 rounded-full scale-100 duration-300 lg:scale-125 mt-6 border object-cover border-3 border-slate-200 "
+            className=" !w-28 !h-28 rounded-full duration-300 scale-125 mt-6 object-cover !border-2 lg:!border-4 !border-white group-hover:scale-[1.4] "
           />
         </legend>
         <ul className="w-full flex flex-col gap-2 justify-center items-center">

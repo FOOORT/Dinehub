@@ -13,7 +13,7 @@ const schema = Yup.object().shape({
   name: Yup.string().required().min(3).max(255),
   image: Yup.string().required(),
   price: Yup.number().required(),
-  category: Yup.number().required(),
+  category: Yup.string().required(),
   description: Yup.string().required(),
 });
 

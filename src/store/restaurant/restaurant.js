@@ -1,4 +1,3 @@
-import { toast } from "react-toastify";
 import { createSlice } from "@reduxjs/toolkit";
 import { apiCallBegan } from "@/store/api";
 import { createSelector } from "reselect";
@@ -15,12 +14,10 @@ const restaurant = createSlice({
     },
     restaurantRequestFailed: (restaurant) => {
       restaurant.loading = false;
-      toast.error(error.response.data.message);
     },
     restaurantReceived: (restaurant, actions) => {
       restaurant.list = actions.payload;
       restaurant.loading = false;
-      toast.success(response.data.message);
     },
     restaurantAdded: (restaurant, actions) => {
       restaurant.list = [actions.payload, ...menu.list];
@@ -64,6 +61,8 @@ export const loadRestaurant = (dispatch) => {
     })
   );
 };
+
+
 
 export const getRestaurant = createSelector(
   (state) => state.restaurant,

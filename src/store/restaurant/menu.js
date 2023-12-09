@@ -94,6 +94,17 @@ export const loadMenu = (dispatch) => {
   );
 };
 
+export const loadVerifiedMenu = (dispatch) => {
+  dispatch(
+    apiCallBegan({
+      url: "/manager/menu",
+      onStart: menuRequested.type,
+      onError: menuRequestFailed.type,
+      onSuccess: menuReceived.type,
+    })
+  );
+};
+
 export const activateOrDeactivateMenu = (id) => (dispatch) => {
   dispatch(
     apiCallBegan({

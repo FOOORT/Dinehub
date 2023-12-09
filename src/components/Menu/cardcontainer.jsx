@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
 import Cards from "../common/Menu/cards";
-import Dishes from "../json/menu";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-import { getMenu, loadMenu } from "@/store/restaurant/menu";
+import { getMenu, loadVerifiedMenu } from "@/store/restaurant/menu";
 import { useDispatch, useSelector } from "react-redux";
 
 const CardContainer = () => {
@@ -12,7 +11,7 @@ const CardContainer = () => {
   const menus = useSelector(getMenu);
 
   useEffect(() => {
-    dispatch(loadMenu);
+    dispatch(loadVerifiedMenu);
   }, []);
 
   console.log("Menus: ", menus);

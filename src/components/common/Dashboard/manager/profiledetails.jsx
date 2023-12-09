@@ -10,25 +10,29 @@ import Controll from "../admin/settings/controll";
 import RestoAbout from "./restoabout";
 
 const ProfileDetails = ({ updateProfile, setUpdateProfile, activeNav }) => {
-  const [moreInfo, setMoreInfo] = useState(false);
   return (
-    <div className="w-full grid grid-cols-1 gap-4">
+    <div className="w-full grid grid-cols-1 gap-4 mt-8">
       <div className="flex flex-col w-full p-4 gap-2 items-start">
         {activeNav === "home" && (
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+          <div className="w-full flex lg:grid flex-col lg:grid-cols-2 gap-4 lg:gap-8">
+            
             <RestoInfo
               updateProfile={updateProfile}
               setUpdateProfile={setUpdateProfile}
             />
+            
+            
             <RestoGallery
               updateProfile={updateProfile}
               setUpdateProfile={setUpdateProfile}
             />
+            
+            
             <RestoAbout
               updateProfile={updateProfile}
               setUpdateProfile={setUpdateProfile}
             />
-
+            
             <Controll
               updateProfile={updateProfile}
               setUpdateProfile={setUpdateProfile}
@@ -42,6 +46,7 @@ const ProfileDetails = ({ updateProfile, setUpdateProfile, activeNav }) => {
             )}
           </div>
         )}
+
         {activeNav === "subscription" && (
           <>
             <RestoSubscription
@@ -57,6 +62,7 @@ const ProfileDetails = ({ updateProfile, setUpdateProfile, activeNav }) => {
             )}
           </>
         )}
+
         {activeNav === "account" && (
           <>
             <BankAccount

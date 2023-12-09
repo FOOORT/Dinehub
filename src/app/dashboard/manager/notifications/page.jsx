@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import ManagerLayout from "../managerlayout";
+import ManagerLayout from "../layout";
 import Navs from "@/components/json/manager/navbar";
 import Header from "@/components/common/Dashboard/admin/header";
 

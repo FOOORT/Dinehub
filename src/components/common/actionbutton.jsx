@@ -4,7 +4,7 @@ const ActionButton = ({name, icon, click, className, type = 'button'}) => {
     return (
         <button
             type={type}
-            className={`${className} bg-black text-white px-4 py-2 rounded-md flex items-center gap-3 duration-100 active:scale-110 border border-white text-sm`}
+            className={`${className} bg-black text-slate-200 px-4 py-2 rounded-md flex items-center gap-3 duration-100 active:scale-110 border border-white text-sm`}
             onClick={click}
         >
             {name}

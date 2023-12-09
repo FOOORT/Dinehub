@@ -42,21 +42,8 @@ const Page = () => {
   };
 
   const handleCreateBusiness = () => {
-    const formData = new FormData();
-    formData.append(firstname),
-      formData.append(lastname),
-      formData.append(email),
-      formData.append(username),
-      formData.append(password),
-      formData.append(confirmPassword),
-      formData.append(businessName),
-      formData.append(businessAddress),
-      formData.append(businessCategory),
-      formData.append(businessDescription),
-      formData.append(businessPhone),
-      formData.append(businessWhatsappNumber),
       setLoading(true);
-    dispatch(addRestaurant(formData));
+    dispatch(addRestaurant(managerForms));
     // router.push("/auth/signup/approval");
   };
 

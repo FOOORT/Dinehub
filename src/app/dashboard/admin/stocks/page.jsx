@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AdminLayout from "../adminlayout";
+import AdminLayout from "../layout";
 import Header from "@/components/common/Dashboard/admin/header";
 import StatsContainer from "@/components/common/Dashboard/admin/statscontainer";
 import RightLayout from "@/components/common/Dashboard/admin/rightlayout";
@@ -8,7 +8,6 @@ import StockContainer from "@/components/common/Dashboard/admin/stock/stockconta
 
 const page = () => {
   return (
-    <AdminLayout>
       <div className="flex justify-between items-start">
         <div className="w-full lg:w-[75%] xl:w-[80%] px-3">
           <Header />
@@ -22,7 +21,6 @@ const page = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
   );
 };
 

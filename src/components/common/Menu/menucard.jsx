@@ -1,5 +1,6 @@
 "use client";
-import React, { use, useState } from "react";
+import Image from 'next/image';
+import React, { useState } from "react";
 import { MdModeEdit } from "react-icons/md";
 import { IoMdTrash } from "react-icons/io";
 import { useDispatch } from "react-redux";
@@ -32,12 +33,12 @@ const MenuCard = ({ name, desc, price, status, category, image, id }) => {
     >
       <fieldset className="bg-gray-100 rounded-xl p-2 flex justify-center items-center w-full">
         <legend className="w-full flex justify-center items-center rounded-xl">
-          <img
+        <img
             src={image}
             alt={name}
             width={100}
             height={100}
-            className=" w-28 h-28 rounded-full scale-100 duration-300 lg:scale-125 mt-6 border object-cover border-3 border-slate-200 "
+            className=" w-28 h-28 rounded-full scale-100 duration-300 lg:scale-125 mt-6 border object-cover border-3 border-slate-200"
           />
         </legend>
         <ul className="w-full flex flex-col gap-2 justify-center items-center mt-3">

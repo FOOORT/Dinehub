@@ -10,13 +10,13 @@ const Sidebar = ({ Navs }) => {
   const categories = [...new Set(Navs.map((nav) => nav.category))];
 
   return (
-    <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-full">
+    <div className="pl-4 py-8 flex flex-col gap-4 bg-white w-[95%] h-[93vh]">
       <Link href="/">
         <Image
           src="/image/DashLogo.png"
-          alt="DashboradLogo"
           height={100}
           width={100}
+          alt="DashboradLogo"
         />
       </Link>
 
@@ -30,8 +30,8 @@ const Sidebar = ({ Navs }) => {
                   <Link
                     key={nav.path}
                     href={nav.path}
-                    className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover-text-white rounded-md duration-300 cursor-pointer ${
-                      activeTab === nav.path ? "bg-black text-white" : ""
+                    className={`flex gap-2 items-center pl-2 text-sm mt-1 py-3 px-4 hover:bg-black hover:text-slate-300 rounded-md duration-300 cursor-pointer ${
+                      activeTab === nav.path ? "bg-black hover:text-slate-300" : ""
                     }`}
                   >
                     {nav.icon}

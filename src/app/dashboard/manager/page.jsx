@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import ManagerLayout from "./managerlayout";
+import ManagerLayout from "./layout";
 import Header from "@/components/common/Dashboard/admin/header";
 import RightLayout from "@/components/common/Dashboard/admin/rightlayout";
 import AdminChart from "@/components/common/Dashboard/admin/adminchart";
@@ -11,7 +11,6 @@ import Navs from "@/components/json/manager/navbar";
 
 const page = () => {
   return (
-    <ManagerLayout>
       <div className="flex justify-between items-start">
         <div className="w-full lg:w-[75%] xl:w-[80%] px-3">
           <Header Navs={Navs} />
@@ -26,7 +25,6 @@ const page = () => {
           </div>
         </div>
       </div>
-    </ManagerLayout>
   );
 };
 

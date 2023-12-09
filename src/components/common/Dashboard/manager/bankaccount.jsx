@@ -43,11 +43,11 @@ const renderBankInfo = (title, icon, number) => (
     <div className="flex gap-2 items-start text-sm">
       {typeof icon === "string" ? (
         <Image
-          layout="responsive"
           src={icon}
           alt={title}
-          width={20}
-          height={20}
+          width={80}
+          height={80}
+          className="w-8"
         />
       ) : (
         icon
@@ -64,11 +64,11 @@ const renderInputBankInfo = (title, icon, value) => (
       <div className="flex gap-2 items-start text-sm">
         {typeof icon === "string" ? (
           <Image
-            layout="responsive"
             src={icon}
             alt={title}
-            width={20}
-            height={20}
+            width={80}
+          height={80}
+          className="w-8"
           />
         ) : (
           icon

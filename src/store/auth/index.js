@@ -22,10 +22,29 @@ const slice = createSlice({
       auth.user = actions.payload;
       auth.loading = false;
     },
+    
+    // Logout Reducer
+    authLogout: (auth) => {
+      auth.user = undefined;
+      auth.loading = false;
+    },
+
+    // Reducers for forgot password
+    forgotPasswordRequested: (auth) => {
+      auth.loading = true;
+    },
+    forgotPasswordFailed: (auth) => {
+      auth.loading = false;
+    },
+    forgotPasswordSuccess: (auth) => {
+      auth.loading = false;
+    },
+
+    
   },
 });
 
-const { authReceived, authRequested, authRequestFailed } = slice.actions;
+const { authReceived, authRequested, authRequestFailed, authLogout, forgotPasswordRequested, forgotPasswordFailed, forgotPasswordSuccess } = slice.actions;
 
 export default slice.reducer;
 // actions
@@ -40,6 +59,24 @@ export const addAuth = (user) => (dispatch) => {
       method: "POST",
     })
   );
+};
+
+// fogrot password actions 
+export const forgotPassword = (email) => (dispatch) => {
+  dispatch(
+    apiCallBegan({
+      url: "/user/forgot-password",
+      onStart: forgotPasswordRequested.type,
+      onSuccess: forgotPasswordSuccess.type,
+      onError: forgotPasswordFailed.type,
+      data: { email },
+      method: "POST",
+    })
+  );
+};
+
+export const logoutUser = () => (dispatch) => {
+  dispatch(authLogout());
 };
 
 // selectors

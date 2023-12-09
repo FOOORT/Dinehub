@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AdminLayout from "../adminlayout";
+import AdminLayout from "../layout";
 import Header from "@/components/common/Dashboard/admin/header";
 import RightLayout from "@/components/common/Dashboard/admin/rightlayout";
 import Image from "next/image";
@@ -9,7 +9,6 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 
 const page = () => {
   return (
-    <AdminLayout>
       <div className="flex justify-between items-start pr-2">
         <div className="w-full px-3">
           <Header />
@@ -41,7 +40,6 @@ const page = () => {
           </div>
         </div>
       </div>
-    </AdminLayout>
   );
 };
 
