@@ -1,4 +1,3 @@
-import Screen from "@/components/Screen";
 import "./globals.css";
 import {Inter} from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,7 +16,6 @@ export default function RootLayout({children}) {
         <body className={inter.className}>
         <Providers>
             {children}
-            <Screen/>
         </Providers>
         </body>
         </html>
