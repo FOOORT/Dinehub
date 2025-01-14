@@ -96,8 +96,6 @@ Install this project with:
 👤 **Author**
 
 - GitHub: [@Reconfort](https://github.com/Reconfort)
-- Github: [Alain Tresor](https://github.com/alaintresor)
-- Github: [Tugane Amiel](https://github.com/tugane)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,23 +106,6 @@ Install this project with:
 There is no future build.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- SUPPORT -->
-
-<!-- ## ⭐️ Show your support <a name="support"></a>
-
-If you like this project you can clone it and feel free to improve it by making a pull request. and consider giver it ⭐️🌟⭐️🌟
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-ACKNOWLEDGEMENTS -->
-
-<!-- ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-I would like to thank Microverse staff, Reviewer, Mentor.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## 📝 License <a name="license"></a>
 
